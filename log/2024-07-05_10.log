@@ -1,0 +1,29 @@
+[2024-07-05 10:01:00.748] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:01:00.748] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:01:01.159] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to database error : pq: no pg_hba.conf entry for host "200.118.16.179", user "xxepin", database "xxepin", SSL off
+[2024-07-05 10:01:01.159] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:03:50.350] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:03:50.351] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:04:11.647] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to database error : dial tcp 74.125.224.72:333: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+[2024-07-05 10:04:11.654] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:05:20.208] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:05:20.208] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:05:20.991] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to database error : pq: no pg_hba.conf entry for host "172.19.2.24", user "xxepin", database "xxepin", SSL off
+[2024-07-05 10:05:20.991] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:06:59.262] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:06:59.263] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:07:02.166] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:10:48.837] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:10:48.837] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:10:48.837] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to database error : missing "=" after "{\"log_level\":\"trace\",\"log_name\":\"agentsDeleted_\"}" in connection info string"
+[2024-07-05 10:10:48.837] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:28:20.347] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:28:20.347] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:28:20.347] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to database error : missing "=" after "{\"log_level\":\"trace\",\"log_name\":\"agentsDeleted_\"}" in connection info string"
+[2024-07-05 10:28:20.347] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:28:49.865] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 10:28:49.865] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
+[2024-07-05 10:28:49.866] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to database error : missing "=" after "{\"log_level\":\"trace\",\"log_name\":\"agentsDeleted_\"}" in connection info string"
+[2024-07-05 10:28:49.866] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-05 10:28:49.866] [agentsdeleter] [main] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-05 10:28:49.868] [agentsdeleter] [main] [info] [] this are the agents in the file [123131 3123123 312312313123 312312312312]

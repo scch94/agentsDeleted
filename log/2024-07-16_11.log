@@ -1,0 +1,34 @@
+[2024-07-16 11:37:14.830] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-16 11:37:14.830] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4}
+[2024-07-16 11:37:15.850] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-16 11:37:15.850] [agentsdeleter] [main] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-16 11:37:15.852] [agentsdeleter] [main] [info] [] this are the agents in the file [996008814317]
+[2024-07-16 11:37:15.853] [agentsdeleter] [main] [trace] [] starting to get agents mobile
+[2024-07-16 11:37:15.854] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-16 11:37:15.854] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=%!s(int=996008814317), and tenant_oid=%!s(int=4)
+[2024-07-16 11:37:16.484] [agentsdeleter] [database] [error] [] query error pq: syntax error at or near "FROM"
+[2024-07-16 11:37:16.484] [agentsdeleter] [main] [error] [] error getting agent mobiles() ,err: pq: syntax error at or near "FROM"
+[2024-07-16 11:37:16.485] [agentsdeleter] [main] [error] [] error in the function getAgentsMobile: pq: syntax error at or near "FROM"
+[2024-07-16 11:37:16.485] [agentsdeleter] [main] [info] [] []
+[2024-07-16 11:37:50.730] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-16 11:37:50.730] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4}
+[2024-07-16 11:37:52.432] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-16 11:37:52.432] [agentsdeleter] [main] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-16 11:37:52.435] [agentsdeleter] [main] [info] [] this are the agents in the file [996008814317]
+[2024-07-16 11:37:52.436] [agentsdeleter] [main] [trace] [] starting to get agents mobile
+[2024-07-16 11:37:52.437] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-16 11:37:52.437] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=%!s(int=996008814317), and tenant_oid=%!s(int=4)
+[2024-07-16 11:37:53.173] [agentsdeleter] [database] [info] [] the query in the database tooks: 735.9059ms
+[2024-07-16 11:37:53.173] [agentsdeleter] [main] [info] [] the agent 996008814317 have 1 mobiles
+[2024-07-16 11:37:53.175] [agentsdeleter] [main] [info] [] []
+[2024-07-16 11:38:32.217] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-16 11:38:32.217] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4}
+[2024-07-16 11:38:33.426] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-16 11:38:33.426] [agentsdeleter] [main] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-16 11:38:33.428] [agentsdeleter] [main] [info] [] this are the agents in the file [996008814317]
+[2024-07-16 11:38:33.428] [agentsdeleter] [main] [trace] [] starting to get agents mobile
+[2024-07-16 11:38:33.429] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-16 11:38:33.429] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=%!s(int=996008814317), and tenant_oid=%!s(int=4)
+[2024-07-16 11:38:34.186] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.8495ms
+[2024-07-16 11:38:34.186] [agentsdeleter] [main] [info] [] the agent 996008814317 have 1 mobiles
+[2024-07-16 11:38:34.187] [agentsdeleter] [main] [info] [] []

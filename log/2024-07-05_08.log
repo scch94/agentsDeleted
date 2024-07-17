@@ -1,0 +1,5 @@
+[2024-07-05 08:54:51.585] [Gconfiguration] [] [fatal] [] error reading the configuration file: open ..\config\micropagosDbConfig.json: The system cannot find the file specified.
+[2024-07-05 08:54:51.585] [Gconfiguration] [config] [fatal] [] error in Gconfiguration.GetConfig() %!(EXTRA *errors.errorString=error reading the configuration file: open ..\config\micropagosDbConfig.json: The system cannot find the file specified.)
+[2024-07-05 08:54:51.586] [Gconfiguration] [] [error] [] error loading configuration: error reading the configuration file: open ..\config\micropagosDbConfig.json: The system cannot find the file specified.
+[2024-07-05 08:56:17.892] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-05 08:56:17.892] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_"}
