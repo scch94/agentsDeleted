@@ -1,0 +1,50 @@
+[2024-07-18 10:45:48.631] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-18 10:45:48.631] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4}
+[2024-07-18 10:45:49.533] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-18 10:45:49.533] [agentsdeleter] [main] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-18 10:45:49.535] [agentsdeleter] [main] [info] [] this are the agents in the file [996008814317]
+[2024-07-18 10:45:49.535] [agentsdeleter] [main] [trace] [] starting to get agents mobile
+[2024-07-18 10:45:49.536] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-18 10:45:49.536] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=%!s(int=996008814317), and tenant_oid=%!s(int=4)
+[2024-07-18 10:45:50.440] [agentsdeleter] [database] [info] [] the query in the database tooks: 903.8015ms
+[2024-07-18 10:45:50.440] [agentsdeleter] [main] [info] [] the agent 996008814317 have 1 mobiles
+[2024-07-18 10:45:50.441] [agentsdeleter] [main] [trace] [] starting to create the query to delete msisdn for and agent
+[2024-07-18 10:45:50.441] [agentsdeleter] [main] [info] [] querytodeletemsisdn is delete from agent_mobile where msisdn in (8451234567); \n
+[2024-07-18 10:45:50.441] [agentsdeleter] [main] [info] [] query to delete the pin of the msisdns is delete from agent_mobile_pin where msisdn_oid in (121721); \n
+[2024-07-18 10:45:50.441] [agentsdeleter] [main] [info] [] starting to write in the file ../utils/agent_mobile_scripts.txt
+[2024-07-18 10:45:50.442] [agentsdeleter] [main] [trace] [] end to wrtite in a file: 
+[2024-07-18 10:45:50.443] [agentsdeleter] [main] [info] [] starting to write in the file ../utils/agent_mobile_scripts.txt
+[2024-07-18 10:45:50.444] [agentsdeleter] [main] [trace] [] end to wrtite in a file: 
+[2024-07-18 10:45:50.444] [agentsdeleter] [main] [info] [] starting to check the users vinculated to the agents
+[2024-07-18 10:45:50.444] [agentsdeleter] [main] [trace] [] starting to get the users vinculatex to the agents
+[2024-07-18 10:45:50.445] [agentsdeleter] [main] [trace] [] the agentsOid are [113272]
+[2024-07-18 10:45:50.446] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113272
+[2024-07-18 10:45:50.446] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113272, and tenant_oid=%!s(int=4)
+[2024-07-18 10:45:51.134] [agentsdeleter] [database] [info] [] the query in the database tooks: 688.0162ms
+[2024-07-18 10:45:51.134] [agentsdeleter] [main] [info] [] the agent 113272 has users: 4
+[2024-07-18 10:45:51.136] [agentsdeleter] [main] [debug] [] Users: [{30520 testing_ky3 113272} {30521 testin231321 113272} {30360 testing-subdis 113272} {30380 subdistributor_KY 113272}]
+[2024-07-18 10:47:39.771] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-18 10:47:39.771] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4}
+[2024-07-18 10:47:40.653] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-18 10:47:40.653] [agentsdeleter] [main] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-18 10:47:40.655] [agentsdeleter] [main] [info] [] this are the agents in the file [996008814317]
+[2024-07-18 10:47:40.655] [agentsdeleter] [main] [trace] [] starting to get agents mobile
+[2024-07-18 10:47:40.657] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-18 10:47:40.657] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=%!s(int=996008814317), and tenant_oid=%!s(int=4)
+[2024-07-18 10:47:41.391] [agentsdeleter] [database] [info] [] the query in the database tooks: 734.0064ms
+[2024-07-18 10:47:41.391] [agentsdeleter] [main] [info] [] the agent 996008814317 have 1 mobiles
+[2024-07-18 10:47:41.392] [agentsdeleter] [main] [trace] [] starting to create the query to delete msisdn for and agent
+[2024-07-18 10:47:41.393] [agentsdeleter] [main] [info] [] querytodeletemsisdn is delete from agent_mobile where msisdn in (8451234567); \n
+[2024-07-18 10:47:41.393] [agentsdeleter] [main] [info] [] query to delete the pin of the msisdns is delete from agent_mobile_pin where msisdn_oid in (121721); \n
+[2024-07-18 10:47:41.393] [agentsdeleter] [main] [info] [] starting to write in the file ../utils/agent_mobile_scripts.txt
+[2024-07-18 10:47:41.394] [agentsdeleter] [main] [trace] [] end to wrtite in a file: 
+[2024-07-18 10:47:41.395] [agentsdeleter] [main] [info] [] starting to write in the file ../utils/agent_mobile_scripts.txt
+[2024-07-18 10:47:41.396] [agentsdeleter] [main] [trace] [] end to wrtite in a file: 
+[2024-07-18 10:47:41.396] [agentsdeleter] [main] [info] [] starting to check the users vinculated to the agents
+[2024-07-18 10:47:41.396] [agentsdeleter] [main] [trace] [] starting to get the users vinculatex to the agents
+[2024-07-18 10:47:41.397] [agentsdeleter] [main] [trace] [] the agentsOid are [113272]
+[2024-07-18 10:47:41.397] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113272
+[2024-07-18 10:47:41.397] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113272, and tenant_oid=%!s(int=4)
+[2024-07-18 10:47:42.109] [agentsdeleter] [database] [info] [] the query in the database tooks: 712.0282ms
+[2024-07-18 10:47:42.109] [agentsdeleter] [main] [info] [] the agent 113272 has users: 4
+[2024-07-18 10:47:42.111] [agentsdeleter] [main] [debug] [] Users: [{30520 testing_ky3 113272} {30521 testin231321 113272} {30360 testing-subdis 113272} {30380 subdistributor_KY 113272}]

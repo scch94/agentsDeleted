@@ -5,3 +5,7 @@ type MsisdnDb struct {
 	MsisdnOid string
 	AgentOid  string
 }
+
+func (db *MsisdnDb) Condition() string {
+	return db.MsisdnOid
+}

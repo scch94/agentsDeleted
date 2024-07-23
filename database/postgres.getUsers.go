@@ -18,7 +18,7 @@ func GetUsers(agentOid string, ctx context.Context) ([]modeldb.UsersDb, error) {
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")
 
 	//creamos una lista donde guardaremos el resultado de la operaicon!
-	var Users []modeldb.UsersDb
+	var users []modeldb.UsersDb
 
 	var err error = nil
 
@@ -39,13 +39,15 @@ func GetUsers(agentOid string, ctx context.Context) ([]modeldb.UsersDb, error) {
 
 	// Iterar sobre las filas de resultados
 	for rows.Next() {
-		var User modeldb.UsersDb
-		err = rows.Scan(&User.UserOid, &User.UserId, &User.AgentOid)
+		var user modeldb.UsersDb
+		//inicialisamos el candelete en true
+		user.CanDelete = true
+		err = rows.Scan(&user.UserOid, &user.UserId, &user.AgentOid)
 		if err != nil {
 			ins_log.Errorf(ctx, "error scanning row: %v", err)
 			return nil, err
 		}
-		Users = append(Users, User)
+		users = append(users, user)
 	}
 	// Verificar si hubo errores en el procesamiento de las filas
 	if err = rows.Err(); err != nil {
@@ -55,6 +57,6 @@ func GetUsers(agentOid string, ctx context.Context) ([]modeldb.UsersDb, error) {
 	duration := time.Since(startTime)
 	ins_log.Infof(ctx, "the query in the database tooks: %v", duration)
 
-	return Users, nil
+	return users, nil
 
 }

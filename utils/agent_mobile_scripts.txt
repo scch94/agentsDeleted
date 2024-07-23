@@ -1,6 +1,0 @@
--- query to delete msisdn for an agents in the list 
-
-delete from agent_mobile where msisdn in (8451234567); 
--- query to delete the pin of the msisdn for an agents in the list 
-
-delete from agent_mobile_pin where msisdn_oid in (121721); 

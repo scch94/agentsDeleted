@@ -1,0 +1,19 @@
+[2024-07-22 12:29:59.311] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-22 12:29:59.311] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-22 12:30:00.184] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-22 12:30:00.184] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-22 12:30:00.186] [agentsdeleter] [main] [info] [] this are the agents in the file [996008814317]
+[2024-07-22 12:30:00.186] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-22 12:30:00.186] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-22 12:30:00.187] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-22 12:30:00.187] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814317, and tenant_oid=%!s(int=4)
+[2024-07-22 12:30:00.935] [agentsdeleter] [database] [info] [] the query in the database tooks: 747.8499ms
+[2024-07-22 12:30:00.935] [agentsdeleter] [controller] [trace] [] the agent with id %!d(string=996008814317) has %!s(int=1) moviles
+[2024-07-22 12:30:00.937] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-22 12:30:00.937] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-22 12:30:00.938] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-22 12:30:00.939] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-22 12:30:00.939] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-22 12:30:00.939] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-22 12:30:00.940] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-22 12:30:00.940] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed

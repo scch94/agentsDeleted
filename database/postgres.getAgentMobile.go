@@ -13,7 +13,7 @@ const (
 	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
 )
 
-func GetMsisdn(agentID int, ctx context.Context) ([]modeldb.MsisdnDb, error) {
+func GetMsisdn(ctx context.Context, agentID string) ([]modeldb.MsisdnDb, error) {
 	// Establece el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")
 

@@ -16,6 +16,7 @@ type AgentsToDeletedConfiguration struct {
 	Log_name                 string `json:"log_name"`
 	DatabaseConnectionString string `json:"database_connection_string"`
 	Tenant                   int    `json:"tenant"`
+	UbSicationAgentFile      string `json:"ubication_agents_file"`
 }
 
 func Upconfig(ctx context.Context) error {
