@@ -13,7 +13,7 @@ const (
 	postgresGetUsers = "SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2"
 )
 
-func GetUsers(agentOid string, ctx context.Context) ([]modeldb.UsersDb, error) {
+func GetUsers(ctx context.Context, agentOid string) ([]modeldb.UsersDb, error) {
 	//establece el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")
 

@@ -8,12 +8,13 @@ import (
 
 	"github.com/scch94/agentsDeleted/database"
 	modeldb "github.com/scch94/agentsDeleted/models/db"
+	modelUtils "github.com/scch94/agentsDeleted/models/utils"
 	fileWriter "github.com/scch94/agentsDeleted/utils/filewriter"
 	querybuilder "github.com/scch94/agentsDeleted/utils/queryBuilder"
 	"github.com/scch94/ins_log"
 )
 
-func DeleteUserAdm(ctx context.Context, agents []string) error {
+func DeleteUserAdm(ctx context.Context, agents []modelUtils.Agents) error {
 	ctx = ins_log.SetPackageNameInContext(ctx, "controller")
 	ins_log.Infof(ctx, "starting to create the script to delete Users vinculated to the agents in the list")
 
@@ -69,7 +70,7 @@ func DeleteUserAdm(ctx context.Context, agents []string) error {
 
 }
 
-func getUsersAdm(ctx context.Context, agents []string) ([]modeldb.UsersDb, error) {
+func getUsersAdm(ctx context.Context, agents []modelUtils.Agents) ([]modeldb.UsersDb, error) {
 
 	ins_log.Tracef(ctx, "starting to get users")
 
@@ -86,7 +87,7 @@ func getUsersAdm(ctx context.Context, agents []string) ([]modeldb.UsersDb, error
 
 	//abrimos el archivo donde se loguearan los usarios que se trataran de eliminar.
 	for _, agent := range agents {
-		usersInfo, err := database.GetUsers(agent, ctx)
+		usersInfo, err := database.GetUsers(ctx, agent.AgentOid)
 		if err != nil {
 			ins_log.Errorf(ctx, "error in getUsers: %v", err)
 

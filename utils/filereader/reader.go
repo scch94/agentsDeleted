@@ -31,7 +31,7 @@ func Read(ctx context.Context) ([]modelUtils.Agents, error) {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		var agent modelUtils.Agents
-		agent.Agent_id = scanner.Text()
+		agent.AgentId = scanner.Text()
 
 		agents = append(agents, agent)
 	}

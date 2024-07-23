@@ -6,6 +6,7 @@ import (
 
 	"github.com/scch94/agentsDeleted/config"
 	modeldb "github.com/scch94/agentsDeleted/models/db"
+	modelUtils "github.com/scch94/agentsDeleted/models/utils"
 	"github.com/scch94/ins_log"
 )
 
@@ -13,7 +14,7 @@ const (
 	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
 )
 
-func GetMsisdn(ctx context.Context, agentID string) ([]modeldb.MsisdnDb, error) {
+func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnDb, error) {
 	// Establece el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")
 
@@ -22,20 +23,19 @@ func GetMsisdn(ctx context.Context, agentID string) ([]modeldb.MsisdnDb, error) 
 
 	var err error = nil
 
-	ins_log.Tracef(ctx, "starting to get the msisdn por the agent with id :%v", agentID)
+	ins_log.Tracef(ctx, "starting to get the msisdn por the agent with id :%v", agent.AgentId)
 	startTime := time.Now()
 
-	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%s", postgresGetMsisdn, agentID, config.Config.Tenant)
+	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%s", postgresGetMsisdn, agent.AgentId, config.Config.Tenant)
 
 	db := GetDb()
 
-	rows, err := db.QueryContext(ctx, postgresGetMsisdn, agentID, config.Config.Tenant)
+	rows, err := db.QueryContext(ctx, postgresGetMsisdn, agent.AgentId, config.Config.Tenant)
 	if err != nil {
 		ins_log.Errorf(ctx, "query error %v", err)
 		return nil, err
 	}
 	defer rows.Close()
-
 	// Iterar sobre las filas de resultados
 	for rows.Next() {
 		var msisdnInfo modeldb.MsisdnDb
@@ -45,6 +45,7 @@ func GetMsisdn(ctx context.Context, agentID string) ([]modeldb.MsisdnDb, error) 
 			return nil, err
 		}
 		msisdnsInfo = append(msisdnsInfo, msisdnInfo)
+		agent.AgentId = msisdnInfo.AgentOid
 	}
 
 	// Verificar si hubo errores en el procesamiento de las filas

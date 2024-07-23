@@ -19,7 +19,7 @@ func DeleteMsisdnAgents(ctx context.Context, agents []modelUtils.Agents) error {
 	ins_log.Infof(ctx, "starting to create the script to delete agents_mobile")
 
 	//llamamos la funcion que nos traera la informacion de cada movil vincualdo a los agentes que debemos elimar
-	msisdnsInfo, err := getAgentsInfo(ctx, agents)
+	msisdnsInfo, err := getAgentsInfo(ctx, &agents)
 	if err != nil {
 		ins_log.Errorf(ctx, "error on the function getAgentsInfo() err: %v", err)
 		return err
@@ -59,7 +59,7 @@ func DeleteMsisdnAgents(ctx context.Context, agents []modelUtils.Agents) error {
 	return nil
 }
 
-func getAgentsInfo(ctx context.Context, agents []string) ([]modeldb.MsisdnDb, error) {
+func getAgentsInfo(ctx context.Context, agents *[]modelUtils.Agents) ([]modeldb.MsisdnDb, error) {
 
 	ins_log.Tracef(ctx, "starting to get agents_msisdn info")
 
@@ -75,8 +75,8 @@ func getAgentsInfo(ctx context.Context, agents []string) ([]modeldb.MsisdnDb, er
 	defer file.Close()
 
 	//abrimos el archivo donde loguearemos los moviles que se eliminaran
-	for _, agent := range agents {
-		msisdnsInfo, err := database.GetMsisdn(ctx, agent)
+	for _, agent := range *agents {
+		msisdnsInfo, err := database.GetMsisdn(ctx, &agent)
 		if err != nil {
 			ins_log.Errorf(ctx, "error in getmsisdn: %v", err)
 			return nil, err
