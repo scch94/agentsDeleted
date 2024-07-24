@@ -1,0 +1,4 @@
+agent ID: 996008814317, user: testing_ky3 can delete true
+agent ID: 996008814317, user: testin231321 can delete true
+agent ID: 996008814317, user: testing-subdis can delete true
+agent ID: 996008814317, user: subdistributor_KY can delete false

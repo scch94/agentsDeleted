@@ -26,7 +26,7 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 	ins_log.Tracef(ctx, "starting to get the msisdn por the agent with id :%v", agent.AgentId)
 	startTime := time.Now()
 
-	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%s", postgresGetMsisdn, agent.AgentId, config.Config.Tenant)
+	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%v", postgresGetMsisdn, agent.AgentId, config.Config.Tenant)
 
 	db := GetDb()
 
@@ -45,7 +45,7 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 			return nil, err
 		}
 		msisdnsInfo = append(msisdnsInfo, msisdnInfo)
-		agent.AgentId = msisdnInfo.AgentOid
+		agent.AgentOid = msisdnInfo.AgentOid
 	}
 
 	// Verificar si hubo errores en el procesamiento de las filas

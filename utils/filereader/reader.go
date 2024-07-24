@@ -32,6 +32,8 @@ func Read(ctx context.Context) ([]modelUtils.Agents, error) {
 	for scanner.Scan() {
 		var agent modelUtils.Agents
 		agent.AgentId = scanner.Text()
+		agent.CanDelete.AgentcanDeleted = true
+		agent.CanDelete.Reason = ""
 
 		agents = append(agents, agent)
 	}

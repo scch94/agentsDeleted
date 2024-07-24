@@ -1,0 +1,41 @@
+[2024-07-23 10:24:39.439] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-23 10:24:39.439] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-23 10:24:40.338] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-23 10:24:40.338] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-23 10:24:40.340] [agentsdeleter] [main] [info] [] this are the agents in the file [{996008814317 }]
+[2024-07-23 10:24:40.340] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-23 10:24:40.340] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-23 10:24:40.342] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-23 10:24:40.342] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814317, and tenant_oid=%!s(int=4)
+[2024-07-23 10:24:41.139] [agentsdeleter] [database] [info] [] the query in the database tooks: 797.113ms
+[2024-07-23 10:24:41.139] [agentsdeleter] [controller] [trace] [] the agent with id {%!d(string=996008814317) %!d(string=113272)} has %!s(int=1) moviles
+[2024-07-23 10:24:41.139] [agentsdeleter] [controller] [info] [] agent info: &[{996008814317 113272}]
+[2024-07-23 10:24:41.140] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-23 10:24:41.140] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-23 10:24:41.141] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-23 10:24:41.141] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-23 10:24:41.141] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-23 10:24:41.141] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-23 10:24:41.142] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-23 10:24:41.142] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-23 10:24:41.143] [agentsdeleter] [main] [info] [] agents [{996008814317 113272}] 
+[2024-07-23 10:24:41.143] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-23 10:24:41.143] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-23 10:24:41.143] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113272
+[2024-07-23 10:24:41.144] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113272, and tenant_oid=%!s(int=4)
+[2024-07-23 10:24:41.900] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.6417ms
+[2024-07-23 10:24:41.900] [agentsdeleter] [controller] [trace] [] the agent with id {%!d(string=996008814317) %!d(string=113272)} has %!s(int=4) users
+[2024-07-23 10:24:41.901] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table old_password
+[2024-07-23 10:24:41.901] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-23 10:24:41.902] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-23 10:24:41.903] [agentsdeleter] [controller] [info] [] query to delete users_old_password was created and writed
+[2024-07-23 10:24:41.903] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table client_user
+[2024-07-23 10:24:41.903] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-23 10:24:41.904] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-23 10:24:41.904] [agentsdeleter] [controller] [info] [] query to delete ClientUser was created and writed
+[2024-07-23 10:24:41.904] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table user_adm
+[2024-07-23 10:24:41.904] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-23 10:24:41.905] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-23 10:24:41.905] [agentsdeleter] [controller] [info] [] query to delete user_adm was created and writed
+[2024-07-23 10:59:59.468] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-23 10:59:59.468] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}

@@ -28,10 +28,14 @@ func CreateQuery(ctx context.Context, tableName string, conditional string, info
 		return ""
 	}
 	for i, info := range infodb {
-		if i > 0 {
-			sb.WriteString(", ")
+
+		if info.CanDeleted() {
+			if i > 0 {
+				sb.WriteString(", ")
+			}
+			sb.WriteString(info.Condition())
 		}
-		sb.WriteString(info.Condition())
+
 	}
 
 	//agregamos el parentesis al final

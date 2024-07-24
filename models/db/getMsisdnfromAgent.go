@@ -9,3 +9,7 @@ type MsisdnDb struct {
 func (db *MsisdnDb) Condition() string {
 	return db.MsisdnOid
 }
+
+func (db *MsisdnDb) CanDeleted() bool {
+	return true
+}

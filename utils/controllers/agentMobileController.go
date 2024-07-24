@@ -14,12 +14,12 @@ import (
 	"github.com/scch94/ins_log"
 )
 
-func DeleteMsisdnAgents(ctx context.Context, agents []modelUtils.Agents) error {
+func DeleteMsisdnAgents(ctx context.Context, agents *[]modelUtils.Agents) error {
 	ctx = ins_log.SetPackageNameInContext(ctx, "controller")
 	ins_log.Infof(ctx, "starting to create the script to delete agents_mobile")
 
 	//llamamos la funcion que nos traera la informacion de cada movil vincualdo a los agentes que debemos elimar
-	msisdnsInfo, err := getAgentsInfo(ctx, &agents)
+	msisdnsInfo, err := getAgentsInfo(ctx, agents)
 	if err != nil {
 		ins_log.Errorf(ctx, "error on the function getAgentsInfo() err: %v", err)
 		return err
@@ -75,15 +75,15 @@ func getAgentsInfo(ctx context.Context, agents *[]modelUtils.Agents) ([]modeldb.
 	defer file.Close()
 
 	//abrimos el archivo donde loguearemos los moviles que se eliminaran
-	for _, agent := range *agents {
-		msisdnsInfo, err := database.GetMsisdn(ctx, &agent)
+	for i := range *agents {
+		msisdnsInfo, err := database.GetMsisdn(ctx, &(*agents)[i])
 		if err != nil {
 			ins_log.Errorf(ctx, "error in getmsisdn: %v", err)
 			return nil, err
 		}
-		ins_log.Tracef(ctx, "the agent with id %d has %s moviles", agent, len(msisdnsInfo))
+		ins_log.Tracef(ctx, "the agent with id %v has %v moviles", (*agents)[i].AgentId, len(msisdnsInfo))
 		for _, msisdnInfo := range msisdnsInfo {
-			if _, err := file.WriteString(fmt.Sprintf("Agent ID: %v, Mobile to delete: %v\n", agent, msisdnInfo.Msisdn)); err != nil {
+			if _, err := file.WriteString(fmt.Sprintf("Agent ID: %v, Mobile to delete: %v\n", (*agents)[i].AgentId, msisdnInfo.Msisdn)); err != nil {
 				ins_log.Errorf(ctx, "error writing to file: %v", err)
 				return nil, err
 			}

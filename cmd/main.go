@@ -35,25 +35,34 @@ func main() {
 	ctx = ins_log.SetPackageNameInContext(ctx, "main")
 
 	//incialisamos la base de datos
-	database.InitDb(ctx)
+	err := database.InitDb(ctx)
+	if err != nil {
+		ins_log.Fatalf(ctx, "cant init database: %v", err)
+	}
 
 	//leemoos y recuperamos la lista de agentes
 	agents, err := reader.Read(ctx)
 	if err != nil {
 		ins_log.Fatalf(ctx, "error triyig to read the agents file: %v", err)
-
 	}
-	ins_log.Infof(ctx, "this are the agents in the file %v", agents)
+	ins_log.Infof(ctx, "number of agents are %v", len(agents))
 
 	//llamamos la funcion para crear el script para eliminar los moviles de los agentes en la base
-	err = controller.DeleteMsisdnAgents(ctx, agents)
+	err = controller.DeleteMsisdnAgents(ctx, &agents)
 	if err != nil {
 		ins_log.Errorf(ctx, "error creating the script to delete the msisdns of the agents: %v", err)
 		return
 	}
 
 	//llamamos la funcion para crear el script para eliminar los users de los agentes en la base
-	err = controller.DeleteUserAdm(ctx, agents)
+	err = controller.DeleteUserAdm(ctx, &agents)
+	if err != nil {
+		ins_log.Errorf(ctx, "error creating the script to delete the users of the agents: %v", err)
+		return
+	}
+
+	//llamamos la funcion para crear el script para eliminar los agentes de la base
+	err = controller.DeleteAgents(ctx, &agents)
 	if err != nil {
 		ins_log.Errorf(ctx, "error creating the script to delete the users of the agents: %v", err)
 		return
