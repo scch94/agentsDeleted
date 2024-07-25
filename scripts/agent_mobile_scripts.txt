@@ -6,3 +6,43 @@ delete from agent_mobile_pin where msisdn_oid in (121721);
 
 delete from agent_mobile where oid in (121721);
  
+-- query to delete msisdn_pin for an agents in the list 
+
+delete from agent_mobile_pin where msisdn_oid in (121721);
+ 
+-- query to delete msisdn for an agents in the list 
+
+delete from agent_mobile where oid in (121721);
+ 
+-- query to delete msisdn_pin for an agents in the list 
+
+delete from agent_mobile_pin where msisdn_oid in (121721);
+ 
+-- query to delete msisdn for an agents in the list 
+
+delete from agent_mobile where oid in (121721);
+ 
+-- query to delete msisdn_pin for an agents in the list 
+
+delete from agent_mobile_pin where msisdn_oid in (121721);
+ 
+-- query to delete msisdn for an agents in the list 
+
+delete from agent_mobile where oid in (121721);
+ 
+-- query to delete msisdn_pin for an agents in the list 
+
+delete from agent_mobile_pin where msisdn_oid in (121721);
+ 
+-- query to delete msisdn for an agents in the list 
+
+delete from agent_mobile where oid in (121721);
+ 
+-- query to delete msisdn_pin for an agents in the list 
+
+delete from agent_mobile_pin where msisdn_oid in (121721);
+ 
+-- query to delete msisdn for an agents in the list 
+
+delete from agent_mobile where oid in (121721);
+ 

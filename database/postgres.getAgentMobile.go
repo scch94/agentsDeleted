@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN FROM AGENT_MOBILE AM INNER JOIN AGENT A ON AM.AGENT_OID=A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
+	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
 )
 
 func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnDb, error) {
@@ -39,7 +39,7 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 	// Iterar sobre las filas de resultados
 	for rows.Next() {
 		var msisdnInfo modeldb.MsisdnDb
-		err := rows.Scan(&msisdnInfo.MsisdnOid, &msisdnInfo.AgentOid, &msisdnInfo.Msisdn)
+		err := rows.Scan(&msisdnInfo.MsisdnOid, &msisdnInfo.AgentOid, &msisdnInfo.Msisdn, &agent.Credit)
 		if err != nil {
 			ins_log.Errorf(ctx, "error scanning row: %v", err)
 			return nil, err

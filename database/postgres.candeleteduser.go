@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	postgresIsUserParent = "SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 "
+	postgresIsUserParent = "SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1"
 )
 
 func isUserParent(ctx context.Context, user *modeldb.UsersDb) error {

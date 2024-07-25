@@ -3,6 +3,7 @@ package modelUtils
 type Agents struct {
 	AgentId   string
 	AgentOid  string
+	Credit    string
 	CanDelete canDeleted
 }
 
