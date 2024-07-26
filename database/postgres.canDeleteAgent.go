@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	postgresIsAgentParent = "SELECT * FROM agent WHERE parent_oid= $1, tenant_oid= $2 limit 1"
+	postgresIsAgentParent = "SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1"
 )
 
 func IsAgentParent(ctx context.Context, agent *modelUtils.Agents) error {
@@ -45,7 +45,7 @@ func IsAgentParent(ctx context.Context, agent *modelUtils.Agents) error {
 
 	if rows.Next() {
 		ins_log.Infof(ctx, "Agent %v is a parent and cannot be deleted", agent.AgentOid)
-		sb.WriteString(" Agent is a parent and cannot be deleted")
+		sb.WriteString(" Agent is a parent and cannot be deleted.")
 		agent.CanDelete.AgentcanDeleted = false
 		agent.CanDelete.Reason = sb.String()
 

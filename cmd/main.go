@@ -40,6 +40,9 @@ func main() {
 		ins_log.Fatalf(ctx, "cant init database: %v", err)
 	}
 
+	//inicamos el contador de proceso
+	startTime := time.Now()
+
 	//leemoos y recuperamos la lista de agentes
 	agents, err := reader.Read(ctx)
 	if err != nil {
@@ -67,15 +70,8 @@ func main() {
 		ins_log.Errorf(ctx, "error creating the script to delete the users of the agents: %v", err)
 		return
 	}
-
-	// ins_log.Infof(ctx, "starting to check the users vinculated to the agents")
-
-	// users, err := getUser_adm(msisdns, ctx)
-	// if err != nil {
-	// 	ins_log.Errorf(ctx, "error when we try to getUser:adm(): %v", err)
-	// 	return
-	// }
-	// ins_log.Debugf(ctx, "Users: %v", users)
+	duration := time.Since(startTime)
+	ins_log.Infof(ctx, "el tiempo que se demoro el proceso fue %v", duration)
 }
 func initializeAndWatchLogger(ctx context.Context) {
 	var file *os.File
