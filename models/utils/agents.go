@@ -3,7 +3,7 @@ package modelUtils
 type Agents struct {
 	AgentId   string
 	AgentOid  string
-	Credit    string
+	Credit    float64
 	CanDelete canDeleted
 }
 

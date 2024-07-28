@@ -36,8 +36,8 @@ func NewPostgresDb(ctx context.Context) error {
 		}
 		DB.SetConnMaxIdleTime(1800)
 		DB.SetConnMaxLifetime(3600)
-		DB.SetMaxOpenConns(2)
-		DB.SetMaxIdleConns(2)
+		DB.SetMaxOpenConns(1000)
+		DB.SetMaxIdleConns(1000)
 
 		if err = DB.Ping(); err != nil {
 			ins_log.Fatalf(ctx, "cant do ping to database error : %v", err)

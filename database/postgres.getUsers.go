@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	postgresGetUsers = "SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2"
+	postgresGetUsers = "SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2"
 )
 
 func GetUsers(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.UsersDb, error) {

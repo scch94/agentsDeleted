@@ -83,6 +83,7 @@ func getUsersAdm(ctx context.Context, agents *[]modelUtils.Agents) ([]modeldb.Us
 	defer file.Close()
 
 	//abrimos el archivo donde se loguearan los usarios que se trataran de eliminar.
+	ins_log.Infof(ctx, "AGENTS:", agents)
 	for i := range *agents {
 		usersInfo, err := database.GetUsers(ctx, &(*agents)[i])
 		if err != nil {

@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
+	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
 )
 
 func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnDb, error) {

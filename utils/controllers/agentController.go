@@ -62,7 +62,7 @@ func checkCreditAccount(ctx context.Context, agents *[]modelUtils.Agents) {
 		//creamos strings builder para manejar el texto
 		var sb strings.Builder
 		sb.WriteString((*agents)[i].CanDelete.Reason)
-		if (*agents)[i].Credit != "0" {
+		if (*agents)[i].Credit > 0 {
 			(*agents)[i].CanDelete.AgentcanDeleted = false
 			sb.WriteString(" Agent has a credit different than 0. ")
 			(*agents)[i].CanDelete.Reason = sb.String()

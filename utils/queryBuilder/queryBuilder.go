@@ -84,30 +84,25 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 		{TableName: agentClerkTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
 		{TableName: agentZoneTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
 	}
-	for _, agent := range agents {
-		if agent.CanDelete.AgentcanDeleted {
-			// Iteramos sobre cada tabla para construir la consulta
-			for tableIndex := range tablesToDelete {
-				table := &tablesToDelete[tableIndex]
-
-				// Si es el primer agente, comenzamos la consulta, si no, añadimos una coma
-				if table.QueryToDelete.Len() == 0 {
-					startOfTheQuery := fmt.Sprintf(deleteQuery, table.TableName, table.Conditional)
-					table.QueryToDelete.WriteString(startOfTheQuery)
+	for i := 0; i < len(agents); i++ {
+		if agents[i].CanDelete.AgentcanDeleted {
+			//sobre cada agente debembemos rrecorres el tables to delete para crear el query de cada tabla
+			for j := 0; j < len(tablesToDelete); j++ {
+				//si es la primera ves arrancamos la query si no le agregamos una coma
+				if i == 0 {
+					startOfTheQuery := fmt.Sprintf(deleteQuery, tablesToDelete[j].TableName, tablesToDelete[j].Conditional)
+					tablesToDelete[j].QueryToDelete.WriteString(startOfTheQuery)
 				} else {
-					table.QueryToDelete.WriteString(", ")
+					tablesToDelete[j].QueryToDelete.WriteString(",")
 				}
 
-				table.QueryToDelete.WriteString(agent.AgentOid)
-
-				// Si es el último agente, cerramos el corchete y añadimos el punto y coma
-				if agent == agents[len(agents)-1] {
-					table.QueryToDelete.WriteString(");\n")
+				tablesToDelete[j].QueryToDelete.WriteString(agents[i].AgentOid)
+				//si es el ultimo agente cierro el corchete y pongo el ;
+				if i == len(agents)-1 {
+					tablesToDelete[j].QueryToDelete.WriteString(");\n")
 				}
 			}
 		}
 	}
-
 	return tablesToDelete
-
 }
