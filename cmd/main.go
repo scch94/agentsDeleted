@@ -38,6 +38,8 @@ func main() {
 	err := database.InitDb(ctx)
 	if err != nil {
 		ins_log.Fatalf(ctx, "cant init database: %v", err)
+		return
+
 	}
 
 	//inicamos el contador de proceso
@@ -47,6 +49,7 @@ func main() {
 	agents, err := reader.Read(ctx)
 	if err != nil {
 		ins_log.Fatalf(ctx, "error triyig to read the agents file: %v", err)
+		return
 	}
 	ins_log.Infof(ctx, "number of agents are %v", len(agents))
 
