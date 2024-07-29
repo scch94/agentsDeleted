@@ -2,6 +2,7 @@ package database
 
 import (
 	"context"
+	"database/sql"
 	"time"
 
 	"github.com/scch94/agentsDeleted/config"
@@ -21,8 +22,6 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 	// Creamos una lista para almacenar los números MSISDN
 	var msisdnsInfo []modeldb.MsisdnDb
 
-	var err error = nil
-
 	ins_log.Tracef(ctx, "starting to get the msisdn por the agent with id :%v", agent.AgentId)
 	startTime := time.Now()
 
@@ -38,14 +37,17 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 	defer rows.Close()
 	// Iterar sobre las filas de resultados
 	for rows.Next() {
-		var msisdnInfo modeldb.MsisdnDb
-		err := rows.Scan(&msisdnInfo.MsisdnOid, &msisdnInfo.AgentOid, &msisdnInfo.Msisdn, &agent.Credit)
+		var msisdnSql modeldb.MsisdnDbSql
+		var credit sql.NullFloat64
+		err := rows.Scan(&msisdnSql.MsisdnOid, &msisdnSql.AgentOid, &msisdnSql.Msisdn, &credit)
 		if err != nil {
 			ins_log.Errorf(ctx, "error scanning row: %v", err)
 			return nil, err
 		}
+		msisdnInfo := msisdnSql.ConvertMsisdn()
 		msisdnsInfo = append(msisdnsInfo, msisdnInfo)
 		agent.AgentOid = msisdnInfo.AgentOid
+		agent.Credit = credit.Float64
 	}
 
 	// Verificar si hubo errores en el procesamiento de las filas

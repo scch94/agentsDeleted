@@ -30,36 +30,41 @@ const (
 	agentOid  = "agent_oid"
 )
 
+// CreateQuery construye una consulta SQL para eliminar datos de una tabla dada con condiciones específicas.
 func CreateQuery(ctx context.Context, tableName string, conditional string, infodb []modeldb.ModelsDb) string {
-	//esta consulta despuesdebera ir en constantes
-	var deleteQuery = "delete from %v where %v in ("
+	// Consulta base para eliminación
+	const deleteQueryTemplate = "DELETE FROM %s WHERE %s IN ("
 
+	// Establece el contexto para los registros
 	ctx = ins_log.SetPackageNameInContext(ctx, "queryBuilder")
-	ins_log.Infof(ctx, "starting to create a query to delete data to the table %v", tableName)
+	ins_log.Infof(ctx, "Iniciando la creación de una consulta para eliminar datos de la tabla %s", tableName)
 
-	deleteQuery = fmt.Sprintf(deleteQuery, tableName, conditional)
+	// Forma la consulta base
+	deleteQuery := fmt.Sprintf(deleteQueryTemplate, tableName, conditional)
 
-	//creamos strings builder para manejar la consulta
+	// Usa strings.Builder para construir la consulta
 	var sb strings.Builder
 	sb.WriteString(deleteQuery)
 
-	//si no tiene data en el arreglo se devuelve un error
+	// Si no hay datos para eliminar, devuelve una cadena vacía y registra un error
 	if len(infodb) == 0 {
-		ins_log.Errorf(ctx, "no data to delete")
+		ins_log.Errorf(ctx, "No hay datos para eliminar")
 		return ""
 	}
-	for i, info := range infodb {
 
-		if info.CanDeleted() {
-			if i > 0 {
+	// Agrega las condiciones a la consulta
+	isFirst := true
+	for _, item := range infodb {
+		if item.CanDeleted() && item.Condition() != "" {
+			if !isFirst {
 				sb.WriteString(", ")
 			}
-			sb.WriteString(info.Condition())
+			sb.WriteString(item.Condition())
+			isFirst = false
 		}
-
 	}
 
-	//agregamos el parentesis al final
+	// Cierra el paréntesis y añade un salto de línea
 	sb.WriteString(");\n")
 	return sb.String()
 }
@@ -97,12 +102,13 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 				}
 
 				tablesToDelete[j].QueryToDelete.WriteString(agents[i].AgentOid)
-				//si es el ultimo agente cierro el corchete y pongo el ;
-				if i == len(agents)-1 {
-					tablesToDelete[j].QueryToDelete.WriteString(");\n")
-				}
 			}
 		}
+
+	}
+	// Cerramos las consultas
+	for i := range tablesToDelete {
+		tablesToDelete[i].QueryToDelete.WriteString(");\n")
 	}
 	return tablesToDelete
 }

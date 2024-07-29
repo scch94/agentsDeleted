@@ -16,12 +16,12 @@ const (
 
 func isUserParent(ctx context.Context, user *modeldb.UsersDb) error {
 
-	ins_log.Tracef(ctx, "starting to check if the user %v can be deleted :%v", user.UserId)
+	ins_log.Tracef(ctx, "starting to check if the user %v can be deleted.", user.UserId)
 
 	//inicamos el conteo en la base
 	startTime := time.Now()
 
-	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%s", postgresIsUserParent, user.UserOid, user.UserOid, config.Config.Tenant)
+	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%v", postgresIsUserParent, user.UserOid, config.Config.Tenant)
 
 	db := GetDb()
 

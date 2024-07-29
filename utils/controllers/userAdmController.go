@@ -23,7 +23,6 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 		ins_log.Errorf(ctx, "error on the function getUsersAdm() err: %v", err)
 		return err
 	}
-	ins_log.Infof(ctx, "usuarios : %v agentes %v", usersInfo, agents)
 
 	var modelsDbInfo []modeldb.ModelsDb
 	for _, user := range usersInfo {
@@ -83,7 +82,6 @@ func getUsersAdm(ctx context.Context, agents *[]modelUtils.Agents) ([]modeldb.Us
 	defer file.Close()
 
 	//abrimos el archivo donde se loguearan los usarios que se trataran de eliminar.
-	ins_log.Infof(ctx, "AGENTS:", agents)
 	for i := range *agents {
 		usersInfo, err := database.GetUsers(ctx, &(*agents)[i])
 		if err != nil {

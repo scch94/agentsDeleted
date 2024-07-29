@@ -64,6 +64,10 @@ func checkCreditAccount(ctx context.Context, agents *[]modelUtils.Agents) {
 		sb.WriteString((*agents)[i].CanDelete.Reason)
 		if (*agents)[i].Credit > 0 {
 			(*agents)[i].CanDelete.AgentcanDeleted = false
+			if (*agents)[i].CanDelete.Reason == "" {
+				beginingtext := fmt.Sprintf("agent whit id %v, can not deleted reasons :", (*agents)[i].AgentId)
+				sb.WriteString(beginingtext)
+			}
 			sb.WriteString(" Agent has a credit different than 0. ")
 			(*agents)[i].CanDelete.Reason = sb.String()
 		}
@@ -93,7 +97,7 @@ func ConclusionTextBuilder(ctx context.Context, agents *[]modelUtils.Agents) str
 	for i, agent := range *agents {
 		sb.WriteString("\n")
 		if agent.CanDelete.AgentcanDeleted {
-			sb.WriteString(fmt.Sprintf("%v the agent whit id %v can be delete", i, agent.AgentId))
+			sb.WriteString(fmt.Sprintf("%v - the agent whit id %v can be delete", i, agent.AgentId))
 		} else {
 			sb.WriteString(fmt.Sprintf("%v - %v", i, agent.CanDelete.Reason))
 		}

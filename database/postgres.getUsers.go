@@ -28,7 +28,7 @@ func GetUsers(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.UsersDb,
 
 	startTime := time.Now()
 
-	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%s", postgresGetUsers, agent.AgentOid, config.Config.Tenant)
+	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%v", postgresGetUsers, agent.AgentOid, config.Config.Tenant)
 
 	db := GetDb()
 

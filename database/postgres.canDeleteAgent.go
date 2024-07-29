@@ -33,7 +33,7 @@ func IsAgentParent(ctx context.Context, agent *modelUtils.Agents) error {
 	//inicamos el contador de la consulta a la base !
 	startTime := time.Now()
 
-	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%s", postgresIsAgentParent, agent.AgentOid, config.Config.Tenant)
+	ins_log.Tracef(ctx, "this is the QUERY: %s and the params: agentID=%s, and tenant_oid=%v", postgresIsAgentParent, agent.AgentOid, config.Config.Tenant)
 
 	db := GetDb()
 

@@ -1,0 +1,2 @@
+[2024-07-29 00:03:59.843] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-29 00:03:59.843] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
