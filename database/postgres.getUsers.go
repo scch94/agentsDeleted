@@ -15,7 +15,7 @@ const (
 	postgresGetUsers = "SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2"
 )
 
-func GetUsers(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.UsersDb, error) {
+func GetUsersPostgres(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.UsersDb, error) {
 	//establece el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")
 
@@ -52,7 +52,7 @@ func GetUsers(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.UsersDb,
 			return nil, err
 		}
 		//chequeamos si el usuario puede ser elimiando
-		err = isUserParent(ctx, &user)
+		err = isUserParentPostgres(ctx, &user)
 		if err != nil {
 			ins_log.Errorf(ctx, "error in the function is UserParent err : %v ", err)
 			return nil, err

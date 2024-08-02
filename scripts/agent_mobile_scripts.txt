@@ -1,0 +1,8 @@
+-- query to delete msisdn_pin for an agents in the list 
+
+DELETE FROM agent_mobile_pin WHERE msisdn_oid IN (121741);
+ 
+-- query to delete msisdn for an agents in the list 
+
+DELETE FROM agent_mobile WHERE oid IN (121741);
+ 

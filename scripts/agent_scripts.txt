@@ -1,0 +1,36 @@
+-- query to delete the table client 
+
+delete from client where oid in (113771);
+ 
+-- query to delete the table client_profile_client_comm 
+
+delete from client_profile_client_comm where client_oid in (113771);
+ 
+-- query to delete the table client_profile_client_notif 
+
+delete from client_profile_client_notif where client_oid in (113771);
+ 
+-- query to delete the table client_profile_client_restric 
+
+delete from client_profile_client_restric where client_oid in (113771);
+ 
+-- query to delete the table client_service_interface 
+
+delete from client_service_interface where client_oid in (113771);
+ 
+-- query to delete the table agent 
+
+delete from agent where oid in (113771);
+ 
+-- query to delete the table account 
+
+delete from account where agent_oid in (113771);
+ 
+-- query to delete the table agent_clerk 
+
+delete from agent_clerk where agent_oid in (113771);
+ 
+-- query to delete the table agent_zone 
+
+delete from agent_zone where agent_oid in (113771);
+ 

@@ -48,7 +48,7 @@ func CreateQuery(ctx context.Context, tableName string, conditional string, info
 
 	// Si no hay datos para eliminar, devuelve una cadena vacía y registra un error
 	if len(infodb) == 0 {
-		ins_log.Errorf(ctx, "No hay datos para eliminar")
+		ins_log.Tracef(ctx, "No hay datos para eliminar")
 		return ""
 	}
 
@@ -73,6 +73,7 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 
 	//esta consulta despuesdebera ir en constantes
 	var deleteQuery = "delete from %v where %v in ("
+	flag := false
 
 	ctx = ins_log.SetPackageNameInContext(ctx, "queryBuilder")
 	ins_log.Infof(ctx, "starting to create the querys to delete agents")
@@ -91,6 +92,8 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 	}
 	for i := 0; i < len(agents); i++ {
 		if agents[i].CanDelete.AgentcanDeleted {
+
+			flag = true
 			//sobre cada agente debembemos rrecorres el tables to delete para crear el query de cada tabla
 			for j := 0; j < len(tablesToDelete); j++ {
 				//si es la primera ves arrancamos la query si no le agregamos una coma
@@ -106,9 +109,15 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 		}
 
 	}
+
 	// Cerramos las consultas
 	for i := range tablesToDelete {
-		tablesToDelete[i].QueryToDelete.WriteString(");\n")
+		if !flag {
+			tablesToDelete[i].QueryToDelete.WriteString("no agents to delete ();\n")
+		} else {
+			tablesToDelete[i].QueryToDelete.WriteString(");\n")
+		}
+
 	}
 	return tablesToDelete
 }

@@ -15,7 +15,7 @@ const (
 	postgresGetMsisdn = `SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2`
 )
 
-func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnDb, error) {
+func GetMsisdnPostgres(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnDb, error) {
 	// Establece el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")
 
@@ -47,7 +47,8 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 		msisdnInfo := msisdnSql.ConvertMsisdn()
 		msisdnsInfo = append(msisdnsInfo, msisdnInfo)
 		agent.AgentOid = msisdnInfo.AgentOid
-		agent.Credit = credit.Float64
+		// agent.Credit = credit.Float64
+		agent.Credit = 0
 	}
 
 	// Verificar si hubo errores en el procesamiento de las filas

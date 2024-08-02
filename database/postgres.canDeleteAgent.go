@@ -15,7 +15,7 @@ const (
 	postgresIsAgentParent = "SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1"
 )
 
-func IsAgentParent(ctx context.Context, agent *modelUtils.Agents) error {
+func IsAgentParentPostgres(ctx context.Context, agent *modelUtils.Agents) error {
 
 	// Establece el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "database")

@@ -11,11 +11,10 @@ import (
 )
 
 const (
-	postgresIsUserParent = "SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1"
+	postgresIsUserParent = "SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR (view_user_parent_oid::bigint = $2 AND view_user_parent_oid::bigint <> oid)) AND tenant_oid = $3 LIMIT 1;"
 )
 
-func isUserParent(ctx context.Context, user *modeldb.UsersDb) error {
-
+func isUserParentPostgres(ctx context.Context, user *modeldb.UsersDb) error {
 	ins_log.Tracef(ctx, "starting to check if the user %v can be deleted.", user.UserId)
 
 	//inicamos el conteo en la base
@@ -31,6 +30,7 @@ func isUserParent(ctx context.Context, user *modeldb.UsersDb) error {
 		return err
 	}
 
+	defer rows.Close()
 	if rows.Next() {
 		ins_log.Infof(ctx, "User %v is a parent and cannot be deleted", user.UserId)
 		user.CanDelete.AgentcanDeleted = false
@@ -49,4 +49,5 @@ func isUserParent(ctx context.Context, user *modeldb.UsersDb) error {
 	ins_log.Infof(ctx, "the query in the database tooks: %v", duration)
 
 	return nil
+
 }

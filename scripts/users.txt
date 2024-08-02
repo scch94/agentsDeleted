@@ -1,0 +1,12 @@
+-- query to delete the old password for the users vinculated to the agents in the list 
+
+DELETE FROM old_password WHERE user_oid IN (30580);
+ 
+-- query to delete the client_user for the users vinculated to the agents in the list 
+
+DELETE FROM client_user WHERE user_oid IN (30580);
+ 
+-- query to delete the user_adm for the users vinculated to the agents in the list 
+
+DELETE FROM user_adm WHERE oid IN (30580);
+ 

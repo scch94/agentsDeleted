@@ -1,0 +1,4 @@
+-- Conclusions of the scriptBuilder 
+
+
+0 - the agent whit id 996008814335 can be delete 

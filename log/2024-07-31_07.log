@@ -1,0 +1,8 @@
+[2024-07-31 07:56:03.318] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-31 07:56:03.318] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"EPIN_NEW/epin@192.168.0.157:1521/epin","tenant":4,"ubication_agents_file":"../utils/agents.txt","database_engine":"oraclesql"}
+[2024-07-31 07:56:13.533] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to the oracle database error : dpoPool_create user=EPIN_NEW extAuth=0: ORA-12514: TNS:el listener no conoce actualmente el servicio solicitado en el descriptor de conexión
+[2024-07-31 07:56:13.534] [agentsdeleter] [main] [fatal] [] cant init database: dpoPool_create user=EPIN_NEW extAuth=0: ORA-12514: TNS:el listener no conoce actualmente el servicio solicitado en el descriptor de conexión
+[2024-07-31 07:59:44.279] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-31 07:59:44.279] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"EPIN_NEW/epin@192.168.0.157:1521/epin","tenant":4,"ubication_agents_file":"../utils/agents.txt","database_engine":"oraclesql"}
+[2024-07-31 07:59:51.123] [agentsdeleter] [databaseConnection] [fatal] [] cant do ping to the oracle database error : dpoPool_create user=EPIN_NEW extAuth=0: ORA-12514: TNS:el listener no conoce actualmente el servicio solicitado en el descriptor de conexión
+[2024-07-31 07:59:51.124] [agentsdeleter] [main] [fatal] [] cant init database: dpoPool_create user=EPIN_NEW extAuth=0: ORA-12514: TNS:el listener no conoce actualmente el servicio solicitado en el descriptor de conexión

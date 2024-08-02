@@ -9,6 +9,8 @@ import (
 	"github.com/scch94/ins_log"
 )
 
+////EPIN_NEW/epin@192.168.0.157:1521/epin
+
 var Config AgentsToDeletedConfiguration
 
 type AgentsToDeletedConfiguration struct {
@@ -17,6 +19,7 @@ type AgentsToDeletedConfiguration struct {
 	DatabaseConnectionString string `json:"database_connection_string"`
 	Tenant                   int    `json:"tenant"`
 	UbSicationAgentFile      string `json:"ubication_agents_file"`
+	DatabaseEngine           string `json:"database_engine"`
 }
 
 func Upconfig(ctx context.Context) error {
