@@ -1,4 +1,56 @@
 -- Conclusions of the scriptBuilder 
 
 
-0 - the agent whit id 996008814335 can be delete 
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+1 - the agent whit id 996008814232 can be delete
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 
+-- Conclusions of the scriptBuilder 
+
+
+0 - the agent whit id 996008814232 can be delete
+1 - agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted.
+2 - the agent whit id 162 can be delete
+3 - agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted. Agent is a parent and cannot be deleted. 

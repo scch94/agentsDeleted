@@ -39,6 +39,16 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 		}
 		ins_log.Infof(ctx, "query to delete users_old_password was created and writed")
 
+		//ahora vamos a eliminar el client_user_mobile
+		queryToDeleteClientUserMobile := querybuilder.CreateQuery(ctx, "client_user_mobile", "user_oid", modelsDbInfo)
+		//pasamos el texto de la query y la ubicacion del archivo para crear el script
+		err = fileWriter.WriteInAfile(ctx, queryToDeleteClientUserMobile, "../scripts/users.txt", "query to delete the client user mobile for the users vinculated to the agents in the list")
+		if err != nil {
+			ins_log.Errorf(ctx, "error when we try to write in a file the queryToDeleteUserOldPassword and the error message is: %s", err)
+			return err
+		}
+		ins_log.Infof(ctx, "query to delete users_old_password was created and writed")
+
 		//ahora vamos a eliminar el client_user
 		querytoDeleteClientUser := querybuilder.CreateQuery(ctx, "client_user", "user_oid", modelsDbInfo)
 		//pasamos el texto de la query y la ubicacion del archivo para crear el script
@@ -58,6 +68,7 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 			return err
 		}
 		ins_log.Infof(ctx, "query to delete user_adm was created and writed")
+
 	} else {
 		ins_log.Infof(ctx, "No users to delete")
 	}
