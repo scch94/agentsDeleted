@@ -17,7 +17,7 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 	ctx = ins_log.SetPackageNameInContext(ctx, "controller")
 	ins_log.Infof(ctx, "starting to create the script to delete Users vinculated to the agents in the list")
 
-	//llamamos la funcion que nos traera la informacion de cada movil vinculado a los agentes que debemos eliminar
+	//llamamos la funcion que nos traera la informacion de cada USUARIO vinculado a los agentes que debemos eliminar
 	usersInfo, err := getUsersAdm(ctx, agents)
 	if err != nil {
 		ins_log.Errorf(ctx, "error on the function getUsersAdm() err: %v", err)

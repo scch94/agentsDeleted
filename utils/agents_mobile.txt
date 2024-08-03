@@ -1,32 +1,3 @@
-Agent ID: 104, Mobile to delete: 
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 104, Mobile to delete: 4124141
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 104, Mobile to delete: 4124141
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 104, Mobile to delete: 4124141
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 104, Mobile to delete: 4124141
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 104, Mobile to delete: 4124141
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 104, Mobile to delete: 4124141
-Agent ID: 996008814232, Mobile to delete: 3459227771
-Agent ID: 162, Mobile to delete: 
-Agent ID: 0, Mobile to delete: 
-Agent ID: 996008814232, Mobile to delete: 3459227771
 Agent ID: 104, Mobile to delete: 4124141
 Agent ID: 162, Mobile to delete: 
 Agent ID: 0, Mobile to delete: 

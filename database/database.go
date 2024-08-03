@@ -100,38 +100,52 @@ func GetDb() *sql.DB {
 
 // funciones que solo sirven de gateways para ver que motor estan usando y que consultas son.
 func IsAgentParent(ctx context.Context, agent *modelUtils.Agents) error {
-	if databaseEngine == "oraclesql" {
-		err := IsAgentParentOracle(ctx, agent)
-		if err != nil {
-			ins_log.Errorf(ctx, "error in IsAgentParentOracle() err: %v", err)
-			return err
+	if agent.AgentOid != "" {
+		if databaseEngine == "oraclesql" {
+			err := IsAgentParentOracle(ctx, agent)
+			if err != nil {
+				ins_log.Errorf(ctx, "error in IsAgentParentOracle() err: %v", err)
+				return err
+			}
+		} else {
+			err := IsAgentParentPostgres(ctx, agent)
+			if err != nil {
+				ins_log.Errorf(ctx, "error in IsAgentParentPostgres() err: %v", err)
+				return err
+			}
 		}
+
 	} else {
-		err := IsAgentParentPostgres(ctx, agent)
-		if err != nil {
-			ins_log.Errorf(ctx, "error in IsAgentParentPostgres() err: %v", err)
-			return err
-		}
+		ins_log.Infof(ctx, "the agent with id %v didnt exist", agent.AgentId)
+		agent.CanDelete.AgentcanDeleted = false
+		agent.CanDelete.Reason = fmt.Sprintf("the agent with id %v didnt exist", agent.AgentId)
 	}
+
 	return nil
 }
 
 func GetUsers(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.UsersDb, error) {
 	var users []modeldb.UsersDb
 	var err error
-
-	if databaseEngine == "oraclesql" {
-		users, err = GetUsersOracle(ctx, agent)
-		if err != nil {
-			ins_log.Errorf(ctx, "error in IsAgentParentOracle() err: %v", err)
-			return nil, err
+	//CHEQUEAMOS SI EL AGENTE EXISTE
+	if agent.AgentOid != "" {
+		if databaseEngine == "oraclesql" {
+			users, err = GetUsersOracle(ctx, agent)
+			if err != nil {
+				ins_log.Errorf(ctx, "error in IsAgentParentOracle() err: %v", err)
+				return nil, err
+			}
+		} else {
+			users, err = GetUsersPostgres(ctx, agent)
+			if err != nil {
+				ins_log.Errorf(ctx, "error in IsAgentParentPostgres() err: %v", err)
+				return nil, err
+			}
 		}
 	} else {
-		users, err = GetUsersPostgres(ctx, agent)
-		if err != nil {
-			ins_log.Errorf(ctx, "error in IsAgentParentPostgres() err: %v", err)
-			return nil, err
-		}
+		ins_log.Infof(ctx, "the agent with id %v didnt exist", agent.AgentId)
+		agent.CanDelete.AgentcanDeleted = false
+		agent.CanDelete.Reason = fmt.Sprintf("the agent with id %v didnt exist", agent.AgentId)
 	}
 	return users, nil
 }
@@ -143,13 +157,13 @@ func GetMsisdn(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.MsisdnD
 	if databaseEngine == "oraclesql" {
 		agentsMsisdn, err = GetMsisdnOracle(ctx, agent)
 		if err != nil {
-			ins_log.Errorf(ctx, "error in IsAgentParentOracle() err: %v", err)
+			ins_log.Errorf(ctx, "error in GetMsisdnOracle() err: %v", err)
 			return nil, err
 		}
 	} else {
 		agentsMsisdn, err = GetMsisdnPostgres(ctx, agent)
 		if err != nil {
-			ins_log.Errorf(ctx, "error in IsAgentParentPostgres() err: %v", err)
+			ins_log.Errorf(ctx, "error in GetMsisdnPostgres() err: %v", err)
 			return nil, err
 		}
 	}

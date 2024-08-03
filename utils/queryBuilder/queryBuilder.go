@@ -17,6 +17,7 @@ const (
 	clientProfileClientNotifTableName   = "client_profile_client_notif"
 	clientProfileClienRestrictTableName = "client_profile_client_restric"
 	clientServiceInterfaceTableName     = "client_service_interface"
+	clientOperative                     = "client_operative"
 
 	//agent table to delete
 	agentTableName      = "agent"
@@ -87,6 +88,7 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 		{TableName: agentClerkTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
 		{TableName: agentZoneTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
 		{TableName: agentTableName, Conditional: oid, QueryToDelete: strings.Builder{}},
+		{TableName: clientOperative, Conditional: clientOid, QueryToDelete: strings.Builder{}},
 		{TableName: clientProfileClientComTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
 		{TableName: clientProfileClientNotifTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
 		{TableName: clientProfileClienRestrictTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
