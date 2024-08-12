@@ -127,3 +127,81 @@ func AgentQueyBuilders(ctx context.Context, agents []modelUtils.Agents) []modelU
 	}
 	return tablesToDelete
 }
+
+// CreateQuery construye una consulta SQL para eliminar datos de una tabla dada con condiciones específicas.
+func CreateQuery2(ctx context.Context, tableName string, conditional string, infodb []modeldb.ModelsDb) string {
+	// Consulta base para eliminación
+	const deleteQueryTemplate = "DELETE FROM %s WHERE %s = %s;"
+
+	// Establece el contexto para los registros
+	ctx = ins_log.SetPackageNameInContext(ctx, "queryBuilder")
+	ins_log.Infof(ctx, "Iniciando la creación de una consulta para eliminar datos de la tabla %s", tableName)
+
+	// Forma la consulta base
+
+	// Usa strings.Builder para construir la consulta
+	var sb strings.Builder
+	// Si no hay datos para eliminar, devuelve una cadena vacía y registra un error
+	if len(infodb) == 0 {
+		ins_log.Tracef(ctx, "No hay datos para eliminar")
+		return ""
+	}
+
+	// Agrega las condiciones a la consulta
+	for _, item := range infodb {
+		if item.CanDeleted() && item.Condition() != "" {
+			deleteQuery := fmt.Sprintf(deleteQueryTemplate, tableName, conditional, item.Condition())
+			sb.WriteString(deleteQuery)
+			sb.WriteString("\n \n")
+		}
+	}
+	return sb.String()
+}
+func AgentQueyBuilders2(ctx context.Context, agents []modelUtils.Agents) []modelUtils.Table {
+
+	//esta consulta despuesdebera ir en constantes
+	var deleteQuery = "delete from %v where %v = %v ; \n"
+	flag := false
+
+	ctx = ins_log.SetPackageNameInContext(ctx, "queryBuilder")
+	ins_log.Infof(ctx, "starting to create the querys to delete agents")
+
+	//creamos un arreglo con el nombre de las tablas a eliminar
+	var tablesToDelete []modelUtils.Table = []modelUtils.Table{
+		{TableName: accountTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
+		{TableName: agentChild, Conditional: childOid, QueryToDelete: strings.Builder{}},
+		{TableName: agentClerkTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
+		{TableName: agentZoneTableName, Conditional: agentOid, QueryToDelete: strings.Builder{}},
+		{TableName: agentTableName, Conditional: oid, QueryToDelete: strings.Builder{}},
+		{TableName: clientOperative, Conditional: clientOid, QueryToDelete: strings.Builder{}},
+		{TableName: clientProfileClientComTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
+		{TableName: clientProfileClientNotifTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
+		{TableName: clientProfileClienRestrictTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
+		{TableName: clientServiceInterfaceTableName, Conditional: clientOid, QueryToDelete: strings.Builder{}},
+		{TableName: clientTableName, Conditional: oid, QueryToDelete: strings.Builder{}},
+	}
+
+	for i := 0; i < len(agents); i++ {
+		if agents[i].CanDelete.AgentcanDeleted {
+
+			flag = true
+			//sobre cada agente debembemos rrecorres el tables to delete para crear el query de cada tabla
+			for j := 0; j < len(tablesToDelete); j++ {
+				startOfTheQuery := fmt.Sprintf(deleteQuery, tablesToDelete[j].TableName, tablesToDelete[j].Conditional, agents[i].AgentOid)
+				tablesToDelete[j].QueryToDelete.WriteString(startOfTheQuery)
+			}
+		}
+
+	}
+
+	// Cerramos las consultas
+	for i := range tablesToDelete {
+		if !flag {
+			tablesToDelete[i].QueryToDelete.WriteString("no agents to delete ();\n")
+		} else {
+			tablesToDelete[i].QueryToDelete.WriteString("\n")
+		}
+
+	}
+	return tablesToDelete
+}

@@ -29,7 +29,7 @@ func DeleteMsisdnAgents(ctx context.Context, agents *[]modelUtils.Agents) error 
 	}
 
 	//primero eliminaremos el agent_movil_pin
-	queryToDeleteAgentMobilePin := querybuilder.CreateQuery(ctx, "agent_mobile_pin", "msisdn_oid", modelsDbInfo)
+	queryToDeleteAgentMobilePin := querybuilder.CreateQuery2(ctx, "agent_mobile_pin", "msisdn_oid", modelsDbInfo)
 	err = fileWriter.WriteInAfile(ctx, queryToDeleteAgentMobilePin, "../scripts/agent_mobile_scripts.txt", "query to delete msisdn_pin for an agents in the list")
 	if err != nil {
 		ins_log.Errorf(ctx, "error when we try to write in a file the queryToDeleteAgentMobilePin and the error message is: %s", err)
@@ -38,7 +38,7 @@ func DeleteMsisdnAgents(ctx context.Context, agents *[]modelUtils.Agents) error 
 	ins_log.Infof(ctx, "query to delete agent mobile pin was created and writed")
 
 	//ahora con esa lista crearemos el archivo con el script para eliminar el agent movil de los agentes
-	queryToDeleteAgentMobile := querybuilder.CreateQuery(ctx, "agent_mobile", "oid", modelsDbInfo)
+	queryToDeleteAgentMobile := querybuilder.CreateQuery2(ctx, "agent_mobile", "oid", modelsDbInfo)
 	//pasamos el texto de la query y la ubicacion del archivo
 	err = fileWriter.WriteInAfile(ctx, queryToDeleteAgentMobile, "../scripts/agent_mobile_scripts.txt", "query to delete msisdn for an agents in the list")
 	if err != nil {

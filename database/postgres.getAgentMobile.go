@@ -47,8 +47,7 @@ func GetMsisdnPostgres(ctx context.Context, agent *modelUtils.Agents) ([]modeldb
 		msisdnInfo := msisdnSql.ConvertMsisdn()
 		msisdnsInfo = append(msisdnsInfo, msisdnInfo)
 		agent.AgentOid = msisdnInfo.AgentOid
-		// agent.Credit = credit.Float64
-		agent.Credit = 0
+		agent.Credit = credit.Float64
 	}
 
 	// Verificar si hubo errores en el procesamiento de las filas

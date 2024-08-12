@@ -29,7 +29,7 @@ func DeleteAgents(ctx context.Context, agents *[]modelUtils.Agents) error {
 	ins_log.Infof(ctx, "check if the agents are parents finish")
 
 	//llamamos la funcioon q nos devolvera un arreglo con todas las querys para eliminar agentes
-	querysToDeleteAgent := querybuilder.AgentQueyBuilders(ctx, *agents)
+	querysToDeleteAgent := querybuilder.AgentQueyBuilders2(ctx, *agents)
 	ins_log.Infof(ctx, "querys To Delete Agent was created")
 	for _, query := range querysToDeleteAgent {
 		comment := fmt.Sprintf("query to delete the table %v", query.TableName)

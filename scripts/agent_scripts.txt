@@ -1,44 +1,143 @@
 -- query to delete the table account 
 
-delete from account where agent_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table agent_child 
 
-delete from agent_child where CHILD_OID in (5554);
+no agents to delete ();
  
 -- query to delete the table agent_clerk 
 
-delete from agent_clerk where agent_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table agent_zone 
 
-delete from agent_zone where agent_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table agent 
 
-delete from agent where oid in (5554);
+no agents to delete ();
  
 -- query to delete the table client_operative 
 
-delete from client_operative where client_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table client_profile_client_comm 
 
-delete from client_profile_client_comm where client_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table client_profile_client_notif 
 
-delete from client_profile_client_notif where client_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table client_profile_client_restric 
 
-delete from client_profile_client_restric where client_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table client_service_interface 
 
-delete from client_service_interface where client_oid in (5554);
+no agents to delete ();
  
 -- query to delete the table client 
 
-delete from client where oid in (5554);
+no agents to delete ();
+ 
+-- query to delete the table account 
+
+delete from account where agent_oid = 501837 ; 
+
+ 
+-- query to delete the table agent_child 
+
+delete from agent_child where CHILD_OID = 501837 ; 
+
+ 
+-- query to delete the table agent_clerk 
+
+delete from agent_clerk where agent_oid = 501837 ; 
+
+ 
+-- query to delete the table agent_zone 
+
+delete from agent_zone where agent_oid = 501837 ; 
+
+ 
+-- query to delete the table agent 
+
+delete from agent where oid = 501837 ; 
+
+ 
+-- query to delete the table client_operative 
+
+delete from client_operative where client_oid = 501837 ; 
+
+ 
+-- query to delete the table client_profile_client_comm 
+
+delete from client_profile_client_comm where client_oid = 501837 ; 
+
+ 
+-- query to delete the table client_profile_client_notif 
+
+delete from client_profile_client_notif where client_oid = 501837 ; 
+
+ 
+-- query to delete the table client_profile_client_restric 
+
+delete from client_profile_client_restric where client_oid = 501837 ; 
+
+ 
+-- query to delete the table client_service_interface 
+
+delete from client_service_interface where client_oid = 501837 ; 
+
+ 
+-- query to delete the table client 
+
+delete from client where oid = 501837 ; 
+
+ 
+-- query to delete the table account 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_child 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_clerk 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_zone 
+
+no agents to delete ();
+ 
+-- query to delete the table agent 
+
+no agents to delete ();
+ 
+-- query to delete the table client_operative 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_comm 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_notif 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_restric 
+
+no agents to delete ();
+ 
+-- query to delete the table client_service_interface 
+
+no agents to delete ();
+ 
+-- query to delete the table client 
+
+no agents to delete ();
  

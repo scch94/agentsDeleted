@@ -1,0 +1,86 @@
+[2024-07-28 21:00:00.027] [agentsdeleter] [database] [info] [] User Clfrancis_KY is not a parent and can be deleted
+[2024-07-28 21:00:00.027] [agentsdeleter] [database] [info] [] the query in the database tooks: 858.3362ms
+[2024-07-28 21:00:00.027] [agentsdeleter] [database] [trace] [] starting to check if the user FHenry_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:00:00.027] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23942, and tenant_oid=23942%!(EXTRA int=4)
+[2024-07-28 21:00:00.766] [agentsdeleter] [database] [info] [] User FHenry_KY is not a parent and can be deleted
+[2024-07-28 21:00:00.766] [agentsdeleter] [database] [info] [] the query in the database tooks: 738.1586ms
+[2024-07-28 21:00:00.766] [agentsdeleter] [database] [trace] [] starting to check if the user admin_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:00:00.766] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1131, and tenant_oid=1131%!(EXTRA int=4)
+[2024-07-28 21:00:01.481] [agentsdeleter] [database] [info] [] User admin_KY is a parent and cannot be deleted
+[2024-07-28 21:00:01.481] [agentsdeleter] [database] [info] [] the query in the database tooks: 715.3525ms
+[2024-07-28 21:00:01.481] [agentsdeleter] [database] [trace] [] starting to check if the user ABonilla_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:00:01.481] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23939, and tenant_oid=23939%!(EXTRA int=4)
+[2024-07-28 21:00:02.204] [agentsdeleter] [database] [info] [] User ABonilla_KY is not a parent and can be deleted
+[2024-07-28 21:00:02.204] [agentsdeleter] [database] [info] [] the query in the database tooks: 722.4996ms
+[2024-07-28 21:00:02.204] [agentsdeleter] [database] [trace] [] starting to check if the user ALopez_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:00:02.204] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23940, and tenant_oid=23940%!(EXTRA int=4)
+[2024-07-28 21:00:02.946] [agentsdeleter] [database] [info] [] User ALopez_KY is not a parent and can be deleted
+[2024-07-28 21:00:02.946] [agentsdeleter] [database] [info] [] the query in the database tooks: 741.3006ms
+[2024-07-28 21:00:02.946] [agentsdeleter] [database] [trace] [] starting to check if the user ahewitt can be deleted :%!v(MISSING)
+[2024-07-28 21:00:02.946] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1132, and tenant_oid=1132%!(EXTRA int=4)
+[2024-07-28 21:00:03.702] [agentsdeleter] [database] [info] [] User ahewitt is not a parent and can be deleted
+[2024-07-28 21:00:03.702] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.6258ms
+[2024-07-28 21:00:03.703] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 32 users
+[2024-07-28 21:00:03.704] [agentsdeleter] [controller] [info] [] usuarios : [{1123 MMS_CFO000 5543 {false User MMS_CFO000 is a parent and cannot be deleted}} {1157 mms_CamanaKiosk 5543 {false User mms_CamanaKiosk is a parent and cannot be deleted}} {1127 MMS_DIG006 5543 {true User MMS_DIG006 is not a parent and can be deleted}} {1122 MMS_CBBILLPAYKIOSK 5543 {true User MMS_CBBILLPAYKIOSK is not a parent and can be deleted}} {1156 mms_CSbillpaykiosk 5543 {true User mms_CSbillpaykiosk is not a parent and can be deleted}} {1160 mms_WFbillpaykiosk2 5543 {true User mms_WFbillpaykiosk2 is not a parent and can be deleted}} {1128 MMS_HQBILLPAYKIOSK 5543 {true User MMS_HQBILLPAYKIOSK is not a parent and can be deleted}} {1159 mms_WFbillpaykiosk 5543 {false User mms_WFbillpaykiosk is a parent and cannot be deleted}} {1161 mms_waterfrontkiosk 5543 {false User mms_waterfrontkiosk is a parent and cannot be deleted}} {1158 mms_CountrysideKiosk 5543 {false User mms_CountrysideKiosk is a parent and cannot be deleted}} {1125 MMS_CSBILLPAYKIOSK 5543 {true User MMS_CSBILLPAYKIOSK is not a parent and can be deleted}} {1126 MMS_CTLS00 5543 {false User MMS_CTLS00 is a parent and cannot be deleted}} {1178 ssuberan 5543 {true User ssuberan is not a parent and can be deleted}} {1101 MMS_CAYB000 5543 {false User MMS_CAYB000 is a parent and cannot be deleted}} {1154 mmartin 5543 {true User mmartin is not a parent and can be deleted}} {1124 MMS_CRP000 5543 {false User MMS_CRP000 is a parent and cannot be deleted}} {1100 MMS_ALT000 5543 {false User MMS_ALT000 is a parent and cannot be deleted}} {1164 rbrown_KY 5531 {false User rbrown_KY is a parent and cannot be deleted}} {1150 kburke_KY 5531 {false User kburke_KY is a parent and cannot be deleted}} {1170 sjackson 5531 {true User sjackson is not a parent and can be deleted}} {1183 tthomas_KY 5531 {false User tthomas_KY is a parent and cannot be deleted}} {1098 JAWhitehorne_KY 5531 {false User JAWhitehorne_KY is a parent and cannot be deleted}} {1152 lbramwell_KY 5531 {false User lbramwell_KY is a parent and cannot be deleted}} {1153 mdrivas 5531 {true User mdrivas is not a parent and can be deleted}} {1172 slewis_KY 5531 {false User slewis_KY is a parent and cannot be deleted}} {1179 swong_KY 5531 {false User swong_KY is a parent and cannot be deleted}} {1165 rcorreia_KY 5531 {false User rcorreia_KY is a parent and cannot be deleted}} {1095 GroupCAY 5531 {false User GroupCAY is a parent and cannot be deleted}} {1143 doconnor 5531 {false User doconnor is a parent and cannot be deleted}} {1173 slouisy_KY 5531 {false User slouisy_KY is a parent and cannot be deleted}} {1162 mwilliams 5531 {true User mwilliams is not a parent and can be deleted}} {1148 jdavies 5531 {true User jdavies is not a parent and can be deleted}} {1175 sroberts_KY 5531 {false User sroberts_KY is a parent and cannot be deleted}} {1145 earthurs 5531 {false User earthurs is a parent and cannot be deleted}} {1139 ccportal_KY 5531 {true User ccportal_KY is not a parent and can be deleted}} {1144 dwilson 5531 {true User dwilson is not a parent and can be deleted}} {14920 jpierre 5531 {true User jpierre is not a parent and can be deleted}} {21205 GTM_CAY 5531 {true User GTM_CAY is not a parent and can be deleted}} {20557 cpearson_KY 5531 {true User cpearson_KY is not a parent and can be deleted}} {20683 karthikeyans_KY 5531 {true User karthikeyans_KY is not a parent and can be deleted}} {20684 sbalakrishnan_KY 5531 {true User sbalakrishnan_KY is not a parent and can be deleted}} {23937 CCardoza_KY 5531 {true User CCardoza_KY is not a parent and can be deleted}} {26728 kwhite_KY 5531 {true User kwhite_KY is not a parent and can be deleted}} {23901 Clfrancis_KY 5531 {true User Clfrancis_KY is not a parent and can be deleted}} {23942 FHenry_KY 5531 {true User FHenry_KY is not a parent and can be deleted}} {1131 admin_KY 5531 {false User admin_KY is a parent and cannot be deleted}} {23939 ABonilla_KY 5531 {true User ABonilla_KY is not a parent and can be deleted}} {23940 ALopez_KY 5531 {true User ALopez_KY is not a parent and can be deleted}} {1132 ahewitt 5531 {true User ahewitt is not a parent and can be deleted}}] agentes &[{996008814335 113771 0 {true }} {104 5543 26650.98 {false agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted. User mms_CamanaKiosk is a parent and cannot be deleted. User mms_WFbillpaykiosk is a parent and cannot be deleted. User mms_waterfrontkiosk is a parent and cannot be deleted. User mms_CountrysideKiosk is a parent and cannot be deleted. User MMS_CTLS00 is a parent and cannot be deleted. User MMS_CAYB000 is a parent and cannot be deleted. User MMS_CRP000 is a parent and cannot be deleted. User MMS_ALT000 is a parent and cannot be deleted.}} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {false agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User tthomas_KY is a parent and cannot be deleted. User JAWhitehorne_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User slewis_KY is a parent and cannot be deleted. User swong_KY is a parent and cannot be deleted. User rcorreia_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User sroberts_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted.}}]
+[2024-07-28 21:00:03.707] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table old_password
+[2024-07-28 21:00:03.707] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:00:03.709] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:03.709] [agentsdeleter] [controller] [info] [] query to delete users_old_password was created and writed
+[2024-07-28 21:00:03.710] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table client_user
+[2024-07-28 21:00:03.710] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:00:03.712] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:03.712] [agentsdeleter] [controller] [info] [] query to delete ClientUser was created and writed
+[2024-07-28 21:00:03.712] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table user_adm
+[2024-07-28 21:00:03.712] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:00:03.714] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:03.715] [agentsdeleter] [controller] [info] [] query to delete user_adm was created and writed
+[2024-07-28 21:00:03.715] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-28 21:00:03.715] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-28 21:00:03.716] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-28 21:00:03.716] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-28 21:00:03.716] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-28 21:00:03.716] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:00:04.434] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-28 21:00:04.434] [agentsdeleter] [database] [info] [] the query in the database tooks: 718.1663ms
+[2024-07-28 21:00:04.434] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 104 is a parent 
+[2024-07-28 21:00:04.434] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:00:05.166] [agentsdeleter] [database] [info] [] Agent 5543 is not a parent and can be deleted
+[2024-07-28 21:00:05.166] [agentsdeleter] [database] [info] [] the query in the database tooks: 731.9901ms
+[2024-07-28 21:00:05.166] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814232 is a parent 
+[2024-07-28 21:00:05.166] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:00:05.884] [agentsdeleter] [database] [info] [] Agent 4788 is not a parent and can be deleted
+[2024-07-28 21:00:05.884] [agentsdeleter] [database] [info] [] the query in the database tooks: 717.7838ms
+[2024-07-28 21:00:05.885] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 162 is a parent 
+[2024-07-28 21:00:05.885] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:00:06.643] [agentsdeleter] [database] [info] [] Agent 5554 is not a parent and can be deleted
+[2024-07-28 21:00:06.643] [agentsdeleter] [database] [info] [] the query in the database tooks: 758.6089ms
+[2024-07-28 21:00:06.643] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 0 is a parent 
+[2024-07-28 21:00:06.644] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:00:07.352] [agentsdeleter] [database] [info] [] Agent 5531 is a parent and cannot be deleted
+[2024-07-28 21:00:07.353] [agentsdeleter] [database] [info] [] the query in the database tooks: 709.0774ms
+[2024-07-28 21:00:07.353] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-28 21:00:07.353] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-28 21:00:07.353] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-28 21:00:07.353] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.354] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.355] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.356] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.357] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.357] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.358] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.358] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.359] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.360] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.360] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.361] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.362] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.362] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.363] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.364] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.365] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:00:07.365] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.367] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-28 21:00:07.367] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-28 21:00:07.367] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:00:07.368] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-28 21:00:07.368] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 47.5545678s

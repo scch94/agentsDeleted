@@ -22,13 +22,13 @@ var (
 
 func InitDb(ctx context.Context) error {
 	if config.Config.DatabaseEngine == "postgresql" {
-		err := NewPostgresDb(ctx)
+		err := NewPostgresDb(ctx, config.Config.DatabaseConnectionString)
 		if err != nil {
 			return err
 		}
 		return nil
 	} else if config.Config.DatabaseEngine == "oraclesql" {
-		err := NewOracleDb(ctx)
+		err := NewOracleDb(ctx, config.Config.DatabaseConnectionString)
 		if err != nil {
 			return err
 		}
@@ -38,16 +38,17 @@ func InitDb(ctx context.Context) error {
 	return fmt.Errorf("please check the configuration file in databaseengine the values accepted are postgresql or oraclesql")
 
 }
-func NewPostgresDb(ctx context.Context) error {
+func NewPostgresDb(ctx context.Context, connectionString string) error {
+	//"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require",
 	databaseEngine = config.Config.DatabaseEngine
 	var initErr error
 	dbOnce.Do(func() {
 		ctx = ins_log.SetPackageNameInContext(ctx, "databaseConnection")
 		var err error
 
-		DB, err = sql.Open("postgres", config.Config.DatabaseConnectionString)
+		DB, err = sql.Open("postgres", connectionString)
 		if err != nil {
-			ins_log.Fatalf(ctx, "cant open postgres database with string connection %v and the error is: %v", config.Config.DatabaseConnectionString, err)
+			ins_log.Fatalf(ctx, "cant open postgres database with string connection %v and the error is: %v", connectionString, err)
 			initErr = err
 			return
 		}
@@ -65,17 +66,17 @@ func NewPostgresDb(ctx context.Context) error {
 	})
 	return initErr
 }
-func NewOracleDb(ctx context.Context) error {
+func NewOracleDb(ctx context.Context, connectionString string) error {
 	databaseEngine = config.Config.DatabaseEngine
-	coneection := "EPIN_NEW/epin@192.168.0.157:1521/EPIN"
+	//coneection := "EPIN_NEW/epin@192.168.0.157:1521/EPIN"
 	var initErr error
 	dbOnce.Do(func() {
 		ctx = ins_log.SetPackageNameInContext(ctx, "databaseConnection")
 		var err error
 
-		DB, err = sql.Open("godror", coneection)
+		DB, err = sql.Open("godror", connectionString)
 		if err != nil {
-			ins_log.Fatalf(ctx, "cant open postgres database with string connection %v and the error is: %v", coneection, err)
+			ins_log.Fatalf(ctx, "cant open postgres database with string connection %v and the error is: %v", connectionString, err)
 			initErr = err
 			return
 		}

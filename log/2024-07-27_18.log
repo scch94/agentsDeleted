@@ -1,0 +1,438 @@
+[2024-07-27 18:22:13.010] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:22:13.010] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:22:13.976] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:22:13.976] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:22:13.978] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:22:13.978] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:22:13.979] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:22:13.980] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814317
+[2024-07-27 18:22:13.980] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814317, and tenant_oid=4
+[2024-07-27 18:22:14.700] [agentsdeleter] [database] [info] [] the query in the database tooks: 720.3127ms
+[2024-07-27 18:22:14.700] [agentsdeleter] [controller] [trace] [] the agent with id 996008814317 has 1 moviles
+[2024-07-27 18:22:14.701] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-27 18:22:14.701] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:22:14.703] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:14.703] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-27 18:22:14.703] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-27 18:22:14.703] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:22:14.704] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:14.704] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-27 18:22:14.704] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-27 18:22:14.705] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-27 18:22:14.705] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113272
+[2024-07-27 18:22:14.705] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113272, and tenant_oid=%!s(int=4)
+[2024-07-27 18:22:15.391] [agentsdeleter] [database] [info] [] the query in the database tooks: 685.6157ms
+[2024-07-27 18:22:15.391] [agentsdeleter] [database] [trace] [] starting to check if the user testing_ky3 can be deleted :%!v(MISSING)
+[2024-07-27 18:22:15.391] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=30520, and tenant_oid=30520%!(EXTRA int=4)
+[2024-07-27 18:22:16.110] [agentsdeleter] [database] [info] [] User testing_ky3 is not a parent and can be deleted
+[2024-07-27 18:22:16.110] [agentsdeleter] [database] [info] [] the query in the database tooks: 718.1133ms
+[2024-07-27 18:22:16.110] [agentsdeleter] [database] [trace] [] starting to check if the user testin231321 can be deleted :%!v(MISSING)
+[2024-07-27 18:22:16.110] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=30521, and tenant_oid=30521%!(EXTRA int=4)
+[2024-07-27 18:22:16.849] [agentsdeleter] [database] [info] [] User testin231321 is not a parent and can be deleted
+[2024-07-27 18:22:16.849] [agentsdeleter] [database] [info] [] the query in the database tooks: 738.6654ms
+[2024-07-27 18:22:16.849] [agentsdeleter] [database] [trace] [] starting to check if the user testing-subdis can be deleted :%!v(MISSING)
+[2024-07-27 18:22:16.849] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=30360, and tenant_oid=30360%!(EXTRA int=4)
+[2024-07-27 18:22:17.582] [agentsdeleter] [database] [info] [] User testing-subdis is not a parent and can be deleted
+[2024-07-27 18:22:17.582] [agentsdeleter] [database] [info] [] the query in the database tooks: 732.9126ms
+[2024-07-27 18:22:17.583] [agentsdeleter] [database] [trace] [] starting to check if the user subdistributor_KY can be deleted :%!v(MISSING)
+[2024-07-27 18:22:17.583] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=30380, and tenant_oid=30380%!(EXTRA int=4)
+[2024-07-27 18:22:18.327] [agentsdeleter] [database] [info] [] User subdistributor_KY is a parent and cannot be deleted
+[2024-07-27 18:22:18.328] [agentsdeleter] [database] [info] [] the query in the database tooks: 745.0569ms
+[2024-07-27 18:22:18.328] [agentsdeleter] [controller] [trace] [] the agent with id 996008814317 has 4 users
+[2024-07-27 18:22:18.329] [agentsdeleter] [controller] [info] [] usuarios : [{30520 testing_ky3 113272 {true User testing_ky3 is not a parent and can be deleted}} {30521 testin231321 113272 {true User testin231321 is not a parent and can be deleted}} {30360 testing-subdis 113272 {true User testing-subdis is not a parent and can be deleted}} {30380 subdistributor_KY 113272 {false User subdistributor_KY is a parent and cannot be deleted}}] agentes &[{996008814317 113272 9999402.460000 {false agent whit id 996008814317, can not deleted reasons : User subdistributor_KY is a parent and cannot be deleted.}}]
+[2024-07-27 18:22:18.329] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table old_password
+[2024-07-27 18:22:18.329] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-27 18:22:18.331] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:18.331] [agentsdeleter] [controller] [info] [] query to delete users_old_password was created and writed
+[2024-07-27 18:22:18.331] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table client_user
+[2024-07-27 18:22:18.331] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-27 18:22:18.333] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:18.334] [agentsdeleter] [controller] [info] [] query to delete ClientUser was created and writed
+[2024-07-27 18:22:18.334] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table user_adm
+[2024-07-27 18:22:18.334] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-27 18:22:18.335] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:18.336] [agentsdeleter] [controller] [info] [] query to delete user_adm was created and writed
+[2024-07-27 18:22:18.336] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-27 18:22:18.336] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-27 18:22:18.336] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-27 18:22:18.336] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-27 18:22:18.336] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814317 is a parent 
+[2024-07-27 18:22:18.336] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113272, and tenant_oid=%!s(int=4)
+[2024-07-27 18:22:19.101] [agentsdeleter] [database] [info] [] Agent 113272 is a parent and cannot be deleted
+[2024-07-27 18:22:19.102] [agentsdeleter] [database] [info] [] the query in the database tooks: 765.4432ms
+[2024-07-27 18:22:19.102] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-27 18:22:19.102] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-27 18:22:19.102] [agentsdeleter] [queryBuilder] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:22:19.102] [agentsdeleter] [controller] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:22:19.103] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-27 18:22:19.103] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.104] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.105] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.106] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.106] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.108] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.108] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.109] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.109] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.110] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.111] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.111] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.112] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.114] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.114] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.115] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.116] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:22:19.117] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.117] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-27 18:22:19.117] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-27 18:22:19.118] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:22:19.119] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-27 18:22:19.119] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 5.1432649s
+[2024-07-27 18:26:36.621] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:26:36.622] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:26:37.505] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:26:37.505] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:26:37.506] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:26:37.506] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:26:37.506] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:26:37.508] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-27 18:26:37.508] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-27 18:26:38.261] [agentsdeleter] [database] [info] [] the query in the database tooks: 753.3124ms
+[2024-07-27 18:26:38.261] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-27 18:26:38.262] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-27 18:26:38.262] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:26:38.263] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:38.264] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-27 18:26:38.264] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-27 18:26:38.264] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:26:38.265] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:38.266] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-27 18:26:38.266] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-27 18:26:38.266] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-27 18:26:38.266] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-27 18:26:38.267] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:26:39.003] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.7626ms
+[2024-07-27 18:26:39.004] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-27 18:26:39.004] [agentsdeleter] [controller] [info] [] usuarios : [] agentes &[{996008814335 113771 0.000000 {true }}]
+[2024-07-27 18:26:39.005] [agentsdeleter] [controller] [info] [] No users to delete
+[2024-07-27 18:26:39.005] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-27 18:26:39.005] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-27 18:26:39.005] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-27 18:26:39.005] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-27 18:26:39.005] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-27 18:26:39.005] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:26:39.692] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-27 18:26:39.692] [agentsdeleter] [database] [info] [] the query in the database tooks: 687.0663ms
+[2024-07-27 18:26:39.692] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-27 18:26:39.693] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-27 18:26:39.693] [agentsdeleter] [queryBuilder] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:26:39.693] [agentsdeleter] [controller] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:26:39.694] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-27 18:26:39.694] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.695] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.695] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.696] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.697] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.697] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.698] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.699] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.699] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.700] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.701] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.702] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.703] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.704] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.705] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.706] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.706] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:26:39.707] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.708] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-27 18:26:39.708] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-27 18:26:39.709] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:26:39.710] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-27 18:26:39.710] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 2.2049633s
+[2024-07-27 18:36:25.328] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:36:25.328] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:36:26.365] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:36:26.365] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:36:26.368] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:36:26.368] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:36:26.368] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:36:26.369] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-27 18:36:26.369] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-27 18:36:27.093] [agentsdeleter] [database] [error] [] error scanning row: sql: Scan error on column index 3, name "credit": converting driver.Value type []uint8 ("0.000000") to a uint: invalid syntax
+[2024-07-27 18:36:27.093] [agentsdeleter] [controller] [error] [] error in getmsisdn: sql: Scan error on column index 3, name "credit": converting driver.Value type []uint8 ("0.000000") to a uint: invalid syntax
+[2024-07-27 18:36:27.094] [agentsdeleter] [controller] [error] [] error on the function getAgentsInfo() err: sql: Scan error on column index 3, name "credit": converting driver.Value type []uint8 ("0.000000") to a uint: invalid syntax
+[2024-07-27 18:36:27.094] [agentsdeleter] [main] [error] [] error creating the script to delete the msisdns of the agents: sql: Scan error on column index 3, name "credit": converting driver.Value type []uint8 ("0.000000") to a uint: invalid syntax
+[2024-07-27 18:37:52.080] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:37:52.081] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:37:53.014] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:37:53.014] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:37:53.017] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:37:53.017] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:37:53.017] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:37:53.018] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-27 18:37:53.018] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-27 18:37:53.735] [agentsdeleter] [database] [info] [] the query in the database tooks: 716.451ms
+[2024-07-27 18:37:53.735] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-27 18:37:53.736] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-27 18:37:53.736] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:37:53.737] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:53.737] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-27 18:37:53.738] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-27 18:37:53.738] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:37:53.741] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:53.741] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-27 18:37:53.741] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-27 18:37:53.742] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-27 18:37:53.743] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-27 18:37:53.743] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:37:54.491] [agentsdeleter] [database] [info] [] the query in the database tooks: 747.8401ms
+[2024-07-27 18:37:54.492] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-27 18:37:54.492] [agentsdeleter] [controller] [info] [] usuarios : [] agentes &[{996008814335 113771 0 {true }}]
+[2024-07-27 18:37:54.493] [agentsdeleter] [controller] [info] [] No users to delete
+[2024-07-27 18:37:54.493] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-27 18:37:54.493] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-27 18:37:54.493] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-27 18:37:54.493] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-27 18:37:54.493] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-27 18:37:54.493] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:37:55.200] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-27 18:37:55.200] [agentsdeleter] [database] [info] [] the query in the database tooks: 707.0736ms
+[2024-07-27 18:37:55.200] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-27 18:37:55.200] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-27 18:37:55.201] [agentsdeleter] [queryBuilder] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:37:55.201] [agentsdeleter] [controller] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:37:55.201] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-27 18:37:55.201] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.203] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.203] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.204] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.205] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.205] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.206] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.207] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.208] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.208] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.209] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.210] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.211] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.212] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.213] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.214] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.215] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:37:55.216] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.216] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-27 18:37:55.216] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-27 18:37:55.218] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:37:55.218] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-27 18:37:55.219] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 2.2049337s
+[2024-07-27 18:39:26.073] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:39:26.074] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:39:26.930] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:39:26.930] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:39:26.931] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:39:26.932] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:39:26.932] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:39:26.933] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-27 18:39:26.933] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-27 18:39:27.694] [agentsdeleter] [database] [info] [] the query in the database tooks: 761.5035ms
+[2024-07-27 18:39:27.694] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-27 18:39:27.696] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-27 18:39:27.696] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:39:27.697] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:27.698] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-27 18:39:27.698] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-27 18:39:27.698] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:39:27.699] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:27.700] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-27 18:39:27.700] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-27 18:39:27.701] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-27 18:39:27.702] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-27 18:39:27.702] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:39:28.417] [agentsdeleter] [database] [info] [] the query in the database tooks: 715.0402ms
+[2024-07-27 18:39:28.418] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-27 18:39:28.418] [agentsdeleter] [controller] [info] [] usuarios : [] agentes &[{996008814335 113771 0 {true }}]
+[2024-07-27 18:39:28.418] [agentsdeleter] [controller] [info] [] No users to delete
+[2024-07-27 18:39:28.418] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-27 18:39:28.418] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-27 18:39:28.418] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-27 18:39:28.419] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-27 18:39:28.419] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-27 18:39:28.419] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:39:29.163] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-27 18:39:29.163] [agentsdeleter] [database] [info] [] the query in the database tooks: 744.4851ms
+[2024-07-27 18:39:29.163] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-27 18:39:29.164] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-27 18:39:29.164] [agentsdeleter] [queryBuilder] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:39:29.165] [agentsdeleter] [controller] [info] [] tablestodelete info [{client oid {<nil> []}} {client_profile_client_comm client_oid {<nil> []}} {client_profile_client_notif client_oid {<nil> []}} {client_profile_client_restric client_oid {<nil> []}} {client_service_interface client_oid {<nil> []}} {agent oid {<nil> []}} {account agent_oid {<nil> []}} {agent_clerk agent_oid {<nil> []}} {agent_zone agent_oid {<nil> []}}]
+[2024-07-27 18:39:29.165] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-27 18:39:29.165] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.166] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.167] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.168] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.168] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.169] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.170] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.170] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.171] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.172] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.172] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.174] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.174] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.175] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.176] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.177] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.177] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:39:29.178] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.179] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-27 18:39:29.179] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-27 18:39:29.180] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:39:29.181] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-27 18:39:29.181] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 2.2511742s
+[2024-07-27 18:52:28.940] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:52:28.940] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:52:29.826] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:52:29.826] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:52:29.828] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:52:29.828] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:52:29.828] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:52:29.829] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-27 18:52:29.829] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-27 18:52:30.567] [agentsdeleter] [database] [info] [] the query in the database tooks: 737.7112ms
+[2024-07-27 18:52:30.567] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-27 18:52:30.568] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-27 18:52:30.568] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:52:30.570] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:30.570] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-27 18:52:30.570] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-27 18:52:30.570] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:52:30.571] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:30.572] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-27 18:52:30.572] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-27 18:52:30.572] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-27 18:52:30.573] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-27 18:52:30.573] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:52:31.322] [agentsdeleter] [database] [info] [] the query in the database tooks: 748.5652ms
+[2024-07-27 18:52:31.323] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-27 18:52:31.324] [agentsdeleter] [controller] [info] [] usuarios : [] agentes &[{996008814335 113771 0 {true }}]
+[2024-07-27 18:52:31.324] [agentsdeleter] [controller] [info] [] No users to delete
+[2024-07-27 18:52:31.324] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-27 18:52:31.324] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-27 18:52:31.324] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-27 18:52:31.325] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-27 18:52:31.325] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-27 18:52:31.325] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:52:32.062] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-27 18:52:32.062] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.9519ms
+[2024-07-27 18:52:32.062] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-27 18:52:32.062] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-27 18:52:32.062] [agentsdeleter] [queryBuilder] [info] [] si entro
+[2024-07-27 18:52:32.062] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019f928 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.063] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019f968 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 99 111 109 109 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.063] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019f9a8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 110 111 116 105 102 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.063] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019f9e8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 114 101 115 116 114 105 99 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.063] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019fa28 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 115 101 114 118 105 99 101 95 105 110 116 101 114 102 97 99 101 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.064] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019fa68 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.064] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019faa8 [100 101 108 101 116 101 32 102 114 111 109 32 97 99 99 111 117 110 116 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.065] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019fae8 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 99 108 101 114 107 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.065] [agentsdeleter] [queryBuilder] [info] [] este es la query: {0xc00019fb28 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 122 111 110 101 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}
+[2024-07-27 18:52:32.065] [agentsdeleter] [queryBuilder] [info] [] tablestodelete info [{client oid {0xc00019f928 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_comm client_oid {0xc00019f968 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 99 111 109 109 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_notif client_oid {0xc00019f9a8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 110 111 116 105 102 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_restric client_oid {0xc00019f9e8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 114 101 115 116 114 105 99 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_service_interface client_oid {0xc00019fa28 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 115 101 114 118 105 99 101 95 105 110 116 101 114 102 97 99 101 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent oid {0xc00019fa68 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {account agent_oid {0xc00019faa8 [100 101 108 101 116 101 32 102 114 111 109 32 97 99 99 111 117 110 116 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_clerk agent_oid {0xc00019fae8 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 99 108 101 114 107 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_zone agent_oid {0xc00019fb28 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 122 111 110 101 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}}]
+[2024-07-27 18:52:32.066] [agentsdeleter] [controller] [info] [] tablestodelete info [{client oid {0xc00019f928 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_comm client_oid {0xc00019f968 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 99 111 109 109 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_notif client_oid {0xc00019f9a8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 110 111 116 105 102 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_restric client_oid {0xc00019f9e8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 114 101 115 116 114 105 99 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_service_interface client_oid {0xc00019fa28 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 115 101 114 118 105 99 101 95 105 110 116 101 114 102 97 99 101 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent oid {0xc00019fa68 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {account agent_oid {0xc00019faa8 [100 101 108 101 116 101 32 102 114 111 109 32 97 99 99 111 117 110 116 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_clerk agent_oid {0xc00019fae8 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 99 108 101 114 107 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_zone agent_oid {0xc00019fb28 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 122 111 110 101 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}}]
+[2024-07-27 18:52:32.067] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-27 18:52:32.067] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.069] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.069] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.071] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.072] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.074] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.075] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.076] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.078] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.079] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.080] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.082] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.083] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.084] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.085] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.086] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.086] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:52:32.087] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.088] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-27 18:52:32.088] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-27 18:52:32.089] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:52:32.090] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-27 18:52:32.090] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 2.2644834s
+[2024-07-27 18:53:52.578] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-27 18:53:52.578] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-27 18:53:53.493] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-27 18:53:53.493] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-27 18:53:53.495] [agentsdeleter] [main] [info] [] number of agents are 1
+[2024-07-27 18:53:53.495] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-27 18:53:53.495] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-27 18:53:53.496] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-27 18:53:53.497] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A INNER JOIN agent_mobile AM ON AM.AGENT_OID=A.OID INNER JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-27 18:53:54.243] [agentsdeleter] [database] [info] [] the query in the database tooks: 745.6843ms
+[2024-07-27 18:53:54.243] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-27 18:53:54.245] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-27 18:53:54.245] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:53:54.246] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:54.247] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-27 18:53:54.247] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-27 18:53:54.247] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-27 18:53:54.249] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:54.250] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-27 18:53:54.250] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-27 18:53:54.250] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-27 18:53:54.251] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-27 18:53:54.251] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:53:54.982] [agentsdeleter] [database] [info] [] the query in the database tooks: 730.3823ms
+[2024-07-27 18:53:54.982] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-27 18:53:54.982] [agentsdeleter] [controller] [info] [] usuarios : [] agentes &[{996008814335 113771 0 {true }}]
+[2024-07-27 18:53:54.982] [agentsdeleter] [controller] [info] [] No users to delete
+[2024-07-27 18:53:54.982] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-27 18:53:54.983] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-27 18:53:54.983] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-27 18:53:54.983] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-27 18:53:54.983] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-27 18:53:54.983] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-27 18:53:55.703] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-27 18:53:55.703] [agentsdeleter] [database] [info] [] the query in the database tooks: 719.8186ms
+[2024-07-27 18:53:55.703] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-27 18:53:55.703] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-27 18:53:55.703] [agentsdeleter] [queryBuilder] [info] [] si entro
+[2024-07-27 18:53:55.704] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from client where oid in (113771);\n
+[2024-07-27 18:53:55.704] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from client_profile_client_comm where client_oid in (113771);\n
+[2024-07-27 18:53:55.704] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from client_profile_client_notif where client_oid in (113771);\n
+[2024-07-27 18:53:55.704] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from client_profile_client_restric where client_oid in (113771);\n
+[2024-07-27 18:53:55.705] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from client_service_interface where client_oid in (113771);\n
+[2024-07-27 18:53:55.705] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from agent where oid in (113771);\n
+[2024-07-27 18:53:55.705] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from account where agent_oid in (113771);\n
+[2024-07-27 18:53:55.705] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from agent_clerk where agent_oid in (113771);\n
+[2024-07-27 18:53:55.705] [agentsdeleter] [queryBuilder] [info] [] este es la query: delete from agent_zone where agent_oid in (113771);\n
+[2024-07-27 18:53:55.705] [agentsdeleter] [queryBuilder] [info] [] tablestodelete info [{client oid {0xc0001a6528 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_comm client_oid {0xc0001a6568 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 99 111 109 109 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_notif client_oid {0xc0001a65a8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 110 111 116 105 102 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_restric client_oid {0xc0001a65e8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 114 101 115 116 114 105 99 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_service_interface client_oid {0xc0001a6628 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 115 101 114 118 105 99 101 95 105 110 116 101 114 102 97 99 101 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent oid {0xc0001a6668 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {account agent_oid {0xc0001a66a8 [100 101 108 101 116 101 32 102 114 111 109 32 97 99 99 111 117 110 116 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_clerk agent_oid {0xc0001a66e8 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 99 108 101 114 107 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_zone agent_oid {0xc0001a6728 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 122 111 110 101 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}}]
+[2024-07-27 18:53:55.706] [agentsdeleter] [controller] [info] [] tablestodelete info [{client oid {0xc0001a6528 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_comm client_oid {0xc0001a6568 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 99 111 109 109 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_notif client_oid {0xc0001a65a8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 110 111 116 105 102 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_profile_client_restric client_oid {0xc0001a65e8 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 112 114 111 102 105 108 101 95 99 108 105 101 110 116 95 114 101 115 116 114 105 99 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {client_service_interface client_oid {0xc0001a6628 [100 101 108 101 116 101 32 102 114 111 109 32 99 108 105 101 110 116 95 115 101 114 118 105 99 101 95 105 110 116 101 114 102 97 99 101 32 119 104 101 114 101 32 99 108 105 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent oid {0xc0001a6668 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 32 119 104 101 114 101 32 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {account agent_oid {0xc0001a66a8 [100 101 108 101 116 101 32 102 114 111 109 32 97 99 99 111 117 110 116 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_clerk agent_oid {0xc0001a66e8 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 99 108 101 114 107 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}} {agent_zone agent_oid {0xc0001a6728 [100 101 108 101 116 101 32 102 114 111 109 32 97 103 101 110 116 95 122 111 110 101 32 119 104 101 114 101 32 97 103 101 110 116 95 111 105 100 32 105 110 32 40 49 49 51 55 55 49 41 59 10]}}]
+[2024-07-27 18:53:55.707] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-27 18:53:55.707] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.708] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.709] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.710] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.711] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.712] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.713] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.713] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.714] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.715] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.716] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.718] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.718] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.719] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.720] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.721] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.721] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-27 18:53:55.723] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.723] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-27 18:53:55.723] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-27 18:53:55.724] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-27 18:53:55.725] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-27 18:53:55.725] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 2.2319354s

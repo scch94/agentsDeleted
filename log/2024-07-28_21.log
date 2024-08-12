@@ -1,0 +1,951 @@
+[2024-07-28 21:02:57.069] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-28 21:02:57.070] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-28 21:02:57.973] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-28 21:02:57.973] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-28 21:02:57.982] [agentsdeleter] [main] [info] [] number of agents are 5
+[2024-07-28 21:02:57.982] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-28 21:02:57.982] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-28 21:02:57.983] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-28 21:02:57.984] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-28 21:02:58.712] [agentsdeleter] [database] [info] [] the query in the database tooks: 728.4209ms
+[2024-07-28 21:02:58.712] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-28 21:02:58.713] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :104
+[2024-07-28 21:02:58.713] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=104, and tenant_oid=4
+[2024-07-28 21:02:59.475] [agentsdeleter] [database] [info] [] the query in the database tooks: 761.9266ms
+[2024-07-28 21:02:59.475] [agentsdeleter] [controller] [trace] [] the agent with id 104 has 1 moviles
+[2024-07-28 21:02:59.475] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814232
+[2024-07-28 21:02:59.475] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814232, and tenant_oid=4
+[2024-07-28 21:03:00.226] [agentsdeleter] [database] [info] [] the query in the database tooks: 750.4046ms
+[2024-07-28 21:03:00.226] [agentsdeleter] [controller] [trace] [] the agent with id 996008814232 has 1 moviles
+[2024-07-28 21:03:00.226] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :162
+[2024-07-28 21:03:00.226] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=162, and tenant_oid=4
+[2024-07-28 21:03:00.948] [agentsdeleter] [database] [info] [] the query in the database tooks: 721.4909ms
+[2024-07-28 21:03:00.948] [agentsdeleter] [controller] [trace] [] the agent with id 162 has 1 moviles
+[2024-07-28 21:03:00.948] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :0
+[2024-07-28 21:03:00.948] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=0, and tenant_oid=4
+[2024-07-28 21:03:01.681] [agentsdeleter] [database] [info] [] the query in the database tooks: 732.7751ms
+[2024-07-28 21:03:01.681] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 1 moviles
+[2024-07-28 21:03:01.682] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-28 21:03:01.683] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-28 21:03:01.684] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:01.684] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-28 21:03:01.684] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-28 21:03:01.684] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-28 21:03:01.685] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:01.686] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-28 21:03:01.686] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-28 21:03:01.686] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-28 21:03:01.686] [agentsdeleter] [controller] [info] [] AGENTS:%!(EXTRA *[]modelUtils.Agents=&[{996008814335 113771 0 {true }} {104 5543 26650.98 {true }} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {true }}])
+[2024-07-28 21:03:01.687] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-28 21:03:01.687] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:02.443] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.0179ms
+[2024-07-28 21:03:02.444] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-28 21:03:02.444] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5543
+[2024-07-28 21:03:02.444] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:03.210] [agentsdeleter] [database] [info] [] the query in the database tooks: 766.093ms
+[2024-07-28 21:03:03.211] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CFO000 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:03.211] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1123, and tenant_oid=1123%!(EXTRA int=4)
+[2024-07-28 21:03:03.904] [agentsdeleter] [database] [info] [] User MMS_CFO000 is a parent and cannot be deleted
+[2024-07-28 21:03:03.904] [agentsdeleter] [database] [info] [] the query in the database tooks: 693.5758ms
+[2024-07-28 21:03:03.904] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CamanaKiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:03:03.905] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1157, and tenant_oid=1157%!(EXTRA int=4)
+[2024-07-28 21:03:04.600] [agentsdeleter] [database] [info] [] User mms_CamanaKiosk is a parent and cannot be deleted
+[2024-07-28 21:03:04.602] [agentsdeleter] [database] [info] [] the query in the database tooks: 696.9102ms
+[2024-07-28 21:03:04.603] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_DIG006 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:04.603] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1127, and tenant_oid=1127%!(EXTRA int=4)
+[2024-07-28 21:03:05.318] [agentsdeleter] [database] [info] [] User MMS_DIG006 is not a parent and can be deleted
+[2024-07-28 21:03:05.318] [agentsdeleter] [database] [info] [] the query in the database tooks: 715.0516ms
+[2024-07-28 21:03:05.318] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CBBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:03:05.318] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1122, and tenant_oid=1122%!(EXTRA int=4)
+[2024-07-28 21:03:06.053] [agentsdeleter] [database] [info] [] User MMS_CBBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:03:06.053] [agentsdeleter] [database] [info] [] the query in the database tooks: 734.7761ms
+[2024-07-28 21:03:06.053] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CSbillpaykiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:03:06.053] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1156, and tenant_oid=1156%!(EXTRA int=4)
+[2024-07-28 21:03:06.827] [agentsdeleter] [database] [info] [] User mms_CSbillpaykiosk is not a parent and can be deleted
+[2024-07-28 21:03:06.827] [agentsdeleter] [database] [info] [] the query in the database tooks: 773.3133ms
+[2024-07-28 21:03:06.827] [agentsdeleter] [database] [trace] [] starting to check if the user mms_WFbillpaykiosk2 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:06.827] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1160, and tenant_oid=1160%!(EXTRA int=4)
+[2024-07-28 21:03:07.525] [agentsdeleter] [database] [info] [] User mms_WFbillpaykiosk2 is not a parent and can be deleted
+[2024-07-28 21:03:07.525] [agentsdeleter] [database] [info] [] the query in the database tooks: 697.9855ms
+[2024-07-28 21:03:07.526] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_HQBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:03:07.526] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1128, and tenant_oid=1128%!(EXTRA int=4)
+[2024-07-28 21:03:08.290] [agentsdeleter] [database] [info] [] User MMS_HQBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:03:08.290] [agentsdeleter] [database] [info] [] the query in the database tooks: 763.9779ms
+[2024-07-28 21:03:08.290] [agentsdeleter] [database] [trace] [] starting to check if the user mms_WFbillpaykiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:03:08.290] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1159, and tenant_oid=1159%!(EXTRA int=4)
+[2024-07-28 21:03:09.009] [agentsdeleter] [database] [info] [] User mms_WFbillpaykiosk is a parent and cannot be deleted
+[2024-07-28 21:03:09.010] [agentsdeleter] [database] [info] [] the query in the database tooks: 719.6359ms
+[2024-07-28 21:03:09.010] [agentsdeleter] [database] [trace] [] starting to check if the user mms_waterfrontkiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:03:09.010] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1161, and tenant_oid=1161%!(EXTRA int=4)
+[2024-07-28 21:03:09.772] [agentsdeleter] [database] [info] [] User mms_waterfrontkiosk is a parent and cannot be deleted
+[2024-07-28 21:03:09.772] [agentsdeleter] [database] [info] [] the query in the database tooks: 761.9942ms
+[2024-07-28 21:03:09.772] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CountrysideKiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:03:09.773] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1158, and tenant_oid=1158%!(EXTRA int=4)
+[2024-07-28 21:03:10.526] [agentsdeleter] [database] [info] [] User mms_CountrysideKiosk is a parent and cannot be deleted
+[2024-07-28 21:03:10.527] [agentsdeleter] [database] [info] [] the query in the database tooks: 753.993ms
+[2024-07-28 21:03:10.527] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CSBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:03:10.527] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1125, and tenant_oid=1125%!(EXTRA int=4)
+[2024-07-28 21:03:11.298] [agentsdeleter] [database] [info] [] User MMS_CSBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:03:11.298] [agentsdeleter] [database] [info] [] the query in the database tooks: 770.664ms
+[2024-07-28 21:03:11.298] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CTLS00 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:11.298] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1126, and tenant_oid=1126%!(EXTRA int=4)
+[2024-07-28 21:03:12.049] [agentsdeleter] [database] [info] [] User MMS_CTLS00 is a parent and cannot be deleted
+[2024-07-28 21:03:12.049] [agentsdeleter] [database] [info] [] the query in the database tooks: 750.5745ms
+[2024-07-28 21:03:12.049] [agentsdeleter] [database] [trace] [] starting to check if the user ssuberan can be deleted :%!v(MISSING)
+[2024-07-28 21:03:12.049] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1178, and tenant_oid=1178%!(EXTRA int=4)
+[2024-07-28 21:03:12.977] [agentsdeleter] [database] [info] [] User ssuberan is not a parent and can be deleted
+[2024-07-28 21:03:12.977] [agentsdeleter] [database] [info] [] the query in the database tooks: 928.4161ms
+[2024-07-28 21:03:12.977] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CAYB000 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:12.977] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1101, and tenant_oid=1101%!(EXTRA int=4)
+[2024-07-28 21:03:13.749] [agentsdeleter] [database] [info] [] User MMS_CAYB000 is a parent and cannot be deleted
+[2024-07-28 21:03:13.749] [agentsdeleter] [database] [info] [] the query in the database tooks: 772.0919ms
+[2024-07-28 21:03:13.749] [agentsdeleter] [database] [trace] [] starting to check if the user mmartin can be deleted :%!v(MISSING)
+[2024-07-28 21:03:13.750] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1154, and tenant_oid=1154%!(EXTRA int=4)
+[2024-07-28 21:03:14.473] [agentsdeleter] [database] [info] [] User mmartin is not a parent and can be deleted
+[2024-07-28 21:03:14.473] [agentsdeleter] [database] [info] [] the query in the database tooks: 722.7973ms
+[2024-07-28 21:03:14.473] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CRP000 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:14.473] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1124, and tenant_oid=1124%!(EXTRA int=4)
+[2024-07-28 21:03:15.225] [agentsdeleter] [database] [info] [] User MMS_CRP000 is a parent and cannot be deleted
+[2024-07-28 21:03:15.226] [agentsdeleter] [database] [info] [] the query in the database tooks: 752.4438ms
+[2024-07-28 21:03:15.226] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_ALT000 can be deleted :%!v(MISSING)
+[2024-07-28 21:03:15.226] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1100, and tenant_oid=1100%!(EXTRA int=4)
+[2024-07-28 21:03:15.927] [agentsdeleter] [database] [info] [] User MMS_ALT000 is a parent and cannot be deleted
+[2024-07-28 21:03:15.927] [agentsdeleter] [database] [info] [] the query in the database tooks: 700.8386ms
+[2024-07-28 21:03:15.927] [agentsdeleter] [controller] [trace] [] the agent with id 104 has 17 users
+[2024-07-28 21:03:15.928] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :4788
+[2024-07-28 21:03:15.928] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:16.683] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.1808ms
+[2024-07-28 21:03:16.685] [agentsdeleter] [controller] [trace] [] the agent with id 996008814232 has 0 users
+[2024-07-28 21:03:16.685] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5554
+[2024-07-28 21:03:16.685] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:17.409] [agentsdeleter] [database] [info] [] the query in the database tooks: 724.6185ms
+[2024-07-28 21:03:17.410] [agentsdeleter] [controller] [trace] [] the agent with id 162 has 0 users
+[2024-07-28 21:03:17.410] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5531
+[2024-07-28 21:03:17.410] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:18.149] [agentsdeleter] [database] [info] [] the query in the database tooks: 738.971ms
+[2024-07-28 21:03:18.150] [agentsdeleter] [database] [trace] [] starting to check if the user rbrown_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:18.150] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1164, and tenant_oid=1164%!(EXTRA int=4)
+[2024-07-28 21:03:18.906] [agentsdeleter] [database] [info] [] User rbrown_KY is a parent and cannot be deleted
+[2024-07-28 21:03:18.907] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.5523ms
+[2024-07-28 21:03:18.908] [agentsdeleter] [database] [trace] [] starting to check if the user kburke_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:18.908] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1150, and tenant_oid=1150%!(EXTRA int=4)
+[2024-07-28 21:03:19.596] [agentsdeleter] [database] [info] [] User kburke_KY is a parent and cannot be deleted
+[2024-07-28 21:03:19.596] [agentsdeleter] [database] [info] [] the query in the database tooks: 688.8805ms
+[2024-07-28 21:03:19.596] [agentsdeleter] [database] [trace] [] starting to check if the user sjackson can be deleted :%!v(MISSING)
+[2024-07-28 21:03:19.596] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1170, and tenant_oid=1170%!(EXTRA int=4)
+[2024-07-28 21:03:20.352] [agentsdeleter] [database] [info] [] User sjackson is not a parent and can be deleted
+[2024-07-28 21:03:20.352] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.1795ms
+[2024-07-28 21:03:20.352] [agentsdeleter] [database] [trace] [] starting to check if the user tthomas_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:20.352] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1183, and tenant_oid=1183%!(EXTRA int=4)
+[2024-07-28 21:03:21.080] [agentsdeleter] [database] [info] [] User tthomas_KY is a parent and cannot be deleted
+[2024-07-28 21:03:21.081] [agentsdeleter] [database] [info] [] the query in the database tooks: 728.5437ms
+[2024-07-28 21:03:21.081] [agentsdeleter] [database] [trace] [] starting to check if the user JAWhitehorne_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:21.081] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1098, and tenant_oid=1098%!(EXTRA int=4)
+[2024-07-28 21:03:21.798] [agentsdeleter] [database] [info] [] User JAWhitehorne_KY is a parent and cannot be deleted
+[2024-07-28 21:03:21.799] [agentsdeleter] [database] [info] [] the query in the database tooks: 717.5125ms
+[2024-07-28 21:03:21.799] [agentsdeleter] [database] [trace] [] starting to check if the user lbramwell_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:21.799] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1152, and tenant_oid=1152%!(EXTRA int=4)
+[2024-07-28 21:03:22.555] [agentsdeleter] [database] [info] [] User lbramwell_KY is a parent and cannot be deleted
+[2024-07-28 21:03:22.555] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.6508ms
+[2024-07-28 21:03:22.555] [agentsdeleter] [database] [trace] [] starting to check if the user mdrivas can be deleted :%!v(MISSING)
+[2024-07-28 21:03:22.555] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1153, and tenant_oid=1153%!(EXTRA int=4)
+[2024-07-28 21:03:23.289] [agentsdeleter] [database] [info] [] User mdrivas is not a parent and can be deleted
+[2024-07-28 21:03:23.289] [agentsdeleter] [database] [info] [] the query in the database tooks: 733.4967ms
+[2024-07-28 21:03:23.289] [agentsdeleter] [database] [trace] [] starting to check if the user slewis_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:23.289] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1172, and tenant_oid=1172%!(EXTRA int=4)
+[2024-07-28 21:03:24.057] [agentsdeleter] [database] [info] [] User slewis_KY is a parent and cannot be deleted
+[2024-07-28 21:03:24.058] [agentsdeleter] [database] [info] [] the query in the database tooks: 768.5503ms
+[2024-07-28 21:03:24.058] [agentsdeleter] [database] [trace] [] starting to check if the user swong_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:24.058] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1179, and tenant_oid=1179%!(EXTRA int=4)
+[2024-07-28 21:03:24.796] [agentsdeleter] [database] [info] [] User swong_KY is a parent and cannot be deleted
+[2024-07-28 21:03:24.797] [agentsdeleter] [database] [info] [] the query in the database tooks: 738.7231ms
+[2024-07-28 21:03:24.797] [agentsdeleter] [database] [trace] [] starting to check if the user rcorreia_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:24.797] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1165, and tenant_oid=1165%!(EXTRA int=4)
+[2024-07-28 21:03:25.542] [agentsdeleter] [database] [info] [] User rcorreia_KY is a parent and cannot be deleted
+[2024-07-28 21:03:25.543] [agentsdeleter] [database] [info] [] the query in the database tooks: 745.9541ms
+[2024-07-28 21:03:25.543] [agentsdeleter] [database] [trace] [] starting to check if the user GroupCAY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:25.544] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1095, and tenant_oid=1095%!(EXTRA int=4)
+[2024-07-28 21:03:26.300] [agentsdeleter] [database] [info] [] User GroupCAY is a parent and cannot be deleted
+[2024-07-28 21:03:26.300] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.7265ms
+[2024-07-28 21:03:26.300] [agentsdeleter] [database] [trace] [] starting to check if the user doconnor can be deleted :%!v(MISSING)
+[2024-07-28 21:03:26.301] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1143, and tenant_oid=1143%!(EXTRA int=4)
+[2024-07-28 21:03:27.004] [agentsdeleter] [database] [info] [] User doconnor is a parent and cannot be deleted
+[2024-07-28 21:03:27.005] [agentsdeleter] [database] [info] [] the query in the database tooks: 704.3503ms
+[2024-07-28 21:03:27.005] [agentsdeleter] [database] [trace] [] starting to check if the user slouisy_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:27.006] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1173, and tenant_oid=1173%!(EXTRA int=4)
+[2024-07-28 21:03:27.861] [agentsdeleter] [database] [info] [] User slouisy_KY is a parent and cannot be deleted
+[2024-07-28 21:03:27.861] [agentsdeleter] [database] [info] [] the query in the database tooks: 855.3117ms
+[2024-07-28 21:03:27.862] [agentsdeleter] [database] [trace] [] starting to check if the user mwilliams can be deleted :%!v(MISSING)
+[2024-07-28 21:03:27.862] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1162, and tenant_oid=1162%!(EXTRA int=4)
+[2024-07-28 21:03:28.598] [agentsdeleter] [database] [info] [] User mwilliams is not a parent and can be deleted
+[2024-07-28 21:03:28.598] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.6148ms
+[2024-07-28 21:03:28.599] [agentsdeleter] [database] [trace] [] starting to check if the user jdavies can be deleted :%!v(MISSING)
+[2024-07-28 21:03:28.599] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1148, and tenant_oid=1148%!(EXTRA int=4)
+[2024-07-28 21:03:29.379] [agentsdeleter] [database] [info] [] User jdavies is not a parent and can be deleted
+[2024-07-28 21:03:29.379] [agentsdeleter] [database] [info] [] the query in the database tooks: 780.2724ms
+[2024-07-28 21:03:29.380] [agentsdeleter] [database] [trace] [] starting to check if the user sroberts_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:29.380] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1175, and tenant_oid=1175%!(EXTRA int=4)
+[2024-07-28 21:03:30.103] [agentsdeleter] [database] [info] [] User sroberts_KY is a parent and cannot be deleted
+[2024-07-28 21:03:30.104] [agentsdeleter] [database] [info] [] the query in the database tooks: 724.1875ms
+[2024-07-28 21:03:30.104] [agentsdeleter] [database] [trace] [] starting to check if the user earthurs can be deleted :%!v(MISSING)
+[2024-07-28 21:03:30.104] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1145, and tenant_oid=1145%!(EXTRA int=4)
+[2024-07-28 21:03:30.834] [agentsdeleter] [database] [info] [] User earthurs is a parent and cannot be deleted
+[2024-07-28 21:03:30.834] [agentsdeleter] [database] [info] [] the query in the database tooks: 730.0002ms
+[2024-07-28 21:03:30.834] [agentsdeleter] [database] [trace] [] starting to check if the user ccportal_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:30.835] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1139, and tenant_oid=1139%!(EXTRA int=4)
+[2024-07-28 21:03:31.582] [agentsdeleter] [database] [info] [] User ccportal_KY is not a parent and can be deleted
+[2024-07-28 21:03:31.582] [agentsdeleter] [database] [info] [] the query in the database tooks: 747.3934ms
+[2024-07-28 21:03:31.582] [agentsdeleter] [database] [trace] [] starting to check if the user dwilson can be deleted :%!v(MISSING)
+[2024-07-28 21:03:31.583] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1144, and tenant_oid=1144%!(EXTRA int=4)
+[2024-07-28 21:03:32.298] [agentsdeleter] [database] [info] [] User dwilson is not a parent and can be deleted
+[2024-07-28 21:03:32.298] [agentsdeleter] [database] [info] [] the query in the database tooks: 715.7352ms
+[2024-07-28 21:03:32.299] [agentsdeleter] [database] [trace] [] starting to check if the user jpierre can be deleted :%!v(MISSING)
+[2024-07-28 21:03:32.299] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=14920, and tenant_oid=14920%!(EXTRA int=4)
+[2024-07-28 21:03:33.044] [agentsdeleter] [database] [info] [] User jpierre is not a parent and can be deleted
+[2024-07-28 21:03:33.044] [agentsdeleter] [database] [info] [] the query in the database tooks: 745.4094ms
+[2024-07-28 21:03:33.045] [agentsdeleter] [database] [trace] [] starting to check if the user GTM_CAY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:33.045] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=21205, and tenant_oid=21205%!(EXTRA int=4)
+[2024-07-28 21:03:33.760] [agentsdeleter] [database] [info] [] User GTM_CAY is not a parent and can be deleted
+[2024-07-28 21:03:33.761] [agentsdeleter] [database] [info] [] the query in the database tooks: 716.0523ms
+[2024-07-28 21:03:33.761] [agentsdeleter] [database] [trace] [] starting to check if the user cpearson_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:33.761] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20557, and tenant_oid=20557%!(EXTRA int=4)
+[2024-07-28 21:03:34.548] [agentsdeleter] [database] [info] [] User cpearson_KY is not a parent and can be deleted
+[2024-07-28 21:03:34.548] [agentsdeleter] [database] [info] [] the query in the database tooks: 787.3726ms
+[2024-07-28 21:03:34.549] [agentsdeleter] [database] [trace] [] starting to check if the user karthikeyans_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:34.549] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20683, and tenant_oid=20683%!(EXTRA int=4)
+[2024-07-28 21:03:35.248] [agentsdeleter] [database] [info] [] User karthikeyans_KY is not a parent and can be deleted
+[2024-07-28 21:03:35.250] [agentsdeleter] [database] [info] [] the query in the database tooks: 700.4631ms
+[2024-07-28 21:03:35.250] [agentsdeleter] [database] [trace] [] starting to check if the user sbalakrishnan_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:35.250] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20684, and tenant_oid=20684%!(EXTRA int=4)
+[2024-07-28 21:03:35.970] [agentsdeleter] [database] [info] [] User sbalakrishnan_KY is not a parent and can be deleted
+[2024-07-28 21:03:35.970] [agentsdeleter] [database] [info] [] the query in the database tooks: 719.8885ms
+[2024-07-28 21:03:35.971] [agentsdeleter] [database] [trace] [] starting to check if the user CCardoza_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:35.971] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23937, and tenant_oid=23937%!(EXTRA int=4)
+[2024-07-28 21:03:36.720] [agentsdeleter] [database] [info] [] User CCardoza_KY is not a parent and can be deleted
+[2024-07-28 21:03:36.720] [agentsdeleter] [database] [info] [] the query in the database tooks: 749.3525ms
+[2024-07-28 21:03:36.721] [agentsdeleter] [database] [trace] [] starting to check if the user kwhite_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:36.721] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=26728, and tenant_oid=26728%!(EXTRA int=4)
+[2024-07-28 21:03:37.459] [agentsdeleter] [database] [info] [] User kwhite_KY is not a parent and can be deleted
+[2024-07-28 21:03:37.459] [agentsdeleter] [database] [info] [] the query in the database tooks: 737.8741ms
+[2024-07-28 21:03:37.459] [agentsdeleter] [database] [trace] [] starting to check if the user Clfrancis_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:37.459] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23901, and tenant_oid=23901%!(EXTRA int=4)
+[2024-07-28 21:03:38.195] [agentsdeleter] [database] [info] [] User Clfrancis_KY is not a parent and can be deleted
+[2024-07-28 21:03:38.195] [agentsdeleter] [database] [info] [] the query in the database tooks: 735.4908ms
+[2024-07-28 21:03:38.195] [agentsdeleter] [database] [trace] [] starting to check if the user FHenry_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:38.195] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23942, and tenant_oid=23942%!(EXTRA int=4)
+[2024-07-28 21:03:38.923] [agentsdeleter] [database] [info] [] User FHenry_KY is not a parent and can be deleted
+[2024-07-28 21:03:38.923] [agentsdeleter] [database] [info] [] the query in the database tooks: 727.7209ms
+[2024-07-28 21:03:38.923] [agentsdeleter] [database] [trace] [] starting to check if the user admin_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:38.923] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1131, and tenant_oid=1131%!(EXTRA int=4)
+[2024-07-28 21:03:39.663] [agentsdeleter] [database] [info] [] User admin_KY is a parent and cannot be deleted
+[2024-07-28 21:03:39.664] [agentsdeleter] [database] [info] [] the query in the database tooks: 740.6137ms
+[2024-07-28 21:03:39.664] [agentsdeleter] [database] [trace] [] starting to check if the user ABonilla_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:39.664] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23939, and tenant_oid=23939%!(EXTRA int=4)
+[2024-07-28 21:03:40.394] [agentsdeleter] [database] [info] [] User ABonilla_KY is not a parent and can be deleted
+[2024-07-28 21:03:40.394] [agentsdeleter] [database] [info] [] the query in the database tooks: 729.6499ms
+[2024-07-28 21:03:40.394] [agentsdeleter] [database] [trace] [] starting to check if the user ALopez_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:03:40.394] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23940, and tenant_oid=23940%!(EXTRA int=4)
+[2024-07-28 21:03:41.103] [agentsdeleter] [database] [info] [] User ALopez_KY is not a parent and can be deleted
+[2024-07-28 21:03:41.103] [agentsdeleter] [database] [info] [] the query in the database tooks: 708.7703ms
+[2024-07-28 21:03:41.103] [agentsdeleter] [database] [trace] [] starting to check if the user ahewitt can be deleted :%!v(MISSING)
+[2024-07-28 21:03:41.103] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1132, and tenant_oid=1132%!(EXTRA int=4)
+[2024-07-28 21:03:41.841] [agentsdeleter] [database] [info] [] User ahewitt is not a parent and can be deleted
+[2024-07-28 21:03:41.841] [agentsdeleter] [database] [info] [] the query in the database tooks: 737.0802ms
+[2024-07-28 21:03:41.841] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 32 users
+[2024-07-28 21:03:41.843] [agentsdeleter] [controller] [info] [] usuarios : [{1123 MMS_CFO000 5543 {false User MMS_CFO000 is a parent and cannot be deleted}} {1157 mms_CamanaKiosk 5543 {false User mms_CamanaKiosk is a parent and cannot be deleted}} {1127 MMS_DIG006 5543 {true User MMS_DIG006 is not a parent and can be deleted}} {1122 MMS_CBBILLPAYKIOSK 5543 {true User MMS_CBBILLPAYKIOSK is not a parent and can be deleted}} {1156 mms_CSbillpaykiosk 5543 {true User mms_CSbillpaykiosk is not a parent and can be deleted}} {1160 mms_WFbillpaykiosk2 5543 {true User mms_WFbillpaykiosk2 is not a parent and can be deleted}} {1128 MMS_HQBILLPAYKIOSK 5543 {true User MMS_HQBILLPAYKIOSK is not a parent and can be deleted}} {1159 mms_WFbillpaykiosk 5543 {false User mms_WFbillpaykiosk is a parent and cannot be deleted}} {1161 mms_waterfrontkiosk 5543 {false User mms_waterfrontkiosk is a parent and cannot be deleted}} {1158 mms_CountrysideKiosk 5543 {false User mms_CountrysideKiosk is a parent and cannot be deleted}} {1125 MMS_CSBILLPAYKIOSK 5543 {true User MMS_CSBILLPAYKIOSK is not a parent and can be deleted}} {1126 MMS_CTLS00 5543 {false User MMS_CTLS00 is a parent and cannot be deleted}} {1178 ssuberan 5543 {true User ssuberan is not a parent and can be deleted}} {1101 MMS_CAYB000 5543 {false User MMS_CAYB000 is a parent and cannot be deleted}} {1154 mmartin 5543 {true User mmartin is not a parent and can be deleted}} {1124 MMS_CRP000 5543 {false User MMS_CRP000 is a parent and cannot be deleted}} {1100 MMS_ALT000 5543 {false User MMS_ALT000 is a parent and cannot be deleted}} {1164 rbrown_KY 5531 {false User rbrown_KY is a parent and cannot be deleted}} {1150 kburke_KY 5531 {false User kburke_KY is a parent and cannot be deleted}} {1170 sjackson 5531 {true User sjackson is not a parent and can be deleted}} {1183 tthomas_KY 5531 {false User tthomas_KY is a parent and cannot be deleted}} {1098 JAWhitehorne_KY 5531 {false User JAWhitehorne_KY is a parent and cannot be deleted}} {1152 lbramwell_KY 5531 {false User lbramwell_KY is a parent and cannot be deleted}} {1153 mdrivas 5531 {true User mdrivas is not a parent and can be deleted}} {1172 slewis_KY 5531 {false User slewis_KY is a parent and cannot be deleted}} {1179 swong_KY 5531 {false User swong_KY is a parent and cannot be deleted}} {1165 rcorreia_KY 5531 {false User rcorreia_KY is a parent and cannot be deleted}} {1095 GroupCAY 5531 {false User GroupCAY is a parent and cannot be deleted}} {1143 doconnor 5531 {false User doconnor is a parent and cannot be deleted}} {1173 slouisy_KY 5531 {false User slouisy_KY is a parent and cannot be deleted}} {1162 mwilliams 5531 {true User mwilliams is not a parent and can be deleted}} {1148 jdavies 5531 {true User jdavies is not a parent and can be deleted}} {1175 sroberts_KY 5531 {false User sroberts_KY is a parent and cannot be deleted}} {1145 earthurs 5531 {false User earthurs is a parent and cannot be deleted}} {1139 ccportal_KY 5531 {true User ccportal_KY is not a parent and can be deleted}} {1144 dwilson 5531 {true User dwilson is not a parent and can be deleted}} {14920 jpierre 5531 {true User jpierre is not a parent and can be deleted}} {21205 GTM_CAY 5531 {true User GTM_CAY is not a parent and can be deleted}} {20557 cpearson_KY 5531 {true User cpearson_KY is not a parent and can be deleted}} {20683 karthikeyans_KY 5531 {true User karthikeyans_KY is not a parent and can be deleted}} {20684 sbalakrishnan_KY 5531 {true User sbalakrishnan_KY is not a parent and can be deleted}} {23937 CCardoza_KY 5531 {true User CCardoza_KY is not a parent and can be deleted}} {26728 kwhite_KY 5531 {true User kwhite_KY is not a parent and can be deleted}} {23901 Clfrancis_KY 5531 {true User Clfrancis_KY is not a parent and can be deleted}} {23942 FHenry_KY 5531 {true User FHenry_KY is not a parent and can be deleted}} {1131 admin_KY 5531 {false User admin_KY is a parent and cannot be deleted}} {23939 ABonilla_KY 5531 {true User ABonilla_KY is not a parent and can be deleted}} {23940 ALopez_KY 5531 {true User ALopez_KY is not a parent and can be deleted}} {1132 ahewitt 5531 {true User ahewitt is not a parent and can be deleted}}] agentes &[{996008814335 113771 0 {true }} {104 5543 26650.98 {false agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted. User mms_CamanaKiosk is a parent and cannot be deleted. User mms_WFbillpaykiosk is a parent and cannot be deleted. User mms_waterfrontkiosk is a parent and cannot be deleted. User mms_CountrysideKiosk is a parent and cannot be deleted. User MMS_CTLS00 is a parent and cannot be deleted. User MMS_CAYB000 is a parent and cannot be deleted. User MMS_CRP000 is a parent and cannot be deleted. User MMS_ALT000 is a parent and cannot be deleted.}} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {false agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User tthomas_KY is a parent and cannot be deleted. User JAWhitehorne_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User slewis_KY is a parent and cannot be deleted. User swong_KY is a parent and cannot be deleted. User rcorreia_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User sroberts_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted.}}]
+[2024-07-28 21:03:41.845] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table old_password
+[2024-07-28 21:03:41.846] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:03:41.847] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:41.848] [agentsdeleter] [controller] [info] [] query to delete users_old_password was created and writed
+[2024-07-28 21:03:41.848] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table client_user
+[2024-07-28 21:03:41.848] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:03:41.849] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:41.850] [agentsdeleter] [controller] [info] [] query to delete ClientUser was created and writed
+[2024-07-28 21:03:41.850] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table user_adm
+[2024-07-28 21:03:41.850] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:03:41.851] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:41.852] [agentsdeleter] [controller] [info] [] query to delete user_adm was created and writed
+[2024-07-28 21:03:41.852] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-28 21:03:41.852] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-28 21:03:41.852] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-28 21:03:41.852] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-28 21:03:41.852] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-28 21:03:41.852] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:42.643] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-28 21:03:42.643] [agentsdeleter] [database] [info] [] the query in the database tooks: 791.0593ms
+[2024-07-28 21:03:42.643] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 104 is a parent 
+[2024-07-28 21:03:42.644] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:43.392] [agentsdeleter] [database] [info] [] Agent 5543 is not a parent and can be deleted
+[2024-07-28 21:03:43.392] [agentsdeleter] [database] [info] [] the query in the database tooks: 747.1055ms
+[2024-07-28 21:03:43.392] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814232 is a parent 
+[2024-07-28 21:03:43.392] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:44.156] [agentsdeleter] [database] [info] [] Agent 4788 is not a parent and can be deleted
+[2024-07-28 21:03:44.156] [agentsdeleter] [database] [info] [] the query in the database tooks: 763.6896ms
+[2024-07-28 21:03:44.156] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 162 is a parent 
+[2024-07-28 21:03:44.156] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:44.924] [agentsdeleter] [database] [info] [] Agent 5554 is not a parent and can be deleted
+[2024-07-28 21:03:44.924] [agentsdeleter] [database] [info] [] the query in the database tooks: 767.628ms
+[2024-07-28 21:03:44.924] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 0 is a parent 
+[2024-07-28 21:03:44.924] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:03:45.666] [agentsdeleter] [database] [info] [] Agent 5531 is a parent and cannot be deleted
+[2024-07-28 21:03:45.667] [agentsdeleter] [database] [info] [] the query in the database tooks: 742.8688ms
+[2024-07-28 21:03:45.667] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-28 21:03:45.667] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-28 21:03:45.668] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-28 21:03:45.674] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.676] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.676] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.678] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.678] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.679] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.680] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.681] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.681] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.683] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.683] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.684] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.684] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.686] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.686] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.687] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.687] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:03:45.688] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.689] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-28 21:03:45.689] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-28 21:03:45.690] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:03:45.690] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-28 21:03:45.690] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 47.717016s
+[2024-07-28 21:05:49.104] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-28 21:05:49.104] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-28 21:05:50.018] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-28 21:05:50.018] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-28 21:05:50.021] [agentsdeleter] [main] [info] [] number of agents are 5
+[2024-07-28 21:05:50.021] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-28 21:05:50.022] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-28 21:05:50.023] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-28 21:05:50.023] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-28 21:05:50.766] [agentsdeleter] [database] [info] [] the query in the database tooks: 742.8374ms
+[2024-07-28 21:05:50.766] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-28 21:05:50.766] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :104
+[2024-07-28 21:05:50.766] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=104, and tenant_oid=4
+[2024-07-28 21:05:51.500] [agentsdeleter] [database] [info] [] the query in the database tooks: 734.3803ms
+[2024-07-28 21:05:51.500] [agentsdeleter] [controller] [trace] [] the agent with id 104 has 1 moviles
+[2024-07-28 21:05:51.502] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814232
+[2024-07-28 21:05:51.502] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814232, and tenant_oid=4
+[2024-07-28 21:05:52.239] [agentsdeleter] [database] [info] [] the query in the database tooks: 737.747ms
+[2024-07-28 21:05:52.239] [agentsdeleter] [controller] [trace] [] the agent with id 996008814232 has 1 moviles
+[2024-07-28 21:05:52.240] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :162
+[2024-07-28 21:05:52.240] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=162, and tenant_oid=4
+[2024-07-28 21:05:53.006] [agentsdeleter] [database] [info] [] the query in the database tooks: 766.3321ms
+[2024-07-28 21:05:53.006] [agentsdeleter] [controller] [trace] [] the agent with id 162 has 1 moviles
+[2024-07-28 21:05:53.006] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :0
+[2024-07-28 21:05:53.007] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=0, and tenant_oid=4
+[2024-07-28 21:05:53.754] [agentsdeleter] [database] [info] [] the query in the database tooks: 747.7927ms
+[2024-07-28 21:05:53.754] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 1 moviles
+[2024-07-28 21:05:53.755] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile_pin
+[2024-07-28 21:05:53.755] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-28 21:05:53.756] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:05:53.758] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-28 21:05:53.758] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table agent_mobile
+[2024-07-28 21:05:53.758] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-28 21:05:53.759] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:05:53.759] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-28 21:05:53.759] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-28 21:05:53.759] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-28 21:05:53.760] [agentsdeleter] [controller] [info] [] AGENTS:%!(EXTRA *[]modelUtils.Agents=&[{996008814335 113771 0 {true }} {104 5543 26650.98 {true }} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {true }}])
+[2024-07-28 21:05:53.760] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-28 21:05:53.760] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:05:54.514] [agentsdeleter] [database] [info] [] the query in the database tooks: 754.2046ms
+[2024-07-28 21:05:54.515] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-28 21:05:54.515] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5543
+[2024-07-28 21:05:54.515] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:05:55.252] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.9816ms
+[2024-07-28 21:05:55.253] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CFO000 can be deleted :%!v(MISSING)
+[2024-07-28 21:05:55.253] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1123, and tenant_oid=1123%!(EXTRA int=4)
+[2024-07-28 21:05:55.979] [agentsdeleter] [database] [info] [] User MMS_CFO000 is a parent and cannot be deleted
+[2024-07-28 21:05:55.979] [agentsdeleter] [database] [info] [] the query in the database tooks: 725.6041ms
+[2024-07-28 21:05:55.979] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CamanaKiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:05:55.979] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1157, and tenant_oid=1157%!(EXTRA int=4)
+[2024-07-28 21:05:56.733] [agentsdeleter] [database] [info] [] User mms_CamanaKiosk is a parent and cannot be deleted
+[2024-07-28 21:05:56.734] [agentsdeleter] [database] [info] [] the query in the database tooks: 754.9015ms
+[2024-07-28 21:05:56.734] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_DIG006 can be deleted :%!v(MISSING)
+[2024-07-28 21:05:56.735] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1127, and tenant_oid=1127%!(EXTRA int=4)
+[2024-07-28 21:05:57.480] [agentsdeleter] [database] [info] [] User MMS_DIG006 is not a parent and can be deleted
+[2024-07-28 21:05:57.481] [agentsdeleter] [database] [info] [] the query in the database tooks: 745.7086ms
+[2024-07-28 21:05:57.481] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CBBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:05:57.481] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1122, and tenant_oid=1122%!(EXTRA int=4)
+[2024-07-28 21:05:58.239] [agentsdeleter] [database] [info] [] User MMS_CBBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:05:58.239] [agentsdeleter] [database] [info] [] the query in the database tooks: 757.5115ms
+[2024-07-28 21:05:58.239] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CSbillpaykiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:05:58.239] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1156, and tenant_oid=1156%!(EXTRA int=4)
+[2024-07-28 21:05:58.995] [agentsdeleter] [database] [info] [] User mms_CSbillpaykiosk is not a parent and can be deleted
+[2024-07-28 21:05:58.995] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.6618ms
+[2024-07-28 21:05:58.996] [agentsdeleter] [database] [trace] [] starting to check if the user mms_WFbillpaykiosk2 can be deleted :%!v(MISSING)
+[2024-07-28 21:05:58.996] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1160, and tenant_oid=1160%!(EXTRA int=4)
+[2024-07-28 21:05:59.732] [agentsdeleter] [database] [info] [] User mms_WFbillpaykiosk2 is not a parent and can be deleted
+[2024-07-28 21:05:59.732] [agentsdeleter] [database] [info] [] the query in the database tooks: 735.9985ms
+[2024-07-28 21:05:59.732] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_HQBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:05:59.732] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1128, and tenant_oid=1128%!(EXTRA int=4)
+[2024-07-28 21:06:00.503] [agentsdeleter] [database] [info] [] User MMS_HQBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:06:00.503] [agentsdeleter] [database] [info] [] the query in the database tooks: 771.1507ms
+[2024-07-28 21:06:00.503] [agentsdeleter] [database] [trace] [] starting to check if the user mms_WFbillpaykiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:06:00.504] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1159, and tenant_oid=1159%!(EXTRA int=4)
+[2024-07-28 21:06:01.238] [agentsdeleter] [database] [info] [] User mms_WFbillpaykiosk is a parent and cannot be deleted
+[2024-07-28 21:06:01.238] [agentsdeleter] [database] [info] [] the query in the database tooks: 734.6671ms
+[2024-07-28 21:06:01.238] [agentsdeleter] [database] [trace] [] starting to check if the user mms_waterfrontkiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:06:01.238] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1161, and tenant_oid=1161%!(EXTRA int=4)
+[2024-07-28 21:06:01.992] [agentsdeleter] [database] [info] [] User mms_waterfrontkiosk is a parent and cannot be deleted
+[2024-07-28 21:06:01.993] [agentsdeleter] [database] [info] [] the query in the database tooks: 754.4772ms
+[2024-07-28 21:06:01.994] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CountrysideKiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:06:01.994] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1158, and tenant_oid=1158%!(EXTRA int=4)
+[2024-07-28 21:06:02.739] [agentsdeleter] [database] [info] [] User mms_CountrysideKiosk is a parent and cannot be deleted
+[2024-07-28 21:06:02.739] [agentsdeleter] [database] [info] [] the query in the database tooks: 745.6377ms
+[2024-07-28 21:06:02.739] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CSBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:06:02.740] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1125, and tenant_oid=1125%!(EXTRA int=4)
+[2024-07-28 21:06:03.490] [agentsdeleter] [database] [info] [] User MMS_CSBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:06:03.490] [agentsdeleter] [database] [info] [] the query in the database tooks: 749.8137ms
+[2024-07-28 21:06:03.490] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CTLS00 can be deleted :%!v(MISSING)
+[2024-07-28 21:06:03.490] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1126, and tenant_oid=1126%!(EXTRA int=4)
+[2024-07-28 21:06:04.231] [agentsdeleter] [database] [info] [] User MMS_CTLS00 is a parent and cannot be deleted
+[2024-07-28 21:06:04.232] [agentsdeleter] [database] [info] [] the query in the database tooks: 741.8874ms
+[2024-07-28 21:06:04.232] [agentsdeleter] [database] [trace] [] starting to check if the user ssuberan can be deleted :%!v(MISSING)
+[2024-07-28 21:06:04.232] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1178, and tenant_oid=1178%!(EXTRA int=4)
+[2024-07-28 21:06:05.105] [agentsdeleter] [database] [info] [] User ssuberan is not a parent and can be deleted
+[2024-07-28 21:06:05.105] [agentsdeleter] [database] [info] [] the query in the database tooks: 872.5223ms
+[2024-07-28 21:06:05.105] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CAYB000 can be deleted :%!v(MISSING)
+[2024-07-28 21:06:05.105] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1101, and tenant_oid=1101%!(EXTRA int=4)
+[2024-07-28 21:06:05.881] [agentsdeleter] [database] [info] [] User MMS_CAYB000 is a parent and cannot be deleted
+[2024-07-28 21:06:05.881] [agentsdeleter] [database] [info] [] the query in the database tooks: 775.9797ms
+[2024-07-28 21:06:05.881] [agentsdeleter] [database] [trace] [] starting to check if the user mmartin can be deleted :%!v(MISSING)
+[2024-07-28 21:06:05.882] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1154, and tenant_oid=1154%!(EXTRA int=4)
+[2024-07-28 21:06:06.643] [agentsdeleter] [database] [info] [] User mmartin is not a parent and can be deleted
+[2024-07-28 21:06:06.643] [agentsdeleter] [database] [info] [] the query in the database tooks: 761.3831ms
+[2024-07-28 21:06:06.644] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CRP000 can be deleted :%!v(MISSING)
+[2024-07-28 21:06:06.644] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1124, and tenant_oid=1124%!(EXTRA int=4)
+[2024-07-28 21:06:07.336] [agentsdeleter] [database] [info] [] User MMS_CRP000 is a parent and cannot be deleted
+[2024-07-28 21:06:07.336] [agentsdeleter] [database] [info] [] the query in the database tooks: 692.4002ms
+[2024-07-28 21:06:07.337] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_ALT000 can be deleted :%!v(MISSING)
+[2024-07-28 21:06:07.337] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1100, and tenant_oid=1100%!(EXTRA int=4)
+[2024-07-28 21:06:08.088] [agentsdeleter] [database] [info] [] User MMS_ALT000 is a parent and cannot be deleted
+[2024-07-28 21:06:08.089] [agentsdeleter] [database] [info] [] the query in the database tooks: 752.0634ms
+[2024-07-28 21:06:08.089] [agentsdeleter] [controller] [trace] [] the agent with id 104 has 17 users
+[2024-07-28 21:06:08.089] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :4788
+[2024-07-28 21:06:08.089] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:08.832] [agentsdeleter] [database] [info] [] the query in the database tooks: 742.5383ms
+[2024-07-28 21:06:08.832] [agentsdeleter] [controller] [trace] [] the agent with id 996008814232 has 0 users
+[2024-07-28 21:06:08.833] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5554
+[2024-07-28 21:06:08.833] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:09.588] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.4601ms
+[2024-07-28 21:06:09.588] [agentsdeleter] [controller] [trace] [] the agent with id 162 has 0 users
+[2024-07-28 21:06:09.588] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5531
+[2024-07-28 21:06:09.589] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:10.282] [agentsdeleter] [database] [info] [] the query in the database tooks: 693.3112ms
+[2024-07-28 21:06:10.283] [agentsdeleter] [database] [trace] [] starting to check if the user rbrown_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:10.283] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1164, and tenant_oid=1164%!(EXTRA int=4)
+[2024-07-28 21:06:11.051] [agentsdeleter] [database] [info] [] User rbrown_KY is a parent and cannot be deleted
+[2024-07-28 21:06:11.052] [agentsdeleter] [database] [info] [] the query in the database tooks: 769.1807ms
+[2024-07-28 21:06:11.052] [agentsdeleter] [database] [trace] [] starting to check if the user kburke_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:11.052] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1150, and tenant_oid=1150%!(EXTRA int=4)
+[2024-07-28 21:06:11.784] [agentsdeleter] [database] [info] [] User kburke_KY is a parent and cannot be deleted
+[2024-07-28 21:06:11.784] [agentsdeleter] [database] [info] [] the query in the database tooks: 731.6431ms
+[2024-07-28 21:06:11.784] [agentsdeleter] [database] [trace] [] starting to check if the user sjackson can be deleted :%!v(MISSING)
+[2024-07-28 21:06:11.784] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1170, and tenant_oid=1170%!(EXTRA int=4)
+[2024-07-28 21:06:12.486] [agentsdeleter] [database] [info] [] User sjackson is not a parent and can be deleted
+[2024-07-28 21:06:12.486] [agentsdeleter] [database] [info] [] the query in the database tooks: 701.9752ms
+[2024-07-28 21:06:12.486] [agentsdeleter] [database] [trace] [] starting to check if the user tthomas_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:12.487] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1183, and tenant_oid=1183%!(EXTRA int=4)
+[2024-07-28 21:06:13.209] [agentsdeleter] [database] [info] [] User tthomas_KY is a parent and cannot be deleted
+[2024-07-28 21:06:13.209] [agentsdeleter] [database] [info] [] the query in the database tooks: 722.5913ms
+[2024-07-28 21:06:13.209] [agentsdeleter] [database] [trace] [] starting to check if the user JAWhitehorne_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:13.210] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1098, and tenant_oid=1098%!(EXTRA int=4)
+[2024-07-28 21:06:13.951] [agentsdeleter] [database] [info] [] User JAWhitehorne_KY is a parent and cannot be deleted
+[2024-07-28 21:06:13.952] [agentsdeleter] [database] [info] [] the query in the database tooks: 742.17ms
+[2024-07-28 21:06:13.952] [agentsdeleter] [database] [trace] [] starting to check if the user lbramwell_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:13.952] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1152, and tenant_oid=1152%!(EXTRA int=4)
+[2024-07-28 21:06:14.703] [agentsdeleter] [database] [info] [] User lbramwell_KY is a parent and cannot be deleted
+[2024-07-28 21:06:14.703] [agentsdeleter] [database] [info] [] the query in the database tooks: 751.0017ms
+[2024-07-28 21:06:14.703] [agentsdeleter] [database] [trace] [] starting to check if the user mdrivas can be deleted :%!v(MISSING)
+[2024-07-28 21:06:14.704] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1153, and tenant_oid=1153%!(EXTRA int=4)
+[2024-07-28 21:06:15.461] [agentsdeleter] [database] [info] [] User mdrivas is not a parent and can be deleted
+[2024-07-28 21:06:15.461] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.813ms
+[2024-07-28 21:06:15.461] [agentsdeleter] [database] [trace] [] starting to check if the user slewis_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:15.461] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1172, and tenant_oid=1172%!(EXTRA int=4)
+[2024-07-28 21:06:16.246] [agentsdeleter] [database] [info] [] User slewis_KY is a parent and cannot be deleted
+[2024-07-28 21:06:16.247] [agentsdeleter] [database] [info] [] the query in the database tooks: 785.5482ms
+[2024-07-28 21:06:16.247] [agentsdeleter] [database] [trace] [] starting to check if the user swong_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:16.247] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1179, and tenant_oid=1179%!(EXTRA int=4)
+[2024-07-28 21:06:16.979] [agentsdeleter] [database] [info] [] User swong_KY is a parent and cannot be deleted
+[2024-07-28 21:06:16.980] [agentsdeleter] [database] [info] [] the query in the database tooks: 733.3393ms
+[2024-07-28 21:06:16.980] [agentsdeleter] [database] [trace] [] starting to check if the user rcorreia_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:16.980] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1165, and tenant_oid=1165%!(EXTRA int=4)
+[2024-07-28 21:06:17.717] [agentsdeleter] [database] [info] [] User rcorreia_KY is a parent and cannot be deleted
+[2024-07-28 21:06:17.717] [agentsdeleter] [database] [info] [] the query in the database tooks: 737.041ms
+[2024-07-28 21:06:17.717] [agentsdeleter] [database] [trace] [] starting to check if the user GroupCAY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:17.717] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1095, and tenant_oid=1095%!(EXTRA int=4)
+[2024-07-28 21:06:18.458] [agentsdeleter] [database] [info] [] User GroupCAY is a parent and cannot be deleted
+[2024-07-28 21:06:18.459] [agentsdeleter] [database] [info] [] the query in the database tooks: 741.5587ms
+[2024-07-28 21:06:18.459] [agentsdeleter] [database] [trace] [] starting to check if the user doconnor can be deleted :%!v(MISSING)
+[2024-07-28 21:06:18.459] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1143, and tenant_oid=1143%!(EXTRA int=4)
+[2024-07-28 21:06:19.153] [agentsdeleter] [database] [info] [] User doconnor is a parent and cannot be deleted
+[2024-07-28 21:06:19.154] [agentsdeleter] [database] [info] [] the query in the database tooks: 694.3815ms
+[2024-07-28 21:06:19.154] [agentsdeleter] [database] [trace] [] starting to check if the user slouisy_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:19.154] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1173, and tenant_oid=1173%!(EXTRA int=4)
+[2024-07-28 21:06:19.968] [agentsdeleter] [database] [info] [] User slouisy_KY is a parent and cannot be deleted
+[2024-07-28 21:06:19.969] [agentsdeleter] [database] [info] [] the query in the database tooks: 815.4284ms
+[2024-07-28 21:06:19.969] [agentsdeleter] [database] [trace] [] starting to check if the user mwilliams can be deleted :%!v(MISSING)
+[2024-07-28 21:06:19.969] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1162, and tenant_oid=1162%!(EXTRA int=4)
+[2024-07-28 21:06:20.695] [agentsdeleter] [database] [info] [] User mwilliams is not a parent and can be deleted
+[2024-07-28 21:06:20.695] [agentsdeleter] [database] [info] [] the query in the database tooks: 725.9791ms
+[2024-07-28 21:06:20.696] [agentsdeleter] [database] [trace] [] starting to check if the user jdavies can be deleted :%!v(MISSING)
+[2024-07-28 21:06:20.696] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1148, and tenant_oid=1148%!(EXTRA int=4)
+[2024-07-28 21:06:21.437] [agentsdeleter] [database] [info] [] User jdavies is not a parent and can be deleted
+[2024-07-28 21:06:21.437] [agentsdeleter] [database] [info] [] the query in the database tooks: 741.6999ms
+[2024-07-28 21:06:21.438] [agentsdeleter] [database] [trace] [] starting to check if the user sroberts_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:21.438] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1175, and tenant_oid=1175%!(EXTRA int=4)
+[2024-07-28 21:06:22.178] [agentsdeleter] [database] [info] [] User sroberts_KY is a parent and cannot be deleted
+[2024-07-28 21:06:22.179] [agentsdeleter] [database] [info] [] the query in the database tooks: 740.8358ms
+[2024-07-28 21:06:22.179] [agentsdeleter] [database] [trace] [] starting to check if the user earthurs can be deleted :%!v(MISSING)
+[2024-07-28 21:06:22.179] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1145, and tenant_oid=1145%!(EXTRA int=4)
+[2024-07-28 21:06:22.919] [agentsdeleter] [database] [info] [] User earthurs is a parent and cannot be deleted
+[2024-07-28 21:06:22.920] [agentsdeleter] [database] [info] [] the query in the database tooks: 740.5756ms
+[2024-07-28 21:06:22.920] [agentsdeleter] [database] [trace] [] starting to check if the user ccportal_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:22.920] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1139, and tenant_oid=1139%!(EXTRA int=4)
+[2024-07-28 21:06:23.704] [agentsdeleter] [database] [info] [] User ccportal_KY is not a parent and can be deleted
+[2024-07-28 21:06:23.704] [agentsdeleter] [database] [info] [] the query in the database tooks: 783.5379ms
+[2024-07-28 21:06:23.704] [agentsdeleter] [database] [trace] [] starting to check if the user dwilson can be deleted :%!v(MISSING)
+[2024-07-28 21:06:23.704] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1144, and tenant_oid=1144%!(EXTRA int=4)
+[2024-07-28 21:06:24.461] [agentsdeleter] [database] [info] [] User dwilson is not a parent and can be deleted
+[2024-07-28 21:06:24.461] [agentsdeleter] [database] [info] [] the query in the database tooks: 756.9027ms
+[2024-07-28 21:06:24.461] [agentsdeleter] [database] [trace] [] starting to check if the user jpierre can be deleted :%!v(MISSING)
+[2024-07-28 21:06:24.462] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=14920, and tenant_oid=14920%!(EXTRA int=4)
+[2024-07-28 21:06:25.169] [agentsdeleter] [database] [info] [] User jpierre is not a parent and can be deleted
+[2024-07-28 21:06:25.169] [agentsdeleter] [database] [info] [] the query in the database tooks: 707.0392ms
+[2024-07-28 21:06:25.169] [agentsdeleter] [database] [trace] [] starting to check if the user GTM_CAY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:25.169] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=21205, and tenant_oid=21205%!(EXTRA int=4)
+[2024-07-28 21:06:25.880] [agentsdeleter] [database] [info] [] User GTM_CAY is not a parent and can be deleted
+[2024-07-28 21:06:25.880] [agentsdeleter] [database] [info] [] the query in the database tooks: 710.3151ms
+[2024-07-28 21:06:25.881] [agentsdeleter] [database] [trace] [] starting to check if the user cpearson_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:25.881] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20557, and tenant_oid=20557%!(EXTRA int=4)
+[2024-07-28 21:06:26.643] [agentsdeleter] [database] [info] [] User cpearson_KY is not a parent and can be deleted
+[2024-07-28 21:06:26.643] [agentsdeleter] [database] [info] [] the query in the database tooks: 762.3483ms
+[2024-07-28 21:06:26.644] [agentsdeleter] [database] [trace] [] starting to check if the user karthikeyans_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:26.644] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20683, and tenant_oid=20683%!(EXTRA int=4)
+[2024-07-28 21:06:27.388] [agentsdeleter] [database] [info] [] User karthikeyans_KY is not a parent and can be deleted
+[2024-07-28 21:06:27.388] [agentsdeleter] [database] [info] [] the query in the database tooks: 744.2905ms
+[2024-07-28 21:06:27.389] [agentsdeleter] [database] [trace] [] starting to check if the user sbalakrishnan_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:27.389] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20684, and tenant_oid=20684%!(EXTRA int=4)
+[2024-07-28 21:06:28.149] [agentsdeleter] [database] [info] [] User sbalakrishnan_KY is not a parent and can be deleted
+[2024-07-28 21:06:28.149] [agentsdeleter] [database] [info] [] the query in the database tooks: 759.9308ms
+[2024-07-28 21:06:28.149] [agentsdeleter] [database] [trace] [] starting to check if the user CCardoza_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:28.149] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23937, and tenant_oid=23937%!(EXTRA int=4)
+[2024-07-28 21:06:28.867] [agentsdeleter] [database] [info] [] User CCardoza_KY is not a parent and can be deleted
+[2024-07-28 21:06:28.867] [agentsdeleter] [database] [info] [] the query in the database tooks: 717.4153ms
+[2024-07-28 21:06:28.867] [agentsdeleter] [database] [trace] [] starting to check if the user kwhite_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:28.867] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=26728, and tenant_oid=26728%!(EXTRA int=4)
+[2024-07-28 21:06:29.597] [agentsdeleter] [database] [info] [] User kwhite_KY is not a parent and can be deleted
+[2024-07-28 21:06:29.597] [agentsdeleter] [database] [info] [] the query in the database tooks: 729.9003ms
+[2024-07-28 21:06:29.597] [agentsdeleter] [database] [trace] [] starting to check if the user Clfrancis_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:29.598] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23901, and tenant_oid=23901%!(EXTRA int=4)
+[2024-07-28 21:06:30.333] [agentsdeleter] [database] [info] [] User Clfrancis_KY is not a parent and can be deleted
+[2024-07-28 21:06:30.333] [agentsdeleter] [database] [info] [] the query in the database tooks: 735.6871ms
+[2024-07-28 21:06:30.333] [agentsdeleter] [database] [trace] [] starting to check if the user FHenry_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:30.334] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23942, and tenant_oid=23942%!(EXTRA int=4)
+[2024-07-28 21:06:31.089] [agentsdeleter] [database] [info] [] User FHenry_KY is not a parent and can be deleted
+[2024-07-28 21:06:31.089] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.598ms
+[2024-07-28 21:06:31.090] [agentsdeleter] [database] [trace] [] starting to check if the user admin_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:31.090] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1131, and tenant_oid=1131%!(EXTRA int=4)
+[2024-07-28 21:06:31.862] [agentsdeleter] [database] [info] [] User admin_KY is a parent and cannot be deleted
+[2024-07-28 21:06:31.863] [agentsdeleter] [database] [info] [] the query in the database tooks: 772.6616ms
+[2024-07-28 21:06:31.863] [agentsdeleter] [database] [trace] [] starting to check if the user ABonilla_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:31.863] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23939, and tenant_oid=23939%!(EXTRA int=4)
+[2024-07-28 21:06:32.568] [agentsdeleter] [database] [info] [] User ABonilla_KY is not a parent and can be deleted
+[2024-07-28 21:06:32.568] [agentsdeleter] [database] [info] [] the query in the database tooks: 704.6579ms
+[2024-07-28 21:06:32.568] [agentsdeleter] [database] [trace] [] starting to check if the user ALopez_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:06:32.568] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23940, and tenant_oid=23940%!(EXTRA int=4)
+[2024-07-28 21:06:33.335] [agentsdeleter] [database] [info] [] User ALopez_KY is not a parent and can be deleted
+[2024-07-28 21:06:33.335] [agentsdeleter] [database] [info] [] the query in the database tooks: 766.3625ms
+[2024-07-28 21:06:33.335] [agentsdeleter] [database] [trace] [] starting to check if the user ahewitt can be deleted :%!v(MISSING)
+[2024-07-28 21:06:33.335] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1132, and tenant_oid=1132%!(EXTRA int=4)
+[2024-07-28 21:06:34.084] [agentsdeleter] [database] [info] [] User ahewitt is not a parent and can be deleted
+[2024-07-28 21:06:34.084] [agentsdeleter] [database] [info] [] the query in the database tooks: 749.4321ms
+[2024-07-28 21:06:34.085] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 32 users
+[2024-07-28 21:06:34.086] [agentsdeleter] [controller] [info] [] usuarios : [{1123 MMS_CFO000 5543 {false User MMS_CFO000 is a parent and cannot be deleted}} {1157 mms_CamanaKiosk 5543 {false User mms_CamanaKiosk is a parent and cannot be deleted}} {1127 MMS_DIG006 5543 {true User MMS_DIG006 is not a parent and can be deleted}} {1122 MMS_CBBILLPAYKIOSK 5543 {true User MMS_CBBILLPAYKIOSK is not a parent and can be deleted}} {1156 mms_CSbillpaykiosk 5543 {true User mms_CSbillpaykiosk is not a parent and can be deleted}} {1160 mms_WFbillpaykiosk2 5543 {true User mms_WFbillpaykiosk2 is not a parent and can be deleted}} {1128 MMS_HQBILLPAYKIOSK 5543 {true User MMS_HQBILLPAYKIOSK is not a parent and can be deleted}} {1159 mms_WFbillpaykiosk 5543 {false User mms_WFbillpaykiosk is a parent and cannot be deleted}} {1161 mms_waterfrontkiosk 5543 {false User mms_waterfrontkiosk is a parent and cannot be deleted}} {1158 mms_CountrysideKiosk 5543 {false User mms_CountrysideKiosk is a parent and cannot be deleted}} {1125 MMS_CSBILLPAYKIOSK 5543 {true User MMS_CSBILLPAYKIOSK is not a parent and can be deleted}} {1126 MMS_CTLS00 5543 {false User MMS_CTLS00 is a parent and cannot be deleted}} {1178 ssuberan 5543 {true User ssuberan is not a parent and can be deleted}} {1101 MMS_CAYB000 5543 {false User MMS_CAYB000 is a parent and cannot be deleted}} {1154 mmartin 5543 {true User mmartin is not a parent and can be deleted}} {1124 MMS_CRP000 5543 {false User MMS_CRP000 is a parent and cannot be deleted}} {1100 MMS_ALT000 5543 {false User MMS_ALT000 is a parent and cannot be deleted}} {1164 rbrown_KY 5531 {false User rbrown_KY is a parent and cannot be deleted}} {1150 kburke_KY 5531 {false User kburke_KY is a parent and cannot be deleted}} {1170 sjackson 5531 {true User sjackson is not a parent and can be deleted}} {1183 tthomas_KY 5531 {false User tthomas_KY is a parent and cannot be deleted}} {1098 JAWhitehorne_KY 5531 {false User JAWhitehorne_KY is a parent and cannot be deleted}} {1152 lbramwell_KY 5531 {false User lbramwell_KY is a parent and cannot be deleted}} {1153 mdrivas 5531 {true User mdrivas is not a parent and can be deleted}} {1172 slewis_KY 5531 {false User slewis_KY is a parent and cannot be deleted}} {1179 swong_KY 5531 {false User swong_KY is a parent and cannot be deleted}} {1165 rcorreia_KY 5531 {false User rcorreia_KY is a parent and cannot be deleted}} {1095 GroupCAY 5531 {false User GroupCAY is a parent and cannot be deleted}} {1143 doconnor 5531 {false User doconnor is a parent and cannot be deleted}} {1173 slouisy_KY 5531 {false User slouisy_KY is a parent and cannot be deleted}} {1162 mwilliams 5531 {true User mwilliams is not a parent and can be deleted}} {1148 jdavies 5531 {true User jdavies is not a parent and can be deleted}} {1175 sroberts_KY 5531 {false User sroberts_KY is a parent and cannot be deleted}} {1145 earthurs 5531 {false User earthurs is a parent and cannot be deleted}} {1139 ccportal_KY 5531 {true User ccportal_KY is not a parent and can be deleted}} {1144 dwilson 5531 {true User dwilson is not a parent and can be deleted}} {14920 jpierre 5531 {true User jpierre is not a parent and can be deleted}} {21205 GTM_CAY 5531 {true User GTM_CAY is not a parent and can be deleted}} {20557 cpearson_KY 5531 {true User cpearson_KY is not a parent and can be deleted}} {20683 karthikeyans_KY 5531 {true User karthikeyans_KY is not a parent and can be deleted}} {20684 sbalakrishnan_KY 5531 {true User sbalakrishnan_KY is not a parent and can be deleted}} {23937 CCardoza_KY 5531 {true User CCardoza_KY is not a parent and can be deleted}} {26728 kwhite_KY 5531 {true User kwhite_KY is not a parent and can be deleted}} {23901 Clfrancis_KY 5531 {true User Clfrancis_KY is not a parent and can be deleted}} {23942 FHenry_KY 5531 {true User FHenry_KY is not a parent and can be deleted}} {1131 admin_KY 5531 {false User admin_KY is a parent and cannot be deleted}} {23939 ABonilla_KY 5531 {true User ABonilla_KY is not a parent and can be deleted}} {23940 ALopez_KY 5531 {true User ALopez_KY is not a parent and can be deleted}} {1132 ahewitt 5531 {true User ahewitt is not a parent and can be deleted}}] agentes &[{996008814335 113771 0 {true }} {104 5543 26650.98 {false agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted. User mms_CamanaKiosk is a parent and cannot be deleted. User mms_WFbillpaykiosk is a parent and cannot be deleted. User mms_waterfrontkiosk is a parent and cannot be deleted. User mms_CountrysideKiosk is a parent and cannot be deleted. User MMS_CTLS00 is a parent and cannot be deleted. User MMS_CAYB000 is a parent and cannot be deleted. User MMS_CRP000 is a parent and cannot be deleted. User MMS_ALT000 is a parent and cannot be deleted.}} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {false agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User tthomas_KY is a parent and cannot be deleted. User JAWhitehorne_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User slewis_KY is a parent and cannot be deleted. User swong_KY is a parent and cannot be deleted. User rcorreia_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User sroberts_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted.}}]
+[2024-07-28 21:06:34.087] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table old_password
+[2024-07-28 21:06:34.088] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:06:34.089] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:34.089] [agentsdeleter] [controller] [info] [] query to delete users_old_password was created and writed
+[2024-07-28 21:06:34.089] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table client_user
+[2024-07-28 21:06:34.089] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:06:34.091] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:34.092] [agentsdeleter] [controller] [info] [] query to delete ClientUser was created and writed
+[2024-07-28 21:06:34.092] [agentsdeleter] [queryBuilder] [info] [] starting to create a query to delete data to the table user_adm
+[2024-07-28 21:06:34.092] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:06:34.093] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:34.093] [agentsdeleter] [controller] [info] [] query to delete user_adm was created and writed
+[2024-07-28 21:06:34.093] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-28 21:06:34.094] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-28 21:06:34.094] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-28 21:06:34.094] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-28 21:06:34.094] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-28 21:06:34.094] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:35.002] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-28 21:06:35.002] [agentsdeleter] [database] [info] [] the query in the database tooks: 908.2829ms
+[2024-07-28 21:06:35.002] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 104 is a parent 
+[2024-07-28 21:06:35.003] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:35.764] [agentsdeleter] [database] [info] [] Agent 5543 is not a parent and can be deleted
+[2024-07-28 21:06:35.764] [agentsdeleter] [database] [info] [] the query in the database tooks: 761.5751ms
+[2024-07-28 21:06:35.764] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814232 is a parent 
+[2024-07-28 21:06:35.765] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:36.518] [agentsdeleter] [database] [info] [] Agent 4788 is not a parent and can be deleted
+[2024-07-28 21:06:36.518] [agentsdeleter] [database] [info] [] the query in the database tooks: 752.9853ms
+[2024-07-28 21:06:36.518] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 162 is a parent 
+[2024-07-28 21:06:36.518] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:37.281] [agentsdeleter] [database] [info] [] Agent 5554 is not a parent and can be deleted
+[2024-07-28 21:06:37.281] [agentsdeleter] [database] [info] [] the query in the database tooks: 763.207ms
+[2024-07-28 21:06:37.282] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 0 is a parent 
+[2024-07-28 21:06:37.282] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:06:38.015] [agentsdeleter] [database] [info] [] Agent 5531 is a parent and cannot be deleted
+[2024-07-28 21:06:38.015] [agentsdeleter] [database] [info] [] the query in the database tooks: 733.3367ms
+[2024-07-28 21:06:38.016] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-28 21:06:38.016] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-28 21:06:38.016] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-28 21:06:38.016] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.017] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.018] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.019] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.019] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.020] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.020] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.022] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.022] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.023] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.023] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.024] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.025] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.026] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.026] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.027] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.028] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:06:38.028] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.029] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-28 21:06:38.029] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-28 21:06:38.030] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:06:38.031] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-28 21:06:38.031] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 48.0122431s
+[2024-07-28 21:09:14.049] [Gconfiguration] [] [info] [] ending to get the configuration
+[2024-07-28 21:09:14.049] [Gconfiguration] [] [trace] [] this is the data that we have in the configuration {"log_level":"trace","log_name":"agentsDeleted_","database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require","tenant":4,"ubication_agents_file":"../utils/agents.txt"}
+[2024-07-28 21:09:14.938] [agentsdeleter] [databaseConnection] [info] [] connected to postgres database
+[2024-07-28 21:09:14.938] [agentsdeleter] [fileReader] [info] [] starting to get the agents  ubication of the file is ../utils/agents.txt
+[2024-07-28 21:09:14.941] [agentsdeleter] [main] [info] [] number of agents are 5
+[2024-07-28 21:09:14.941] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents_mobile
+[2024-07-28 21:09:14.941] [agentsdeleter] [controller] [trace] [] starting to get agents_msisdn info
+[2024-07-28 21:09:14.942] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814335
+[2024-07-28 21:09:14.943] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814335, and tenant_oid=4
+[2024-07-28 21:09:15.688] [agentsdeleter] [database] [info] [] the query in the database tooks: 746.1015ms
+[2024-07-28 21:09:15.688] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 1 moviles
+[2024-07-28 21:09:15.689] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :104
+[2024-07-28 21:09:15.689] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=104, and tenant_oid=4
+[2024-07-28 21:09:16.412] [agentsdeleter] [database] [info] [] the query in the database tooks: 722.9083ms
+[2024-07-28 21:09:16.412] [agentsdeleter] [controller] [trace] [] the agent with id 104 has 1 moviles
+[2024-07-28 21:09:16.412] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :996008814232
+[2024-07-28 21:09:16.412] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=996008814232, and tenant_oid=4
+[2024-07-28 21:09:17.178] [agentsdeleter] [database] [info] [] the query in the database tooks: 765.5908ms
+[2024-07-28 21:09:17.179] [agentsdeleter] [controller] [trace] [] the agent with id 996008814232 has 1 moviles
+[2024-07-28 21:09:17.179] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :162
+[2024-07-28 21:09:17.179] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=162, and tenant_oid=4
+[2024-07-28 21:09:17.935] [agentsdeleter] [database] [info] [] the query in the database tooks: 755.6157ms
+[2024-07-28 21:09:17.935] [agentsdeleter] [controller] [trace] [] the agent with id 162 has 1 moviles
+[2024-07-28 21:09:17.935] [agentsdeleter] [database] [trace] [] starting to get the msisdn por the agent with id :0
+[2024-07-28 21:09:17.935] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT AM.OID, A.OID, MSISDN, ACC.CREDIT FROM agent A FULL JOIN agent_mobile AM ON AM.AGENT_OID=A.OID FULL JOIN account ACC ON ACC.AGENT_OID = A.OID WHERE A.AGENT_ID=$1 AND A.TENANT_OID=$2 and the params: agentID=0, and tenant_oid=4
+[2024-07-28 21:09:18.636] [agentsdeleter] [database] [info] [] the query in the database tooks: 700.7635ms
+[2024-07-28 21:09:18.636] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 1 moviles
+[2024-07-28 21:09:18.637] [agentsdeleter] [queryBuilder] [info] [] Iniciando la creación de una consulta para eliminar datos de la tabla agent_mobile_pin
+[2024-07-28 21:09:18.638] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-28 21:09:18.639] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:09:18.639] [agentsdeleter] [controller] [info] [] query to delete agent mobile pin was created and writed
+[2024-07-28 21:09:18.639] [agentsdeleter] [queryBuilder] [info] [] Iniciando la creación de una consulta para eliminar datos de la tabla agent_mobile
+[2024-07-28 21:09:18.639] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_mobile_scripts.txt
+[2024-07-28 21:09:18.640] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:09:18.641] [agentsdeleter] [controller] [info] [] query to delete agent mobile was created and writed
+[2024-07-28 21:09:18.641] [agentsdeleter] [controller] [info] [] starting to create the script to delete Users vinculated to the agents in the list
+[2024-07-28 21:09:18.641] [agentsdeleter] [controller] [trace] [] starting to get users
+[2024-07-28 21:09:18.641] [agentsdeleter] [controller] [info] [] AGENTS:%!(EXTRA *[]modelUtils.Agents=&[{996008814335 113771 0 {true }} {104 5543 26650.98 {true }} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {true }}])
+[2024-07-28 21:09:18.642] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :113771
+[2024-07-28 21:09:18.642] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:09:19.387] [agentsdeleter] [database] [info] [] the query in the database tooks: 744.6707ms
+[2024-07-28 21:09:19.388] [agentsdeleter] [controller] [trace] [] the agent with id 996008814335 has 0 users
+[2024-07-28 21:09:19.388] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5543
+[2024-07-28 21:09:19.388] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:09:20.117] [agentsdeleter] [database] [info] [] the query in the database tooks: 728.5267ms
+[2024-07-28 21:09:20.117] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CFO000 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:20.117] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1123, and tenant_oid=1123%!(EXTRA int=4)
+[2024-07-28 21:09:20.860] [agentsdeleter] [database] [info] [] User MMS_CFO000 is a parent and cannot be deleted
+[2024-07-28 21:09:20.860] [agentsdeleter] [database] [info] [] the query in the database tooks: 742.6668ms
+[2024-07-28 21:09:20.860] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CamanaKiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:09:20.861] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1157, and tenant_oid=1157%!(EXTRA int=4)
+[2024-07-28 21:09:21.600] [agentsdeleter] [database] [info] [] User mms_CamanaKiosk is a parent and cannot be deleted
+[2024-07-28 21:09:21.601] [agentsdeleter] [database] [info] [] the query in the database tooks: 740.088ms
+[2024-07-28 21:09:21.601] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_DIG006 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:21.601] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1127, and tenant_oid=1127%!(EXTRA int=4)
+[2024-07-28 21:09:22.332] [agentsdeleter] [database] [info] [] User MMS_DIG006 is not a parent and can be deleted
+[2024-07-28 21:09:22.332] [agentsdeleter] [database] [info] [] the query in the database tooks: 730.9789ms
+[2024-07-28 21:09:22.333] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CBBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:09:22.333] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1122, and tenant_oid=1122%!(EXTRA int=4)
+[2024-07-28 21:09:23.066] [agentsdeleter] [database] [info] [] User MMS_CBBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:09:23.066] [agentsdeleter] [database] [info] [] the query in the database tooks: 733.2418ms
+[2024-07-28 21:09:23.066] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CSbillpaykiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:09:23.066] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1156, and tenant_oid=1156%!(EXTRA int=4)
+[2024-07-28 21:09:23.803] [agentsdeleter] [database] [info] [] User mms_CSbillpaykiosk is not a parent and can be deleted
+[2024-07-28 21:09:23.803] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.9153ms
+[2024-07-28 21:09:23.804] [agentsdeleter] [database] [trace] [] starting to check if the user mms_WFbillpaykiosk2 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:23.804] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1160, and tenant_oid=1160%!(EXTRA int=4)
+[2024-07-28 21:09:24.555] [agentsdeleter] [database] [info] [] User mms_WFbillpaykiosk2 is not a parent and can be deleted
+[2024-07-28 21:09:24.555] [agentsdeleter] [database] [info] [] the query in the database tooks: 750.7906ms
+[2024-07-28 21:09:24.555] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_HQBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:09:24.555] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1128, and tenant_oid=1128%!(EXTRA int=4)
+[2024-07-28 21:09:25.376] [agentsdeleter] [database] [info] [] User MMS_HQBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:09:25.376] [agentsdeleter] [database] [info] [] the query in the database tooks: 820.3468ms
+[2024-07-28 21:09:25.376] [agentsdeleter] [database] [trace] [] starting to check if the user mms_WFbillpaykiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:09:25.376] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1159, and tenant_oid=1159%!(EXTRA int=4)
+[2024-07-28 21:09:26.069] [agentsdeleter] [database] [info] [] User mms_WFbillpaykiosk is a parent and cannot be deleted
+[2024-07-28 21:09:26.070] [agentsdeleter] [database] [info] [] the query in the database tooks: 693.5872ms
+[2024-07-28 21:09:26.070] [agentsdeleter] [database] [trace] [] starting to check if the user mms_waterfrontkiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:09:26.070] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1161, and tenant_oid=1161%!(EXTRA int=4)
+[2024-07-28 21:09:26.791] [agentsdeleter] [database] [info] [] User mms_waterfrontkiosk is a parent and cannot be deleted
+[2024-07-28 21:09:26.792] [agentsdeleter] [database] [info] [] the query in the database tooks: 721.4709ms
+[2024-07-28 21:09:26.792] [agentsdeleter] [database] [trace] [] starting to check if the user mms_CountrysideKiosk can be deleted :%!v(MISSING)
+[2024-07-28 21:09:26.792] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1158, and tenant_oid=1158%!(EXTRA int=4)
+[2024-07-28 21:09:27.486] [agentsdeleter] [database] [info] [] User mms_CountrysideKiosk is a parent and cannot be deleted
+[2024-07-28 21:09:27.486] [agentsdeleter] [database] [info] [] the query in the database tooks: 694.0552ms
+[2024-07-28 21:09:27.486] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CSBILLPAYKIOSK can be deleted :%!v(MISSING)
+[2024-07-28 21:09:27.487] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1125, and tenant_oid=1125%!(EXTRA int=4)
+[2024-07-28 21:09:28.234] [agentsdeleter] [database] [info] [] User MMS_CSBILLPAYKIOSK is not a parent and can be deleted
+[2024-07-28 21:09:28.234] [agentsdeleter] [database] [info] [] the query in the database tooks: 747.5975ms
+[2024-07-28 21:09:28.235] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CTLS00 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:28.235] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1126, and tenant_oid=1126%!(EXTRA int=4)
+[2024-07-28 21:09:28.987] [agentsdeleter] [database] [info] [] User MMS_CTLS00 is a parent and cannot be deleted
+[2024-07-28 21:09:28.987] [agentsdeleter] [database] [info] [] the query in the database tooks: 752.1703ms
+[2024-07-28 21:09:28.987] [agentsdeleter] [database] [trace] [] starting to check if the user ssuberan can be deleted :%!v(MISSING)
+[2024-07-28 21:09:28.987] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1178, and tenant_oid=1178%!(EXTRA int=4)
+[2024-07-28 21:09:29.738] [agentsdeleter] [database] [info] [] User ssuberan is not a parent and can be deleted
+[2024-07-28 21:09:29.738] [agentsdeleter] [database] [info] [] the query in the database tooks: 751.3141ms
+[2024-07-28 21:09:29.739] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CAYB000 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:29.739] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1101, and tenant_oid=1101%!(EXTRA int=4)
+[2024-07-28 21:09:30.483] [agentsdeleter] [database] [info] [] User MMS_CAYB000 is a parent and cannot be deleted
+[2024-07-28 21:09:30.483] [agentsdeleter] [database] [info] [] the query in the database tooks: 744.2113ms
+[2024-07-28 21:09:30.483] [agentsdeleter] [database] [trace] [] starting to check if the user mmartin can be deleted :%!v(MISSING)
+[2024-07-28 21:09:30.483] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1154, and tenant_oid=1154%!(EXTRA int=4)
+[2024-07-28 21:09:31.197] [agentsdeleter] [database] [info] [] User mmartin is not a parent and can be deleted
+[2024-07-28 21:09:31.197] [agentsdeleter] [database] [info] [] the query in the database tooks: 713.7611ms
+[2024-07-28 21:09:31.198] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_CRP000 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:31.198] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1124, and tenant_oid=1124%!(EXTRA int=4)
+[2024-07-28 21:09:31.939] [agentsdeleter] [database] [info] [] User MMS_CRP000 is a parent and cannot be deleted
+[2024-07-28 21:09:31.939] [agentsdeleter] [database] [info] [] the query in the database tooks: 741.6638ms
+[2024-07-28 21:09:31.939] [agentsdeleter] [database] [trace] [] starting to check if the user MMS_ALT000 can be deleted :%!v(MISSING)
+[2024-07-28 21:09:31.940] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1100, and tenant_oid=1100%!(EXTRA int=4)
+[2024-07-28 21:09:32.676] [agentsdeleter] [database] [info] [] User MMS_ALT000 is a parent and cannot be deleted
+[2024-07-28 21:09:32.677] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.6525ms
+[2024-07-28 21:09:32.677] [agentsdeleter] [controller] [trace] [] the agent with id 104 has 17 users
+[2024-07-28 21:09:32.678] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :4788
+[2024-07-28 21:09:32.678] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:09:33.409] [agentsdeleter] [database] [info] [] the query in the database tooks: 731.026ms
+[2024-07-28 21:09:33.410] [agentsdeleter] [controller] [trace] [] the agent with id 996008814232 has 0 users
+[2024-07-28 21:09:33.410] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5554
+[2024-07-28 21:09:33.410] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:09:34.130] [agentsdeleter] [database] [info] [] the query in the database tooks: 719.6434ms
+[2024-07-28 21:09:34.131] [agentsdeleter] [controller] [trace] [] the agent with id 162 has 0 users
+[2024-07-28 21:09:34.131] [agentsdeleter] [database] [trace] [] starting to get the Users por the agent with oid :5531
+[2024-07-28 21:09:34.131] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT ua.oid, ua.user_id, cu.client_oid FROM user_adm ua FULL JOIN client_user cu ON ua.oid = cu.user_oid WHERE cu.client_oid = $1 AND cu.tenant_oid=$2 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:09:34.814] [agentsdeleter] [database] [info] [] the query in the database tooks: 683.7244ms
+[2024-07-28 21:09:34.815] [agentsdeleter] [database] [trace] [] starting to check if the user rbrown_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:34.815] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1164, and tenant_oid=1164%!(EXTRA int=4)
+[2024-07-28 21:09:35.543] [agentsdeleter] [database] [info] [] User rbrown_KY is a parent and cannot be deleted
+[2024-07-28 21:09:35.544] [agentsdeleter] [database] [info] [] the query in the database tooks: 728.9824ms
+[2024-07-28 21:09:35.544] [agentsdeleter] [database] [trace] [] starting to check if the user kburke_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:35.544] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1150, and tenant_oid=1150%!(EXTRA int=4)
+[2024-07-28 21:09:36.310] [agentsdeleter] [database] [info] [] User kburke_KY is a parent and cannot be deleted
+[2024-07-28 21:09:36.310] [agentsdeleter] [database] [info] [] the query in the database tooks: 765.4528ms
+[2024-07-28 21:09:36.310] [agentsdeleter] [database] [trace] [] starting to check if the user sjackson can be deleted :%!v(MISSING)
+[2024-07-28 21:09:36.310] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1170, and tenant_oid=1170%!(EXTRA int=4)
+[2024-07-28 21:09:37.048] [agentsdeleter] [database] [info] [] User sjackson is not a parent and can be deleted
+[2024-07-28 21:09:37.048] [agentsdeleter] [database] [info] [] the query in the database tooks: 738.2869ms
+[2024-07-28 21:09:37.049] [agentsdeleter] [database] [trace] [] starting to check if the user tthomas_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:37.049] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1183, and tenant_oid=1183%!(EXTRA int=4)
+[2024-07-28 21:09:37.794] [agentsdeleter] [database] [info] [] User tthomas_KY is a parent and cannot be deleted
+[2024-07-28 21:09:37.795] [agentsdeleter] [database] [info] [] the query in the database tooks: 746.4698ms
+[2024-07-28 21:09:37.795] [agentsdeleter] [database] [trace] [] starting to check if the user JAWhitehorne_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:37.795] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1098, and tenant_oid=1098%!(EXTRA int=4)
+[2024-07-28 21:09:38.525] [agentsdeleter] [database] [info] [] User JAWhitehorne_KY is a parent and cannot be deleted
+[2024-07-28 21:09:38.525] [agentsdeleter] [database] [info] [] the query in the database tooks: 729.5438ms
+[2024-07-28 21:09:38.526] [agentsdeleter] [database] [trace] [] starting to check if the user lbramwell_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:38.526] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1152, and tenant_oid=1152%!(EXTRA int=4)
+[2024-07-28 21:09:39.266] [agentsdeleter] [database] [info] [] User lbramwell_KY is a parent and cannot be deleted
+[2024-07-28 21:09:39.267] [agentsdeleter] [database] [info] [] the query in the database tooks: 740.4618ms
+[2024-07-28 21:09:39.267] [agentsdeleter] [database] [trace] [] starting to check if the user mdrivas can be deleted :%!v(MISSING)
+[2024-07-28 21:09:39.267] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1153, and tenant_oid=1153%!(EXTRA int=4)
+[2024-07-28 21:09:40.168] [agentsdeleter] [database] [info] [] User mdrivas is not a parent and can be deleted
+[2024-07-28 21:09:40.168] [agentsdeleter] [database] [info] [] the query in the database tooks: 900.8368ms
+[2024-07-28 21:09:40.168] [agentsdeleter] [database] [trace] [] starting to check if the user slewis_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:40.168] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1172, and tenant_oid=1172%!(EXTRA int=4)
+[2024-07-28 21:09:40.943] [agentsdeleter] [database] [info] [] User slewis_KY is a parent and cannot be deleted
+[2024-07-28 21:09:40.943] [agentsdeleter] [database] [info] [] the query in the database tooks: 774.9588ms
+[2024-07-28 21:09:40.943] [agentsdeleter] [database] [trace] [] starting to check if the user swong_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:40.944] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1179, and tenant_oid=1179%!(EXTRA int=4)
+[2024-07-28 21:09:41.671] [agentsdeleter] [database] [info] [] User swong_KY is a parent and cannot be deleted
+[2024-07-28 21:09:41.671] [agentsdeleter] [database] [info] [] the query in the database tooks: 727.5317ms
+[2024-07-28 21:09:41.672] [agentsdeleter] [database] [trace] [] starting to check if the user rcorreia_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:41.672] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1165, and tenant_oid=1165%!(EXTRA int=4)
+[2024-07-28 21:09:42.406] [agentsdeleter] [database] [info] [] User rcorreia_KY is a parent and cannot be deleted
+[2024-07-28 21:09:42.406] [agentsdeleter] [database] [info] [] the query in the database tooks: 733.8367ms
+[2024-07-28 21:09:42.406] [agentsdeleter] [database] [trace] [] starting to check if the user GroupCAY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:42.406] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1095, and tenant_oid=1095%!(EXTRA int=4)
+[2024-07-28 21:09:43.134] [agentsdeleter] [database] [info] [] User GroupCAY is a parent and cannot be deleted
+[2024-07-28 21:09:43.135] [agentsdeleter] [database] [info] [] the query in the database tooks: 728.157ms
+[2024-07-28 21:09:43.135] [agentsdeleter] [database] [trace] [] starting to check if the user doconnor can be deleted :%!v(MISSING)
+[2024-07-28 21:09:43.135] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1143, and tenant_oid=1143%!(EXTRA int=4)
+[2024-07-28 21:09:43.877] [agentsdeleter] [database] [info] [] User doconnor is a parent and cannot be deleted
+[2024-07-28 21:09:43.877] [agentsdeleter] [database] [info] [] the query in the database tooks: 742.4407ms
+[2024-07-28 21:09:43.877] [agentsdeleter] [database] [trace] [] starting to check if the user slouisy_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:43.878] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1173, and tenant_oid=1173%!(EXTRA int=4)
+[2024-07-28 21:09:44.588] [agentsdeleter] [database] [info] [] User slouisy_KY is a parent and cannot be deleted
+[2024-07-28 21:09:44.588] [agentsdeleter] [database] [info] [] the query in the database tooks: 710.5288ms
+[2024-07-28 21:09:44.589] [agentsdeleter] [database] [trace] [] starting to check if the user mwilliams can be deleted :%!v(MISSING)
+[2024-07-28 21:09:44.589] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1162, and tenant_oid=1162%!(EXTRA int=4)
+[2024-07-28 21:09:45.341] [agentsdeleter] [database] [info] [] User mwilliams is not a parent and can be deleted
+[2024-07-28 21:09:45.341] [agentsdeleter] [database] [info] [] the query in the database tooks: 752.3139ms
+[2024-07-28 21:09:45.342] [agentsdeleter] [database] [trace] [] starting to check if the user jdavies can be deleted :%!v(MISSING)
+[2024-07-28 21:09:45.342] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1148, and tenant_oid=1148%!(EXTRA int=4)
+[2024-07-28 21:09:46.107] [agentsdeleter] [database] [info] [] User jdavies is not a parent and can be deleted
+[2024-07-28 21:09:46.107] [agentsdeleter] [database] [info] [] the query in the database tooks: 764.7396ms
+[2024-07-28 21:09:46.107] [agentsdeleter] [database] [trace] [] starting to check if the user sroberts_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:46.107] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1175, and tenant_oid=1175%!(EXTRA int=4)
+[2024-07-28 21:09:46.843] [agentsdeleter] [database] [info] [] User sroberts_KY is a parent and cannot be deleted
+[2024-07-28 21:09:46.844] [agentsdeleter] [database] [info] [] the query in the database tooks: 736.7787ms
+[2024-07-28 21:09:46.844] [agentsdeleter] [database] [trace] [] starting to check if the user earthurs can be deleted :%!v(MISSING)
+[2024-07-28 21:09:46.844] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1145, and tenant_oid=1145%!(EXTRA int=4)
+[2024-07-28 21:09:47.529] [agentsdeleter] [database] [info] [] User earthurs is a parent and cannot be deleted
+[2024-07-28 21:09:47.530] [agentsdeleter] [database] [info] [] the query in the database tooks: 685.3834ms
+[2024-07-28 21:09:47.530] [agentsdeleter] [database] [trace] [] starting to check if the user ccportal_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:47.530] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1139, and tenant_oid=1139%!(EXTRA int=4)
+[2024-07-28 21:09:48.293] [agentsdeleter] [database] [info] [] User ccportal_KY is not a parent and can be deleted
+[2024-07-28 21:09:48.293] [agentsdeleter] [database] [info] [] the query in the database tooks: 762.9374ms
+[2024-07-28 21:09:48.294] [agentsdeleter] [database] [trace] [] starting to check if the user dwilson can be deleted :%!v(MISSING)
+[2024-07-28 21:09:48.294] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1144, and tenant_oid=1144%!(EXTRA int=4)
+[2024-07-28 21:09:48.995] [agentsdeleter] [database] [info] [] User dwilson is not a parent and can be deleted
+[2024-07-28 21:09:48.995] [agentsdeleter] [database] [info] [] the query in the database tooks: 701.6816ms
+[2024-07-28 21:09:48.996] [agentsdeleter] [database] [trace] [] starting to check if the user jpierre can be deleted :%!v(MISSING)
+[2024-07-28 21:09:48.996] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=14920, and tenant_oid=14920%!(EXTRA int=4)
+[2024-07-28 21:09:49.742] [agentsdeleter] [database] [info] [] User jpierre is not a parent and can be deleted
+[2024-07-28 21:09:49.742] [agentsdeleter] [database] [info] [] the query in the database tooks: 746.4409ms
+[2024-07-28 21:09:49.743] [agentsdeleter] [database] [trace] [] starting to check if the user GTM_CAY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:49.743] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=21205, and tenant_oid=21205%!(EXTRA int=4)
+[2024-07-28 21:09:50.497] [agentsdeleter] [database] [info] [] User GTM_CAY is not a parent and can be deleted
+[2024-07-28 21:09:50.497] [agentsdeleter] [database] [info] [] the query in the database tooks: 753.5435ms
+[2024-07-28 21:09:50.497] [agentsdeleter] [database] [trace] [] starting to check if the user cpearson_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:50.497] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20557, and tenant_oid=20557%!(EXTRA int=4)
+[2024-07-28 21:09:51.241] [agentsdeleter] [database] [info] [] User cpearson_KY is not a parent and can be deleted
+[2024-07-28 21:09:51.241] [agentsdeleter] [database] [info] [] the query in the database tooks: 744.214ms
+[2024-07-28 21:09:51.241] [agentsdeleter] [database] [trace] [] starting to check if the user karthikeyans_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:51.242] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20683, and tenant_oid=20683%!(EXTRA int=4)
+[2024-07-28 21:09:51.974] [agentsdeleter] [database] [info] [] User karthikeyans_KY is not a parent and can be deleted
+[2024-07-28 21:09:51.974] [agentsdeleter] [database] [info] [] the query in the database tooks: 731.9313ms
+[2024-07-28 21:09:51.974] [agentsdeleter] [database] [trace] [] starting to check if the user sbalakrishnan_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:51.974] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=20684, and tenant_oid=20684%!(EXTRA int=4)
+[2024-07-28 21:09:52.738] [agentsdeleter] [database] [info] [] User sbalakrishnan_KY is not a parent and can be deleted
+[2024-07-28 21:09:52.738] [agentsdeleter] [database] [info] [] the query in the database tooks: 763.2811ms
+[2024-07-28 21:09:52.738] [agentsdeleter] [database] [trace] [] starting to check if the user CCardoza_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:52.738] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23937, and tenant_oid=23937%!(EXTRA int=4)
+[2024-07-28 21:09:53.493] [agentsdeleter] [database] [info] [] User CCardoza_KY is not a parent and can be deleted
+[2024-07-28 21:09:53.493] [agentsdeleter] [database] [info] [] the query in the database tooks: 754.9503ms
+[2024-07-28 21:09:53.493] [agentsdeleter] [database] [trace] [] starting to check if the user kwhite_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:53.494] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=26728, and tenant_oid=26728%!(EXTRA int=4)
+[2024-07-28 21:09:54.237] [agentsdeleter] [database] [info] [] User kwhite_KY is not a parent and can be deleted
+[2024-07-28 21:09:54.237] [agentsdeleter] [database] [info] [] the query in the database tooks: 743.3875ms
+[2024-07-28 21:09:54.237] [agentsdeleter] [database] [trace] [] starting to check if the user Clfrancis_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:54.237] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23901, and tenant_oid=23901%!(EXTRA int=4)
+[2024-07-28 21:09:55.037] [agentsdeleter] [database] [info] [] User Clfrancis_KY is not a parent and can be deleted
+[2024-07-28 21:09:55.037] [agentsdeleter] [database] [info] [] the query in the database tooks: 799.1582ms
+[2024-07-28 21:09:55.037] [agentsdeleter] [database] [trace] [] starting to check if the user FHenry_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:55.037] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23942, and tenant_oid=23942%!(EXTRA int=4)
+[2024-07-28 21:09:55.756] [agentsdeleter] [database] [info] [] User FHenry_KY is not a parent and can be deleted
+[2024-07-28 21:09:55.756] [agentsdeleter] [database] [info] [] the query in the database tooks: 718.7615ms
+[2024-07-28 21:09:55.756] [agentsdeleter] [database] [trace] [] starting to check if the user admin_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:55.756] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1131, and tenant_oid=1131%!(EXTRA int=4)
+[2024-07-28 21:09:56.461] [agentsdeleter] [database] [info] [] User admin_KY is a parent and cannot be deleted
+[2024-07-28 21:09:56.462] [agentsdeleter] [database] [info] [] the query in the database tooks: 705.2304ms
+[2024-07-28 21:09:56.462] [agentsdeleter] [database] [trace] [] starting to check if the user ABonilla_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:56.462] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23939, and tenant_oid=23939%!(EXTRA int=4)
+[2024-07-28 21:09:57.215] [agentsdeleter] [database] [info] [] User ABonilla_KY is not a parent and can be deleted
+[2024-07-28 21:09:57.215] [agentsdeleter] [database] [info] [] the query in the database tooks: 752.687ms
+[2024-07-28 21:09:57.215] [agentsdeleter] [database] [trace] [] starting to check if the user ALopez_KY can be deleted :%!v(MISSING)
+[2024-07-28 21:09:57.215] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=23940, and tenant_oid=23940%!(EXTRA int=4)
+[2024-07-28 21:09:57.962] [agentsdeleter] [database] [info] [] User ALopez_KY is not a parent and can be deleted
+[2024-07-28 21:09:57.962] [agentsdeleter] [database] [info] [] the query in the database tooks: 746.287ms
+[2024-07-28 21:09:57.962] [agentsdeleter] [database] [trace] [] starting to check if the user ahewitt can be deleted :%!v(MISSING)
+[2024-07-28 21:09:57.962] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM user_Adm WHERE (user_parent_oid = $1 OR view_user_parent_oid = $2 ) and tenant_oid= $3 limit 1 and the params: agentID=1132, and tenant_oid=1132%!(EXTRA int=4)
+[2024-07-28 21:09:58.684] [agentsdeleter] [database] [info] [] User ahewitt is not a parent and can be deleted
+[2024-07-28 21:09:58.684] [agentsdeleter] [database] [info] [] the query in the database tooks: 721.7672ms
+[2024-07-28 21:09:58.684] [agentsdeleter] [controller] [trace] [] the agent with id 0 has 32 users
+[2024-07-28 21:09:58.686] [agentsdeleter] [controller] [info] [] usuarios : [{1123 MMS_CFO000 5543 {false User MMS_CFO000 is a parent and cannot be deleted}} {1157 mms_CamanaKiosk 5543 {false User mms_CamanaKiosk is a parent and cannot be deleted}} {1127 MMS_DIG006 5543 {true User MMS_DIG006 is not a parent and can be deleted}} {1122 MMS_CBBILLPAYKIOSK 5543 {true User MMS_CBBILLPAYKIOSK is not a parent and can be deleted}} {1156 mms_CSbillpaykiosk 5543 {true User mms_CSbillpaykiosk is not a parent and can be deleted}} {1160 mms_WFbillpaykiosk2 5543 {true User mms_WFbillpaykiosk2 is not a parent and can be deleted}} {1128 MMS_HQBILLPAYKIOSK 5543 {true User MMS_HQBILLPAYKIOSK is not a parent and can be deleted}} {1159 mms_WFbillpaykiosk 5543 {false User mms_WFbillpaykiosk is a parent and cannot be deleted}} {1161 mms_waterfrontkiosk 5543 {false User mms_waterfrontkiosk is a parent and cannot be deleted}} {1158 mms_CountrysideKiosk 5543 {false User mms_CountrysideKiosk is a parent and cannot be deleted}} {1125 MMS_CSBILLPAYKIOSK 5543 {true User MMS_CSBILLPAYKIOSK is not a parent and can be deleted}} {1126 MMS_CTLS00 5543 {false User MMS_CTLS00 is a parent and cannot be deleted}} {1178 ssuberan 5543 {true User ssuberan is not a parent and can be deleted}} {1101 MMS_CAYB000 5543 {false User MMS_CAYB000 is a parent and cannot be deleted}} {1154 mmartin 5543 {true User mmartin is not a parent and can be deleted}} {1124 MMS_CRP000 5543 {false User MMS_CRP000 is a parent and cannot be deleted}} {1100 MMS_ALT000 5543 {false User MMS_ALT000 is a parent and cannot be deleted}} {1164 rbrown_KY 5531 {false User rbrown_KY is a parent and cannot be deleted}} {1150 kburke_KY 5531 {false User kburke_KY is a parent and cannot be deleted}} {1170 sjackson 5531 {true User sjackson is not a parent and can be deleted}} {1183 tthomas_KY 5531 {false User tthomas_KY is a parent and cannot be deleted}} {1098 JAWhitehorne_KY 5531 {false User JAWhitehorne_KY is a parent and cannot be deleted}} {1152 lbramwell_KY 5531 {false User lbramwell_KY is a parent and cannot be deleted}} {1153 mdrivas 5531 {true User mdrivas is not a parent and can be deleted}} {1172 slewis_KY 5531 {false User slewis_KY is a parent and cannot be deleted}} {1179 swong_KY 5531 {false User swong_KY is a parent and cannot be deleted}} {1165 rcorreia_KY 5531 {false User rcorreia_KY is a parent and cannot be deleted}} {1095 GroupCAY 5531 {false User GroupCAY is a parent and cannot be deleted}} {1143 doconnor 5531 {false User doconnor is a parent and cannot be deleted}} {1173 slouisy_KY 5531 {false User slouisy_KY is a parent and cannot be deleted}} {1162 mwilliams 5531 {true User mwilliams is not a parent and can be deleted}} {1148 jdavies 5531 {true User jdavies is not a parent and can be deleted}} {1175 sroberts_KY 5531 {false User sroberts_KY is a parent and cannot be deleted}} {1145 earthurs 5531 {false User earthurs is a parent and cannot be deleted}} {1139 ccportal_KY 5531 {true User ccportal_KY is not a parent and can be deleted}} {1144 dwilson 5531 {true User dwilson is not a parent and can be deleted}} {14920 jpierre 5531 {true User jpierre is not a parent and can be deleted}} {21205 GTM_CAY 5531 {true User GTM_CAY is not a parent and can be deleted}} {20557 cpearson_KY 5531 {true User cpearson_KY is not a parent and can be deleted}} {20683 karthikeyans_KY 5531 {true User karthikeyans_KY is not a parent and can be deleted}} {20684 sbalakrishnan_KY 5531 {true User sbalakrishnan_KY is not a parent and can be deleted}} {23937 CCardoza_KY 5531 {true User CCardoza_KY is not a parent and can be deleted}} {26728 kwhite_KY 5531 {true User kwhite_KY is not a parent and can be deleted}} {23901 Clfrancis_KY 5531 {true User Clfrancis_KY is not a parent and can be deleted}} {23942 FHenry_KY 5531 {true User FHenry_KY is not a parent and can be deleted}} {1131 admin_KY 5531 {false User admin_KY is a parent and cannot be deleted}} {23939 ABonilla_KY 5531 {true User ABonilla_KY is not a parent and can be deleted}} {23940 ALopez_KY 5531 {true User ALopez_KY is not a parent and can be deleted}} {1132 ahewitt 5531 {true User ahewitt is not a parent and can be deleted}}] agentes &[{996008814335 113771 0 {true }} {104 5543 26650.98 {false agent whit id 104, can not deleted reasons : User MMS_CFO000 is a parent and cannot be deleted. User mms_CamanaKiosk is a parent and cannot be deleted. User mms_WFbillpaykiosk is a parent and cannot be deleted. User mms_waterfrontkiosk is a parent and cannot be deleted. User mms_CountrysideKiosk is a parent and cannot be deleted. User MMS_CTLS00 is a parent and cannot be deleted. User MMS_CAYB000 is a parent and cannot be deleted. User MMS_CRP000 is a parent and cannot be deleted. User MMS_ALT000 is a parent and cannot be deleted.}} {996008814232 4788 0 {true }} {162 5554 29 {true }} {0 5531 21 {false agent whit id 0, can not deleted reasons : User rbrown_KY is a parent and cannot be deleted. User kburke_KY is a parent and cannot be deleted. User tthomas_KY is a parent and cannot be deleted. User JAWhitehorne_KY is a parent and cannot be deleted. User lbramwell_KY is a parent and cannot be deleted. User slewis_KY is a parent and cannot be deleted. User swong_KY is a parent and cannot be deleted. User rcorreia_KY is a parent and cannot be deleted. User GroupCAY is a parent and cannot be deleted. User doconnor is a parent and cannot be deleted. User slouisy_KY is a parent and cannot be deleted. User sroberts_KY is a parent and cannot be deleted. User earthurs is a parent and cannot be deleted. User admin_KY is a parent and cannot be deleted.}}]
+[2024-07-28 21:09:58.688] [agentsdeleter] [queryBuilder] [info] [] Iniciando la creación de una consulta para eliminar datos de la tabla old_password
+[2024-07-28 21:09:58.688] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:09:58.689] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:09:58.690] [agentsdeleter] [controller] [info] [] query to delete users_old_password was created and writed
+[2024-07-28 21:09:58.690] [agentsdeleter] [queryBuilder] [info] [] Iniciando la creación de una consulta para eliminar datos de la tabla client_user
+[2024-07-28 21:09:58.690] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:09:58.691] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:09:58.691] [agentsdeleter] [controller] [info] [] query to delete ClientUser was created and writed
+[2024-07-28 21:09:58.691] [agentsdeleter] [queryBuilder] [info] [] Iniciando la creación de una consulta para eliminar datos de la tabla user_adm
+[2024-07-28 21:09:58.692] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/users.txt
+[2024-07-28 21:09:58.693] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:09:58.694] [agentsdeleter] [controller] [info] [] query to delete user_adm was created and writed
+[2024-07-28 21:09:58.694] [agentsdeleter] [controller] [info] [] starting to create the script to delete agents 
+[2024-07-28 21:09:58.694] [agentsdeleter] [controller] [trace] [] checking if the agents have a credit different than 0
+[2024-07-28 21:09:58.694] [agentsdeleter] [controller] [info] [] check credit accounts finish
+[2024-07-28 21:09:58.694] [agentsdeleter] [controller] [trace] [] checking if the agents are parents
+[2024-07-28 21:09:58.694] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814335 is a parent 
+[2024-07-28 21:09:58.694] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=113771, and tenant_oid=%!s(int=4)
+[2024-07-28 21:09:59.391] [agentsdeleter] [database] [info] [] Agent 113771 is not a parent and can be deleted
+[2024-07-28 21:09:59.391] [agentsdeleter] [database] [info] [] the query in the database tooks: 696.9232ms
+[2024-07-28 21:09:59.392] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 104 is a parent 
+[2024-07-28 21:09:59.392] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5543, and tenant_oid=%!s(int=4)
+[2024-07-28 21:10:00.129] [agentsdeleter] [database] [info] [] Agent 5543 is not a parent and can be deleted
+[2024-07-28 21:10:00.129] [agentsdeleter] [database] [info] [] the query in the database tooks: 737.4812ms
+[2024-07-28 21:10:00.129] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 996008814232 is a parent 
+[2024-07-28 21:10:00.129] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=4788, and tenant_oid=%!s(int=4)
+[2024-07-28 21:10:00.893] [agentsdeleter] [database] [info] [] Agent 4788 is not a parent and can be deleted
+[2024-07-28 21:10:00.893] [agentsdeleter] [database] [info] [] the query in the database tooks: 763.9743ms
+[2024-07-28 21:10:00.894] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 162 is a parent 
+[2024-07-28 21:10:00.894] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5554, and tenant_oid=%!s(int=4)
+[2024-07-28 21:10:01.645] [agentsdeleter] [database] [info] [] Agent 5554 is not a parent and can be deleted
+[2024-07-28 21:10:01.645] [agentsdeleter] [database] [info] [] the query in the database tooks: 751.1795ms
+[2024-07-28 21:10:01.646] [agentsdeleter] [database] [trace] [] starting to check if the Agent whit id 0 is a parent 
+[2024-07-28 21:10:01.646] [agentsdeleter] [database] [trace] [] this is the QUERY: SELECT * FROM agent WHERE parent_oid= $1 AND tenant_oid= $2 limit 1 and the params: agentID=5531, and tenant_oid=%!s(int=4)
+[2024-07-28 21:10:02.386] [agentsdeleter] [database] [info] [] Agent 5531 is a parent and cannot be deleted
+[2024-07-28 21:10:02.387] [agentsdeleter] [database] [info] [] the query in the database tooks: 741.238ms
+[2024-07-28 21:10:02.387] [agentsdeleter] [controller] [info] [] check if the agents are parents finish
+[2024-07-28 21:10:02.387] [agentsdeleter] [queryBuilder] [info] [] starting to create the querys to delete agents
+[2024-07-28 21:10:02.388] [agentsdeleter] [controller] [info] [] querys To Delete Agent was created
+[2024-07-28 21:10:02.388] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.389] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.390] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.390] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.391] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.391] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.392] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.393] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.393] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.394] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.394] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.395] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.396] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.397] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.397] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.398] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.399] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../scripts/agent_scripts.txt
+[2024-07-28 21:10:02.400] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.400] [agentsdeleter] [controller] [info] [] agent script was created
+[2024-07-28 21:10:02.400] [agentsdeleter] [fileWriter] [info] [] starting to write in the file ../utils/conclusions.txt
+[2024-07-28 21:10:02.401] [agentsdeleter] [fileWriter] [trace] [] end to wrtite in a file: 
+[2024-07-28 21:10:02.402] [agentsdeleter] [controller] [info] [] conclusion file was created 
+[2024-07-28 21:10:02.402] [agentsdeleter] [main] [info] [] el tiempo que se demoro el proceso fue 47.463818s

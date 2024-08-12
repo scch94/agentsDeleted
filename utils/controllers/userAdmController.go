@@ -30,7 +30,7 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 	}
 	if len(usersInfo) > 0 {
 		//eliminamos la old_password del user
-		queryToDeleteUserOldPassword := querybuilder.CreateQuery(ctx, "old_password", "user_oid", modelsDbInfo)
+		queryToDeleteUserOldPassword := querybuilder.CreateQuery2(ctx, "old_password", "user_oid", modelsDbInfo)
 		//pasamos el texto de la query y la ubicacion del archivo para crear el script
 		err = fileWriter.WriteInAfile(ctx, queryToDeleteUserOldPassword, "../scripts/users.txt", "query to delete the old password for the users vinculated to the agents in the list")
 		if err != nil {
@@ -40,7 +40,7 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 		ins_log.Infof(ctx, "query to delete users_old_password was created and writed")
 
 		//ahora vamos a eliminar el client_user_mobile
-		queryToDeleteClientUserMobile := querybuilder.CreateQuery(ctx, "client_user_mobile", "user_oid", modelsDbInfo)
+		queryToDeleteClientUserMobile := querybuilder.CreateQuery2(ctx, "client_user_mobile", "user_oid", modelsDbInfo)
 		//pasamos el texto de la query y la ubicacion del archivo para crear el script
 		err = fileWriter.WriteInAfile(ctx, queryToDeleteClientUserMobile, "../scripts/users.txt", "query to delete the client user mobile for the users vinculated to the agents in the list")
 		if err != nil {
@@ -50,7 +50,7 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 		ins_log.Infof(ctx, "query to delete users_old_password was created and writed")
 
 		//ahora vamos a eliminar el client_user
-		querytoDeleteClientUser := querybuilder.CreateQuery(ctx, "client_user", "user_oid", modelsDbInfo)
+		querytoDeleteClientUser := querybuilder.CreateQuery2(ctx, "client_user", "user_oid", modelsDbInfo)
 		//pasamos el texto de la query y la ubicacion del archivo para crear el script
 		err = fileWriter.WriteInAfile(ctx, querytoDeleteClientUser, "../scripts/users.txt", "query to delete the client_user for the users vinculated to the agents in the list")
 		if err != nil {
@@ -60,7 +60,7 @@ func DeleteUserAdm(ctx context.Context, agents *[]modelUtils.Agents) error {
 		ins_log.Infof(ctx, "query to delete ClientUser was created and writed")
 
 		//ahora vamos a eliminar el user_adm
-		queryToDeleteUserAdm := querybuilder.CreateQuery(ctx, "user_adm", "oid", modelsDbInfo)
+		queryToDeleteUserAdm := querybuilder.CreateQuery2(ctx, "user_adm", "oid", modelsDbInfo)
 		//pasamos el texto de la query y la ubicacion del archivo para crear el script
 		err = fileWriter.WriteInAfile(ctx, queryToDeleteUserAdm, "../scripts/users.txt", "query to delete the user_adm for the users vinculated to the agents in the list")
 		if err != nil {

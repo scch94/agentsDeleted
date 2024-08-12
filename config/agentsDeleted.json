@@ -1,9 +1,10 @@
 {
     "log_level": "trace",
     "log_name": "agentsDeleted_",
-    "database_connection_string":"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require",
-    "tenant":4,
+    "database_connection_string":"EPIN_NEW/epin@192.168.0.157:1521/EPIN",
+    "tenant":18,
     "ubication_agents_file":"../utils/agents.txt",
-    "database_engine":"postgresql"
+    "database_engine":"oraclesql"
 }
+
 
