@@ -21,13 +21,14 @@ var (
 )
 
 func InitDb(ctx context.Context) error {
-	if config.Config.DatabaseEngine == "postgresql" {
+	ctx = ins_log.SetPackageNameInContext(ctx, "databaseConnection")
+	if config.Config.DatabaseEngine == DBPOSTGRES {
 		err := NewPostgresDb(ctx, config.Config.DatabaseConnectionString)
 		if err != nil {
 			return err
 		}
 		return nil
-	} else if config.Config.DatabaseEngine == "oraclesql" {
+	} else if config.Config.DatabaseEngine == DBORACLE {
 		err := NewOracleDb(ctx, config.Config.DatabaseConnectionString)
 		if err != nil {
 			return err
@@ -43,7 +44,6 @@ func NewPostgresDb(ctx context.Context, connectionString string) error {
 	databaseEngine = config.Config.DatabaseEngine
 	var initErr error
 	dbOnce.Do(func() {
-		ctx = ins_log.SetPackageNameInContext(ctx, "databaseConnection")
 		var err error
 
 		DB, err = sql.Open("postgres", connectionString)
@@ -71,7 +71,6 @@ func NewOracleDb(ctx context.Context, connectionString string) error {
 	//coneection := "EPIN_NEW/epin@192.168.0.157:1521/EPIN"
 	var initErr error
 	dbOnce.Do(func() {
-		ctx = ins_log.SetPackageNameInContext(ctx, "databaseConnection")
 		var err error
 
 		DB, err = sql.Open("godror", connectionString)
@@ -91,6 +90,32 @@ func NewOracleDb(ctx context.Context, connectionString string) error {
 			return
 		}
 		ins_log.Info(ctx, "connected to oracle database")
+	})
+	return initErr
+}
+func newDb(ctx context.Context, databaseEngine string) error {
+	connectionString := config.Config.DatabaseConnectionString
+	var initErr error
+	dbOnce.Do(func() {
+		var err error
+
+		DB, err = sql.Open(databaseEngine, connectionString)
+		if err != nil {
+			ins_log.Fatalf(ctx, "cant open database with string connection %v and the error is: %v", connectionString, err)
+			initErr = err
+			return
+		}
+		DB.SetConnMaxIdleTime(1800)
+		DB.SetConnMaxLifetime(3600)
+		DB.SetMaxOpenConns(1000)
+		DB.SetMaxIdleConns(1000)
+
+		if err = DB.Ping(); err != nil {
+			ins_log.Fatalf(ctx, "cant do ping to the database error : %v", err)
+			initErr = err
+			return
+		}
+		ins_log.Info(ctx, "connected to database")
 	})
 	return initErr
 }

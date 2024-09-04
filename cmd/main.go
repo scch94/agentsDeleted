@@ -20,14 +20,14 @@ func main() {
 	//creamos contecxto par ala ejecucion
 	ctx := context.Background()
 
-	//creamos el archivo de donde el programa logueara
-	go initializeAndWatchLogger(ctx)
-
 	//levantamos la configuracion
 	if err := config.Upconfig(ctx); err != nil {
 		ins_log.Errorf(ctx, "error loading configuration: %v", err)
 		return
 	}
+
+	//creamos el archivo de donde el programa logueara
+	go initializeAndWatchLogger(ctx)
 
 	//inicamos el logger
 	ins_log.SetService("agentsdeleter")

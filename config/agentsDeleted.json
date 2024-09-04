@@ -4,7 +4,13 @@
     "database_connection_string":"EPIN_NEW/epin@192.168.0.157:1521/EPIN",
     "tenant":18,
     "ubication_agents_file":"../utils/agents.txt",
-    "database_engine":"oraclesql"
+    "database":{
+        "database_engine":"oraclesql",   
+        "ConnMaxIdleTime":1800,
+		"ConnMaxLifetime":3600,
+		"MaxOpenConns":1000,
+		"MaxIdleConns":1000
+    }
 }
 
 
