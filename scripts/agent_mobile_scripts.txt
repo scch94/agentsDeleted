@@ -24,3 +24,21 @@ DELETE FROM agent_mobile_pin WHERE msisdn_oid = 348227;
 DELETE FROM agent_mobile WHERE oid = 348227;
  
  
+-- query to delete msisdn_pin for an agents in the list 
+
+ 
+-- query to delete msisdn for an agents in the list 
+
+ 
+-- query to delete msisdn_pin for an agents in the list 
+
+ 
+-- query to delete msisdn for an agents in the list 
+
+ 
+-- query to delete msisdn_pin for an agents in the list 
+
+ 
+-- query to delete msisdn for an agents in the list 
+
+ 

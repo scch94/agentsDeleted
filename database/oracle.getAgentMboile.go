@@ -45,11 +45,12 @@ func GetMsisdnOracle(ctx context.Context, agent *modelUtils.Agents) ([]modeldb.M
 			ins_log.Errorf(ctx, "error scanning row: %v", err)
 			return nil, err
 		}
+		ins_log.Infof(ctx, "estos son los resultados de la consulta ! 1:%v   2:%v 	3:%v	4:%v", msisdnSql.MsisdnOid, msisdnSql.AgentOid, msisdnSql.Msisdn, credit)
 		msisdnInfo := msisdnSql.ConvertMsisdn()
 		msisdnsInfo = append(msisdnsInfo, msisdnInfo)
 		agent.AgentOid = msisdnInfo.AgentOid
 		agent.Credit = credit.Float64
-
+		ins_log.Infof(ctx, "esto solo es para ver la info recuperada ")
 	}
 
 	// Verificar si hubo errores en el procesamiento de las filas

@@ -1,0 +1,204 @@
+-- query to delete the old password for the users vinculated to the agents in the list 
+
+DELETE FROM old_password WHERE user_oid = 1170;
+ 
+DELETE FROM old_password WHERE user_oid = 1183;
+ 
+DELETE FROM old_password WHERE user_oid = 1098;
+ 
+DELETE FROM old_password WHERE user_oid = 1153;
+ 
+DELETE FROM old_password WHERE user_oid = 1172;
+ 
+DELETE FROM old_password WHERE user_oid = 1179;
+ 
+DELETE FROM old_password WHERE user_oid = 1165;
+ 
+DELETE FROM old_password WHERE user_oid = 1162;
+ 
+DELETE FROM old_password WHERE user_oid = 1148;
+ 
+DELETE FROM old_password WHERE user_oid = 1175;
+ 
+DELETE FROM old_password WHERE user_oid = 1139;
+ 
+DELETE FROM old_password WHERE user_oid = 1144;
+ 
+DELETE FROM old_password WHERE user_oid = 14920;
+ 
+DELETE FROM old_password WHERE user_oid = 21205;
+ 
+DELETE FROM old_password WHERE user_oid = 20557;
+ 
+DELETE FROM old_password WHERE user_oid = 20683;
+ 
+DELETE FROM old_password WHERE user_oid = 20684;
+ 
+DELETE FROM old_password WHERE user_oid = 23937;
+ 
+DELETE FROM old_password WHERE user_oid = 26728;
+ 
+DELETE FROM old_password WHERE user_oid = 23901;
+ 
+DELETE FROM old_password WHERE user_oid = 23942;
+ 
+DELETE FROM old_password WHERE user_oid = 23939;
+ 
+DELETE FROM old_password WHERE user_oid = 23940;
+ 
+DELETE FROM old_password WHERE user_oid = 1132;
+ 
+ 
+-- query to delete the client user mobile for the users vinculated to the agents in the list 
+
+DELETE FROM client_user_mobile WHERE user_oid = 1170;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1183;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1098;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1153;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1172;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1179;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1165;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1162;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1148;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1175;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1139;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1144;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 14920;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 21205;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 20557;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 20683;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 20684;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 23937;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 26728;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 23901;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 23942;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 23939;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 23940;
+ 
+DELETE FROM client_user_mobile WHERE user_oid = 1132;
+ 
+ 
+-- query to delete the client_user for the users vinculated to the agents in the list 
+
+DELETE FROM client_user WHERE user_oid = 1170;
+ 
+DELETE FROM client_user WHERE user_oid = 1183;
+ 
+DELETE FROM client_user WHERE user_oid = 1098;
+ 
+DELETE FROM client_user WHERE user_oid = 1153;
+ 
+DELETE FROM client_user WHERE user_oid = 1172;
+ 
+DELETE FROM client_user WHERE user_oid = 1179;
+ 
+DELETE FROM client_user WHERE user_oid = 1165;
+ 
+DELETE FROM client_user WHERE user_oid = 1162;
+ 
+DELETE FROM client_user WHERE user_oid = 1148;
+ 
+DELETE FROM client_user WHERE user_oid = 1175;
+ 
+DELETE FROM client_user WHERE user_oid = 1139;
+ 
+DELETE FROM client_user WHERE user_oid = 1144;
+ 
+DELETE FROM client_user WHERE user_oid = 14920;
+ 
+DELETE FROM client_user WHERE user_oid = 21205;
+ 
+DELETE FROM client_user WHERE user_oid = 20557;
+ 
+DELETE FROM client_user WHERE user_oid = 20683;
+ 
+DELETE FROM client_user WHERE user_oid = 20684;
+ 
+DELETE FROM client_user WHERE user_oid = 23937;
+ 
+DELETE FROM client_user WHERE user_oid = 26728;
+ 
+DELETE FROM client_user WHERE user_oid = 23901;
+ 
+DELETE FROM client_user WHERE user_oid = 23942;
+ 
+DELETE FROM client_user WHERE user_oid = 23939;
+ 
+DELETE FROM client_user WHERE user_oid = 23940;
+ 
+DELETE FROM client_user WHERE user_oid = 1132;
+ 
+ 
+-- query to delete the user_adm for the users vinculated to the agents in the list 
+
+DELETE FROM user_adm WHERE oid = 1170;
+ 
+DELETE FROM user_adm WHERE oid = 1183;
+ 
+DELETE FROM user_adm WHERE oid = 1098;
+ 
+DELETE FROM user_adm WHERE oid = 1153;
+ 
+DELETE FROM user_adm WHERE oid = 1172;
+ 
+DELETE FROM user_adm WHERE oid = 1179;
+ 
+DELETE FROM user_adm WHERE oid = 1165;
+ 
+DELETE FROM user_adm WHERE oid = 1162;
+ 
+DELETE FROM user_adm WHERE oid = 1148;
+ 
+DELETE FROM user_adm WHERE oid = 1175;
+ 
+DELETE FROM user_adm WHERE oid = 1139;
+ 
+DELETE FROM user_adm WHERE oid = 1144;
+ 
+DELETE FROM user_adm WHERE oid = 14920;
+ 
+DELETE FROM user_adm WHERE oid = 21205;
+ 
+DELETE FROM user_adm WHERE oid = 20557;
+ 
+DELETE FROM user_adm WHERE oid = 20683;
+ 
+DELETE FROM user_adm WHERE oid = 20684;
+ 
+DELETE FROM user_adm WHERE oid = 23937;
+ 
+DELETE FROM user_adm WHERE oid = 26728;
+ 
+DELETE FROM user_adm WHERE oid = 23901;
+ 
+DELETE FROM user_adm WHERE oid = 23942;
+ 
+DELETE FROM user_adm WHERE oid = 23939;
+ 
+DELETE FROM user_adm WHERE oid = 23940;
+ 
+DELETE FROM user_adm WHERE oid = 1132;
+ 
+ 

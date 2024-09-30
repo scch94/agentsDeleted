@@ -141,3 +141,135 @@ no agents to delete ();
 
 no agents to delete ();
  
+-- query to delete the table account 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_child 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_clerk 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_zone 
+
+no agents to delete ();
+ 
+-- query to delete the table agent 
+
+no agents to delete ();
+ 
+-- query to delete the table client_operative 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_comm 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_notif 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_restric 
+
+no agents to delete ();
+ 
+-- query to delete the table client_service_interface 
+
+no agents to delete ();
+ 
+-- query to delete the table client 
+
+no agents to delete ();
+ 
+-- query to delete the table account 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_child 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_clerk 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_zone 
+
+no agents to delete ();
+ 
+-- query to delete the table agent 
+
+no agents to delete ();
+ 
+-- query to delete the table client_operative 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_comm 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_notif 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_restric 
+
+no agents to delete ();
+ 
+-- query to delete the table client_service_interface 
+
+no agents to delete ();
+ 
+-- query to delete the table client 
+
+no agents to delete ();
+ 
+-- query to delete the table account 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_child 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_clerk 
+
+no agents to delete ();
+ 
+-- query to delete the table agent_zone 
+
+no agents to delete ();
+ 
+-- query to delete the table agent 
+
+no agents to delete ();
+ 
+-- query to delete the table client_operative 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_comm 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_notif 
+
+no agents to delete ();
+ 
+-- query to delete the table client_profile_client_restric 
+
+no agents to delete ();
+ 
+-- query to delete the table client_service_interface 
+
+no agents to delete ();
+ 
+-- query to delete the table client 
+
+no agents to delete ();
+ 
