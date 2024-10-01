@@ -57,7 +57,7 @@ func getAgentsInfo(ctx context.Context, agents *[]modelUtils.Agents) ([]modeldb.
 	var AllmsisdnsInfo []modeldb.MsisdnDb
 
 	// Abre el archivo en modo de escritura (crea el archivo si no existe)
-	file, err := os.OpenFile("../utils/agents_mobile.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile("../info/agents_mobile.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		ins_log.Errorf(ctx, "error opening file: %v", err)
 		return nil, err

@@ -1,8 +1,14 @@
 {
     "log_level": "trace",
     "log_name": "agentsDeleted_",
-    "database_connection_string": "postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require",
+    "database":{
+        "database_connection_string": "postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require",
+        "database_maxIdleTime":1800,
+        "database_maxLifeTime":3600,
+        "database_maxOpenConns":1000,
+        "database_maxIdleConns":1000,
+        "database_engine": "postgresql"
+    },
     "tenant": 4,
-    "ubication_agents_file": "../utils/agents.txt",
-    "database_engine": "postgresql"
+    "ubication_agents_file": "../utils/agents.txt"
 }

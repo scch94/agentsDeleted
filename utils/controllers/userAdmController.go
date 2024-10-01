@@ -85,7 +85,7 @@ func getUsersAdm(ctx context.Context, agents *[]modelUtils.Agents) ([]modeldb.Us
 	var AllUsers []modeldb.UsersDb
 
 	// Abre el archivo en modo de escritura (crea el archivo si no existe)
-	file, err := os.OpenFile("../utils/userAdm.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile("../info/userAdm.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		ins_log.Errorf(ctx, "error opening file: %v", err)
 		return nil, err

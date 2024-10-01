@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 	"sync"
+	"time"
 
 	_ "github.com/godror/godror" // Importa el driver para Oracle
 	_ "github.com/lib/pq"        // Importa el driver para PostgreSQL
@@ -22,14 +23,14 @@ var (
 
 func InitDb(ctx context.Context) error {
 	ctx = ins_log.SetPackageNameInContext(ctx, "databaseConnection")
-	if config.Config.DatabaseEngine == DBPOSTGRES {
-		err := NewPostgresDb(ctx, config.Config.DatabaseConnectionString)
+	if config.Config.Database.DatabaseEngine == DBPOSTGRES {
+		err := NewPostgresDb(ctx, config.Config.Database.DatabaseConnectionString)
 		if err != nil {
 			return err
 		}
 		return nil
-	} else if config.Config.DatabaseEngine == DBORACLE {
-		err := NewOracleDb(ctx, config.Config.DatabaseConnectionString)
+	} else if config.Config.Database.DatabaseEngine == DBORACLE {
+		err := NewOracleDb(ctx, config.Config.Database.DatabaseConnectionString)
 		if err != nil {
 			return err
 		}
@@ -41,7 +42,7 @@ func InitDb(ctx context.Context) error {
 }
 func NewPostgresDb(ctx context.Context, connectionString string) error {
 	//"postgres://xxepin:migracion@digicel-dev-flex.postgres.database.azure.com:5432/xxepin?sslmode=require",
-	databaseEngine = config.Config.DatabaseEngine
+	databaseEngine = config.Config.Database.DatabaseEngine
 	var initErr error
 	dbOnce.Do(func() {
 		var err error
@@ -52,10 +53,10 @@ func NewPostgresDb(ctx context.Context, connectionString string) error {
 			initErr = err
 			return
 		}
-		DB.SetConnMaxIdleTime(1800)
-		DB.SetConnMaxLifetime(3600)
-		DB.SetMaxOpenConns(1000)
-		DB.SetMaxIdleConns(1000)
+		DB.SetConnMaxIdleTime(time.Duration(config.Config.Database.MaxIdleTime))
+		DB.SetConnMaxLifetime(time.Duration(config.Config.Database.MaxLifeTime))
+		DB.SetMaxOpenConns(config.Config.Database.MaxOpenConns)
+		DB.SetMaxIdleConns(config.Config.Database.MaxIdleConns)
 
 		if err = DB.Ping(); err != nil {
 			ins_log.Fatalf(ctx, "cant do ping to  postgres database error : %v", err)
@@ -67,8 +68,7 @@ func NewPostgresDb(ctx context.Context, connectionString string) error {
 	return initErr
 }
 func NewOracleDb(ctx context.Context, connectionString string) error {
-	databaseEngine = config.Config.DatabaseEngine
-	//coneection := "EPIN_NEW/epin@192.168.0.157:1521/EPIN"
+	databaseEngine = config.Config.Database.DatabaseEngine
 	var initErr error
 	dbOnce.Do(func() {
 		var err error
@@ -79,10 +79,10 @@ func NewOracleDb(ctx context.Context, connectionString string) error {
 			initErr = err
 			return
 		}
-		DB.SetConnMaxIdleTime(1800)
-		DB.SetConnMaxLifetime(3600)
-		DB.SetMaxOpenConns(1000)
-		DB.SetMaxIdleConns(1000)
+		DB.SetConnMaxIdleTime(time.Duration(config.Config.Database.MaxIdleTime))
+		DB.SetConnMaxLifetime(time.Duration(config.Config.Database.MaxLifeTime))
+		DB.SetMaxOpenConns(config.Config.Database.MaxOpenConns)
+		DB.SetMaxIdleConns(config.Config.Database.MaxIdleConns)
 
 		if err = DB.Ping(); err != nil {
 			ins_log.Fatalf(ctx, "cant do ping to the oracle database error : %v", err)
@@ -94,7 +94,7 @@ func NewOracleDb(ctx context.Context, connectionString string) error {
 	return initErr
 }
 func newDb(ctx context.Context, databaseEngine string) error {
-	connectionString := config.Config.DatabaseConnectionString
+	connectionString := config.Config.Database.DatabaseConnectionString
 	var initErr error
 	dbOnce.Do(func() {
 		var err error
@@ -105,10 +105,10 @@ func newDb(ctx context.Context, databaseEngine string) error {
 			initErr = err
 			return
 		}
-		DB.SetConnMaxIdleTime(1800)
-		DB.SetConnMaxLifetime(3600)
-		DB.SetMaxOpenConns(1000)
-		DB.SetMaxIdleConns(1000)
+		DB.SetConnMaxIdleTime(time.Duration(config.Config.Database.MaxIdleTime))
+		DB.SetConnMaxLifetime(time.Duration(config.Config.Database.MaxLifeTime))
+		DB.SetMaxOpenConns(config.Config.Database.MaxOpenConns)
+		DB.SetMaxIdleConns(config.Config.Database.MaxIdleConns)
 
 		if err = DB.Ping(); err != nil {
 			ins_log.Fatalf(ctx, "cant do ping to the database error : %v", err)

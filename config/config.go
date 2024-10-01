@@ -14,18 +14,25 @@ import (
 var Config AgentsToDeletedConfiguration
 
 type AgentsToDeletedConfiguration struct {
-	LogLevel                 string `json:"log_level"`
-	Log_name                 string `json:"log_name"`
+	LogLevel            string   `json:"log_level"`
+	Log_name            string   `json:"log_name"`
+	Database            Database `json:"database"`
+	Tenant              int      `json:"tenant"`
+	UbSicationAgentFile string   `json:"ubication_agents_file"`
+}
+
+type Database struct {
 	DatabaseConnectionString string `json:"database_connection_string"`
-	Tenant                   int    `json:"tenant"`
-	UbSicationAgentFile      string `json:"ubication_agents_file"`
+	MaxIdleTime              int    `json:"database_maxIdleTime"`
+	MaxLifeTime              int    `json:"database_maxLifeTime"`
+	MaxOpenConns             int    `json:"database_maxOpenConns"`
+	MaxIdleConns             int    `json:"database_maxIdleConns"`
 	DatabaseEngine           string `json:"database_engine"`
 }
 
 func Upconfig(ctx context.Context) error {
 	//traemos el contexto y le setiamos el contexto actual
 	ctx = ins_log.SetPackageNameInContext(ctx, "config")
-
 	ins_log.Info(ctx, "starting to get the config struct ")
 	err := Gconfiguration.GetConfig(&Config, "../config", "agentsDeleted.json")
 	if err != nil {

@@ -43,7 +43,7 @@ func DeleteAgents(ctx context.Context, agents *[]modelUtils.Agents) error {
 
 	//creamos el archivo con concluisones
 	conclusionText := ConclusionTextBuilder(ctx, agents)
-	err = fileWriter.WriteInAfile(ctx, conclusionText, "../utils/conclusions.txt", "Conclusions of the scriptBuilder")
+	err = fileWriter.WriteInAfile(ctx, conclusionText, "../info/conclusions.txt", "Conclusions of the scriptBuilder")
 	if err != nil {
 		ins_log.Errorf(ctx, "error when we try to write in a file the conclusionText and the error message is: %s", err)
 		return err
